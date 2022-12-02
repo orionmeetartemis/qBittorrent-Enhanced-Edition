@@ -105,6 +105,8 @@
 #include "lttypecast.h"
 #include "magneturi.h"
 #include "nativesessionextension.h"
+#include "peer_blacklist.hpp"
+#include "peer_filter_session_plugin.hpp"
 #include "portforwarderimpl.h"
 #include "resumedatastorage.h"
 #include "torrentimpl.h"
@@ -120,7 +122,7 @@ const int STATISTICS_SAVE_INTERVAL = std::chrono::milliseconds(15min).count();
 namespace
 {
     const char PEER_ID[] = "qB";
-    const auto USER_AGENT = QStringLiteral("qBittorrent/" QBT_VERSION_2);
+    const auto USER_AGENT = QStringLiteral("qBittorrent Enhanced/" QBT_VERSION_2);
 
     void torrentQueuePositionUp(const lt::torrent_handle &handle)
     {
@@ -509,6 +511,10 @@ SessionImpl::SessionImpl(QObject *parent)
                         }
                  )
     , m_resumeDataStorageType(BITTORRENT_SESSION_KEY(u"ResumeDataStorageType"_qs), ResumeDataStorageType::Legacy)
+    , m_publicTrackers(BITTORRENT_SESSION_KEY(u"PublicTrackersList"_qs))
+    , m_autoBanUnknownPeer(BITTORRENT_SESSION_KEY(u"AutoBanUnknownPeer"_qs), false)
+    , m_autoBanBTPlayerPeer(BITTORRENT_SESSION_KEY(u"AutoBanBTPlayerPeer"_qs), false)
+    , m_isAutoUpdateTrackersEnabled(BITTORRENT_SESSION_KEY(u"AutoUpdateTrackersEnabled"_qs), false)
     , m_seedingLimitTimer {new QTimer {this}}
     , m_resumeDataTimer {new QTimer {this}}
     , m_ioThread {new QThread {this}}
@@ -546,6 +552,7 @@ SessionImpl::SessionImpl(QObject *parent)
 
     updateSeedingLimitTimer();
     populateAdditionalTrackers();
+    populatePublicTrackers();
     if (isExcludedFileNamesEnabled())
         populateExcludedFileNamesRegExpList();
 
@@ -578,6 +585,15 @@ SessionImpl::SessionImpl(QObject *parent)
     enableTracker(isTrackerEnabled());
 
     prepareStartup();
+
+    // Update Tracker
+    m_updateTimer = new QTimer(this);
+    m_updateTimer->setInterval(86400*1000);
+    connect(m_updateTimer, &QTimer::timeout, this, &SessionImpl::updatePublicTracker);
+    if (isAutoUpdateTrackersEnabled()) {
+        updatePublicTracker();
+        m_updateTimer->start();
+    }
 }
 
 SessionImpl::~SessionImpl()
@@ -694,6 +710,54 @@ void SessionImpl::setRefreshInterval(const int value)
 bool SessionImpl::isPreallocationEnabled() const
 {
     return m_isPreallocationEnabled;
+}
+
+bool SessionImpl::isAutoUpdateTrackersEnabled() const
+{
+    return m_isAutoUpdateTrackersEnabled;
+}
+
+void SessionImpl::setAutoUpdateTrackersEnabled(bool enabled)
+{
+    m_isAutoUpdateTrackersEnabled = enabled;
+
+    if(!enabled) {
+        m_updateTimer->stop();
+    } else {
+        m_updateTimer->start();
+        updatePublicTracker();
+    }
+}
+
+QString SessionImpl::publicTrackers() const
+{
+    return m_publicTrackers;
+}
+
+void SessionImpl::setPublicTrackers(const QString &trackers)
+{
+    if (trackers != publicTrackers()) {
+        m_publicTrackers = trackers;
+        populatePublicTrackers();
+    }
+}
+
+void SessionImpl::updatePublicTracker()
+{
+    Preferences *const pref = Preferences::instance();
+    Net::DownloadManager::instance()->download({pref->customizeTrackersListUrl()}, this, &SessionImpl::handlePublicTrackerTxtDownloadFinished);
+}
+
+void SessionImpl::handlePublicTrackerTxtDownloadFinished(const Net::DownloadResult &result)
+{
+    switch (result.status) {
+        case Net::DownloadStatus::Success:
+            setPublicTrackers(QString::fromUtf8(result.data.data()));
+            LogMsg(tr("The public tracker list updated."), Log::INFO);
+            break;
+        default:
+            LogMsg(tr("Updating the public tracker list failed: %1").arg(result.errorString, Log::WARNING));
+    }
 }
 
 void SessionImpl::setPreallocationEnabled(const bool enabled)
@@ -1489,6 +1553,18 @@ void SessionImpl::initializeNativeSession()
     if (isPeXEnabled())
         m_nativeSession->add_extension(&lt::create_ut_pex_plugin);
 
+    // Enhanced features
+    const Path peersDbPath = specialFolderLocation(SpecialFolder::Data) / Path(u"peers.db"_qs);
+    db_connection::instance().init(peersDbPath.toString());
+    m_nativeSession->add_extension(&create_drop_bad_peers_plugin);
+    if (isAutoBanUnknownPeerEnabled()) {
+        m_nativeSession->add_extension(&create_drop_unknown_peers_plugin);
+        m_nativeSession->add_extension(&create_drop_offline_downloader_plugin);
+    }
+    if (isAutoBanBTPlayerPeerEnabled())
+        m_nativeSession->add_extension(&create_drop_bittorrent_media_player_plugin);
+    m_nativeSession->add_extension(std::make_shared<peer_filter_session_plugin>());
+
     m_nativeSession->add_extension(std::make_shared<NativeSessionExtension>());
 }
 
@@ -2026,6 +2102,19 @@ void SessionImpl::populateAdditionalTrackers()
         tracker = tracker.trimmed();
         if (!tracker.isEmpty())
             m_additionalTrackerList.append({tracker.toString()});
+    }
+}
+
+void SessionImpl::populatePublicTrackers()
+{
+    m_publicTrackerList.clear();
+
+    const QString trackers = publicTrackers();
+    for (QStringView tracker : asConst(QStringView(trackers).split(u'\n')))
+    {
+        tracker = tracker.trimmed();
+        if (!tracker.isEmpty())
+            m_publicTrackerList.append({tracker.toString()});
     }
 }
 
@@ -2730,6 +2819,17 @@ bool SessionImpl::addTorrent_impl(const std::variant<MagnetUri, TorrentInfo> &so
         p.tracker_tiers.reserve(p.trackers.size() + static_cast<std::size_t>(m_additionalTrackerList.size()));
         p.tracker_tiers.resize(p.trackers.size(), 0);
         for (const TrackerEntry &trackerEntry : asConst(m_additionalTrackerList))
+        {
+            p.trackers.push_back(trackerEntry.url.toStdString());
+            p.tracker_tiers.push_back(trackerEntry.tier);
+        }
+    }
+
+    if (isAutoUpdateTrackersEnabled() && !(hasMetadata && p.ti->priv())) {
+        p.trackers.reserve(p.trackers.size() + static_cast<std::size_t>(m_publicTrackerList.size()));
+        p.tracker_tiers.reserve(p.trackers.size() + static_cast<std::size_t>(m_publicTrackerList.size()));
+        p.tracker_tiers.resize(p.trackers.size(), 0);
+        for (const TrackerEntry &trackerEntry : asConst(m_publicTrackerList))
         {
             p.trackers.push_back(trackerEntry.url.toStdString());
             p.tracker_tiers.push_back(trackerEntry.tier);
@@ -4480,6 +4580,32 @@ void SessionImpl::setTrackerFilteringEnabled(const bool enabled)
     {
         m_isTrackerFilteringEnabled = enabled;
         configureDeferred();
+    }
+}
+
+bool SessionImpl::isAutoBanUnknownPeerEnabled() const
+{
+    return m_autoBanUnknownPeer;
+}
+
+void SessionImpl::setAutoBanUnknownPeer(bool value)
+{
+    if (value != isAutoBanUnknownPeerEnabled()) {
+        m_autoBanUnknownPeer = value;
+        LogMsg(tr("Restart is required to toggle Auto Ban Unknown Client support"), Log::WARNING);
+    }
+}
+
+bool SessionImpl::isAutoBanBTPlayerPeerEnabled() const
+{
+    return m_autoBanBTPlayerPeer;
+}
+
+void SessionImpl::setAutoBanBTPlayerPeer(bool value)
+{
+    if (value != isAutoBanBTPlayerPeerEnabled()) {
+        m_autoBanBTPlayerPeer = value;
+        LogMsg(tr("Restart is required to toggle Auto Ban Bittorrent Media Player support"), Log::WARNING);
     }
 }
 

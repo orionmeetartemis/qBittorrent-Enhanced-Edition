@@ -196,6 +196,8 @@ void AppController::preferencesAction()
     data[u"ip_filter_path"_qs] = session->IPFilterFile().toString();
     data[u"ip_filter_trackers"_qs] = session->isTrackerFilteringEnabled();
     data[u"banned_IPs"_qs] = session->bannedIPs().join(u'\n');
+    data[u"auto_ban_unknown_peer"_qs] = session->isAutoBanUnknownPeerEnabled();
+    data[u"auto_ban_bt_player_peer"_qs] = session->isAutoBanBTPlayerPeerEnabled();
 
     // Speed
     // Global Rate Limits
@@ -244,6 +246,9 @@ void AppController::preferencesAction()
     // Add trackers
     data[u"add_trackers_enabled"_qs] = session->isAddTrackersEnabled();
     data[u"add_trackers"_qs] = session->additionalTrackers();
+    data[u"auto_update_trackers_enabled"_qs] = session->isAutoUpdateTrackersEnabled();
+    data[u"customize_trackers_list_url"_qs] = pref->customizeTrackersListUrl();
+    data[u"public_trackers"_qs] = session->publicTrackers();
 
     // Web UI
     // Language
@@ -583,6 +588,10 @@ void AppController::setPreferencesAction()
         session->setTrackerFilteringEnabled(it.value().toBool());
     if (hasKey(u"banned_IPs"_qs))
         session->setBannedIPs(it.value().toString().split(u'\n', Qt::SkipEmptyParts));
+    if (hasKey(u"auto_ban_unknown_peer"_qs))
+        session->setAutoBanUnknownPeer(it.value().toBool());
+    if (hasKey(u"auto_ban_bt_player_peer"_qs))
+        session->setAutoBanBTPlayerPeer(it.value().toBool());
 
     // Speed
     // Global Rate Limits
@@ -666,6 +675,10 @@ void AppController::setPreferencesAction()
         session->setAddTrackersEnabled(it.value().toBool());
     if (hasKey(u"add_trackers"_qs))
         session->setAdditionalTrackers(it.value().toString());
+    if (hasKey(u"auto_update_trackers_enabled"_qs))
+        session->setAutoUpdateTrackersEnabled(it.value().toBool());
+    if (hasKey(u"customize_trackers_list_url"_qs))
+        pref->setCustomizeTrackersListUrl(it.value().toString());
 
     // Web UI
     // Language

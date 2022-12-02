@@ -430,6 +430,21 @@ namespace BitTorrent
         void findIncompleteFiles(const TorrentInfo &torrentInfo, const Path &savePath
                                  , const Path &downloadPath, const PathList &filePaths = {}) const;
 
+        // Auto ban Unknown Peer
+        bool isAutoBanUnknownPeerEnabled() const override;
+        void setAutoBanUnknownPeer(bool value) override;
+
+        // Auto ban Bittorrent Media Player Peer
+        bool isAutoBanBTPlayerPeerEnabled() const override;
+        void setAutoBanBTPlayerPeer(bool value) override;
+
+        // Trackers list
+        bool isAutoUpdateTrackersEnabled() const override;
+        void setAutoUpdateTrackersEnabled(bool enabled) override;
+        QString publicTrackers() const override;
+        void setPublicTrackers(const QString &trackers) override;
+        void updatePublicTracker() override;
+
     private slots:
         void configureDeferred();
         void readAlerts();
@@ -446,6 +461,9 @@ namespace BitTorrent
         void networkOnlineStateChanged(bool online);
         void networkConfigurationChange(const QNetworkConfiguration &);
 #endif
+
+        // Public Tracker handle slots
+        void handlePublicTrackerTxtDownloadFinished(const Net::DownloadResult &result);
 
     private:
         struct ResumeSessionContext;
@@ -534,6 +552,8 @@ namespace BitTorrent
         void saveResumeData();
         void saveTorrentsQueue() const;
         void removeTorrentsQueue() const;
+
+        void populatePublicTrackers();
 
         std::vector<lt::alert *> getPendingAlerts(lt::time_duration time = lt::time_duration::zero()) const;
 
@@ -662,6 +682,13 @@ namespace BitTorrent
         CachedSettingValue<QStringList> m_bannedIPs;
         CachedSettingValue<ResumeDataStorageType> m_resumeDataStorageType;
 
+        // Enhanced Function
+        CachedSettingValue<QString> m_publicTrackers;
+        CachedSettingValue<bool> m_autoBanUnknownPeer;
+        CachedSettingValue<bool> m_autoBanBTPlayerPeer;
+        CachedSettingValue<bool> m_isAutoUpdateTrackersEnabled;
+        QTimer *m_updateTimer;
+
         bool m_isRestored = false;
 
         // Order is important. This needs to be declared after its CachedSettingsValue
@@ -672,6 +699,7 @@ namespace BitTorrent
         int m_numResumeData = 0;
         int m_extraLimit = 0;
         QVector<TrackerEntry> m_additionalTrackerList;
+        QVector<TrackerEntry> m_publicTrackerList;
         QVector<QRegularExpression> m_excludedFileNamesRegExpList;
 
         // Statistics

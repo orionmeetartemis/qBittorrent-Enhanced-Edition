@@ -327,14 +327,28 @@ void PeerListWidget::banSelectedPeers()
     // Store selected rows first as selected peers may disconnect
     const QModelIndexList selectedIndexes = selectionModel()->selectedRows();
 
-    QVector<QString> selectedIPs;
-    selectedIPs.reserve(selectedIndexes.size());
+    struct selectedData {
+      QString ip;
+      QString client;
+      QString peerId;
+      QString country;
+    };
+
+    QVector<selectedData> selectedDatas;
+    selectedDatas.reserve(selectedIndexes.size());
 
     for (const QModelIndex &index : selectedIndexes)
     {
         const int row = m_proxyModel->mapToSource(index).row();
         const QString ip = m_listModel->item(row, PeerListColumns::IP_HIDDEN)->text();
-        selectedIPs += ip;
+        const QString client = m_listModel->item(row, PeerListColumns::CLIENT)->text();
+        const QString peerId = m_listModel->item(row, PeerListColumns::PEERID_CLIENT)->text();
+
+        QHostAddress host(ip);
+        const QString country = Net::GeoIPManager::CountryName(Net::GeoIPManager::instance()->lookup(host));
+
+        selectedData tmp{ip, client, peerId, country};
+        selectedDatas += tmp;
     }
 
     // Confirm before banning peer
@@ -342,10 +356,10 @@ void PeerListWidget::banSelectedPeers()
         , tr("Are you sure you want to permanently ban the selected peers?"));
     if (btn != QMessageBox::Yes) return;
 
-    for (const QString &ip : selectedIPs)
+    for (const selectedData &data : selectedDatas)
     {
-        BitTorrent::Session::instance()->banIP(ip);
-        LogMsg(tr("Peer \"%1\" is manually banned").arg(ip));
+        BitTorrent::Session::instance()->banIP(data.ip);
+        LogMsg(tr("Peer \"%1\" is manually banned. PeerID: '%2' Client: '%3' Country: '%4'").arg(data.ip).arg(data.peerId).arg(data.client).arg(data.country));
     }
     // Refresh list
     loadPeers(m_properties->getCurrentTorrent());
