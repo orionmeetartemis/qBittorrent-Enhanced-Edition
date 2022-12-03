@@ -26,7 +26,6 @@ Section $(inst_qbt_req) ;"qBittorrent (required)"
   SetOutPath $INSTDIR
   ; Put files there
   File "qbittorrent.exe"
-  File "qbittorrent.pdb"
   File "qt.conf"
 
   ;Create 'translations' directory
@@ -63,6 +62,16 @@ Section $(inst_qbt_req) ;"qBittorrent (required)"
 SectionEnd
 
 ; Optional section (can be disabled by the user)
+Section "Install with Debug Symbol File"
+
+  ; Set output path to the installation directory.
+  SetOutPath $INSTDIR
+
+  File "qbittorrent.pdb"
+  Exec '"cmd.exe" /c COMPACT /C "$INSTDIR\qbittorrent.pdb"'
+
+SectionEnd
+
 Section /o $(inst_dekstop) ;"Create Desktop Shortcut"
 
   CreateShortCut "$DESKTOP\qBittorrent.lnk" "$INSTDIR\qbittorrent.exe"
