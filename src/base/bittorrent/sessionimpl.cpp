@@ -892,6 +892,7 @@ bool SessionImpl::editCategory(const QString &name, const CategoryOptions &optio
         }
     }
 
+    emit categoryOptionsChanged(name);
     return true;
 }
 
