@@ -29,9 +29,15 @@ bool is_unknown_peer(const lt::peer_info& info)
 // Offline Downloader filter
 bool is_offline_downloader(const lt::peer_info& info)
 {
+  std::regex id_filter("-LT(1220|2070)-");
   unsigned short port = info.ip.port();
   QString country = Net::GeoIPManager::instance()->lookup(QHostAddress(info.ip.data()));
-  return port >= 65000 && country == QLatin1String("CN") && info.client.find("Transmission") != std::string::npos;
+  // 115: Old data, may out of date.
+  bool fake_transmission = port >= 65000 && country == QLatin1String("CN") && info.client.find("Transmission") != std::string::npos;
+  // PikPak: PikPak is renting Worldstream server and announce as LT1220/LT2070, the best way is block the ip range via ip filter(?)
+  // Xunlei: it seems Xunlei is using LT2070 too
+  bool fake_libtorrent = (country == QLatin1String("NL") || country == QLatin1String("CN")) && std::regex_match(info.pid.data(), info.pid.data() + 8, id_filter);
+  return fake_transmission || fake_libtorrent;
 }
 
 // BitTorrent Media Player Peer filter

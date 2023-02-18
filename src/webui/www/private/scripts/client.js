@@ -1289,11 +1289,11 @@ function registerMagnetHandler() {
         return;
     }
 
-    const hashParams = getHashParamsFromUrl();
-    hashParams.download = '';
+    const hashString = location.hash ? location.hash.replace(/^#/, '') : '';
+    const hashParams = new URLSearchParams(hashString);
+    hashParams.set('download', '');
 
-    const templateHashString = Object.toQueryString(hashParams).replace('download=', 'download=%s');
-
+    const templateHashString = hashParams.toString().replace('download=', 'download=%s');
     const templateUrl = location.origin + location.pathname
         + location.search + '#' + templateHashString;
 
@@ -1311,11 +1311,6 @@ function handleDownloadParam() {
     // Remove the processed hash from the URL
     history.replaceState('', document.title, (location.pathname + location.search));
     showDownloadPage([url]);
-}
-
-function getHashParamsFromUrl() {
-    const hashString = location.hash ? location.hash.replace(/^#/, '') : '';
-    return (hashString.length > 0) ? String.parseQueryString(hashString) : {};
 }
 
 function closeWindows() {
@@ -1350,14 +1345,26 @@ new Keyboard({
     defaultEventType: 'keydown',
     events: {
         'ctrl+a': function(event) {
+            if (event.target.nodeName == "INPUT" || event.target.nodeName == "TEXTAREA")
+                return;
+            if (event.target.isContentEditable)
+                return;
             torrentsTable.selectAll();
             event.preventDefault();
         },
         'delete': function(event) {
+            if (event.target.nodeName == "INPUT" || event.target.nodeName == "TEXTAREA")
+                return;
+            if (event.target.isContentEditable)
+                return;
             deleteFN();
             event.preventDefault();
         },
         'shift+delete': (event) => {
+            if (event.target.nodeName == "INPUT" || event.target.nodeName == "TEXTAREA")
+                return;
+            if (event.target.isContentEditable)
+                return;
             deleteFN(true);
             event.preventDefault();
         }
