@@ -381,7 +381,7 @@
     </message>
     <message>
         <source>Original author</source>
-        <translation type="unfinished" />
+        <translation>Pengarang asal</translation>
     </message>
     <message>
         <source>Are you sure you want to remove the selected torrents from the transfer list?</source>
@@ -597,7 +597,7 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation>Batal</translation>
     </message>
     <message>
         <source>Remove</source>
@@ -609,14 +609,6 @@
     </message>
     <message>
         <source>Would you like to pause all torrents?</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Execution Log</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Log</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -791,10 +783,6 @@
         <translation>Jenis:</translation>
     </message>
     <message>
-        <source>(None)</source>
-        <translation type="vanished">(Tiada)</translation>
-    </message>
-    <message>
         <source>SOCKS4</source>
         <translation>SOCKS4</translation>
     </message>
@@ -817,10 +805,6 @@
     <message>
         <source>Use proxy for peer connections</source>
         <translation>Guna proksi untuk sambungan rakan</translation>
-    </message>
-    <message>
-        <source>Use proxy only for torrents</source>
-        <translation type="vanished">Guna proksi hanya untuk torrent</translation>
     </message>
     <message>
         <source>Filter path (.dat, .p2p, .p2b):</source>
@@ -1570,7 +1554,7 @@
     </message>
     <message>
         <source>Enable OS cache</source>
-        <translation type="unfinished" />
+        <translation>Benarkan cache OS</translation>
     </message>
     <message>
         <source>Refresh interval:</source>
@@ -1658,7 +1642,7 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
     </message>
     <message>
         <source>Example: 172.17.32.0/24, fdff:ffff:c8::/40</source>
-        <translation type="unfinished" />
+        <translation>Contoh: 172.17.32.0/24, fdff:ffff:c8::/40</translation>
     </message>
     <message>
         <source>SQLite database (experimental)</source>
@@ -1673,52 +1657,12 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
         <translation type="unfinished" />
     </message>
     <message>
-        <source>Backup the log file after:</source>
-        <translation type="unfinished" />
+        <source>(None)</source>
+        <translation>(Tiada)</translation>
     </message>
     <message>
-        <source>days</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Log file</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Behavior</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Delete backup logs older than:</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Use proxy for BitTorrent purposes</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>years</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Save path:</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>months</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Remember Multi-Rename settings</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Use proxy for general purposes</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Use proxy for RSS purposes</source>
-        <translation type="unfinished" />
+        <source>Use proxy only for torrents</source>
+        <translation>Guna proksi hanya untuk torrent</translation>
     </message>
 </context>
 <context>
@@ -2018,71 +1962,11 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
     </message>
     <message>
         <source>N/A</source>
-        <translation type="unfinished" />
+        <translation>T/A</translation>
     </message>
     <message>
         <source>Progress:</source>
         <translation>Kemajuan:</translation>
-    </message>
-    <message>
-        <source>Use regular expressions</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Filename</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Filename + Extension</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Enumerate Files</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Rename failed: file or folder already exists</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Match all occurences</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Toggle Selection</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Replacement Input</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Replace</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Extension</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Replace All</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Include files</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Include folders</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Search Files</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Case sensitive</source>
-        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -2549,7 +2433,7 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
     </message>
     <message>
         <source>Total Size</source>
-        <translation type="unfinished" />
+        <translation>Jumlah Saiz</translation>
     </message>
     <message>
         <source>Times Downloaded</source>
@@ -2557,14 +2441,6 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
     </message>
     <message>
         <source>Add trackers...</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Renamed</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Original</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -2861,14 +2737,6 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
         <source>Remove</source>
         <translation type="unfinished" />
     </message>
-    <message>
-        <source>Rename Files...</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Renaming</source>
-        <translation type="unfinished" />
-    </message>
 </context>
 <context>
     <name>UpDownRatioDialog</name>
@@ -3092,7 +2960,7 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
     </message>
     <message>
         <source>to</source>
-        <translation type="unfinished" />
+        <translation>hingga</translation>
     </message>
     <message>
         <source>Results</source>
@@ -3412,10 +3280,6 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
         <source>New name:</source>
         <translation>Nama baharu:</translation>
     </message>
-    <message>
-        <source>Renaming)</source>
-        <translation type="unfinished" />
-    </message>
 </context>
 <context>
     <name>RSSWidget</name>
@@ -3592,7 +3456,7 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
     </message>
     <message>
         <source>An expression with an empty %1 clause (e.g. %2)</source>
-        <translation type="unfinished" />
+        <translation>Satu ungkapan dengan klausa %1 kosong (seperti %2)</translation>
     </message>
     <message>
         <source>Example: </source>
@@ -3660,7 +3524,7 @@ Guna ';' untuk asingkan masukan berbilang. Boleh guna kad liar '*'.</translation
     </message>
     <message>
         <source> will match 2, 5, 8 through 15, 30 and onward episodes of season one</source>
-        <translation type="unfinished" />
+        <translation>akan padankan 2, 5, 8 menerusi 15, 30 dan episod seterusnya bagi musim pertama</translation>
     </message>
     <message>
         <source>Rule deletion confirmation</source>
@@ -3745,19 +3609,19 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Torrent content layout:</source>
-        <translation type="unfinished" />
+        <translation>Bentangan kandungan torrent:</translation>
     </message>
     <message>
         <source>Create subfolder</source>
-        <translation type="unfinished" />
+        <translation>Cipta subfolder</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished" />
+        <translation>Asal</translation>
     </message>
     <message>
         <source>Don't create subfolder</source>
-        <translation type="unfinished" />
+        <translation>Jangan cipta subfolder</translation>
     </message>
 </context>
 <context>
@@ -3768,7 +3632,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>All (%1)</source>
-        <translation type="unfinished" />
+        <translation>Semua (%1)</translation>
     </message>
     <message>
         <source>Trackerless (%1)</source>
@@ -3796,137 +3660,5 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
 </context>
 <context>
     <name>ExecutionLogWidget</name>
-    <message>
-        <source>General</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Blocked</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Unknown</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>All</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>showing</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Copy</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Select All</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>ID</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Log Type</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Information Messages</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Warning Messages</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Filter logs</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Blocked IPs</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>out of</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Status</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Timestamp</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Clear All</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Message</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Log Levels:</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Reason</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>item</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>IP</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Banned</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Normal Messages</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Critical</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Critical Messages</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Normal</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>items</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Results</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Info</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Choose a log level...</source>
-        <translation type="unfinished" />
-    </message>
-</context>
+    </context>
 </TS>

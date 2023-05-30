@@ -611,14 +611,6 @@
         <source>Would you like to pause all torrents?</source>
         <translation>Wilt u alle torrents pauzeren?</translation>
     </message>
-    <message>
-        <source>Execution Log</source>
-        <translation>Uitvoeringslog</translation>
-    </message>
-    <message>
-        <source>Log</source>
-        <translation>Log</translation>
-    </message>
 </context>
 <context>
     <name>OptionsDialog</name>
@@ -791,10 +783,6 @@
         <translation>Type:</translation>
     </message>
     <message>
-        <source>(None)</source>
-        <translation type="vanished">(Geen)</translation>
-    </message>
-    <message>
         <source>SOCKS4</source>
         <translation>SOCKS4</translation>
     </message>
@@ -817,10 +805,6 @@
     <message>
         <source>Use proxy for peer connections</source>
         <translation>Proxy gebruiken voor peer-verbindingen</translation>
-    </message>
-    <message>
-        <source>Use proxy only for torrents</source>
-        <translation type="vanished">Proxy alleen voor torrents gebruiken</translation>
     </message>
     <message>
         <source>Filter path (.dat, .p2p, .p2b):</source>
@@ -1673,52 +1657,12 @@ Gebruik ';' om meerdere items te splitsen. Jokerteken '*' kan gebruikt worden.</
         <translation>Bestanden voor snel hervatten</translation>
     </message>
     <message>
-        <source>Backup the log file after:</source>
-        <translation type="unfinished" />
+        <source>(None)</source>
+        <translation>(Geen)</translation>
     </message>
     <message>
-        <source>days</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Log file</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Behavior</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Delete backup logs older than:</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Use proxy for BitTorrent purposes</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>years</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Save path:</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>months</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Remember Multi-Rename settings</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Use proxy for general purposes</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Use proxy for RSS purposes</source>
-        <translation type="unfinished" />
+        <source>Use proxy only for torrents</source>
+        <translation>Proxy alleen voor torrents gebruiken</translation>
     </message>
 </context>
 <context>
@@ -2023,66 +1967,6 @@ Gebruik ';' om meerdere items te splitsen. Jokerteken '*' kan gebruikt worden.</
     <message>
         <source>Progress:</source>
         <translation>Voortgang:</translation>
-    </message>
-    <message>
-        <source>Use regular expressions</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Filename</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Filename + Extension</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Enumerate Files</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Rename failed: file or folder already exists</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Match all occurences</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Toggle Selection</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Replacement Input</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Replace</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Extension</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Replace All</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Include files</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Include folders</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Search Files</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Case sensitive</source>
-        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -2559,14 +2443,6 @@ Gebruik ';' om meerdere items te splitsen. Jokerteken '*' kan gebruikt worden.</
         <source>Add trackers...</source>
         <translation>Trackers toevoegen...</translation>
     </message>
-    <message>
-        <source>Renamed</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Original</source>
-        <translation type="unfinished" />
-    </message>
 </context>
 <context>
     <name>TrackersAdditionDialog</name>
@@ -2860,14 +2736,6 @@ Gebruik ';' om meerdere items te splitsen. Jokerteken '*' kan gebruikt worden.</
     <message>
         <source>Remove</source>
         <translation>Verwijderen</translation>
-    </message>
-    <message>
-        <source>Rename Files...</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Renaming</source>
-        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -3412,10 +3280,6 @@ Gebruik ';' om meerdere items te splitsen. Jokerteken '*' kan gebruikt worden.</
         <source>New name:</source>
         <translation>Nieuwe naam:</translation>
     </message>
-    <message>
-        <source>Renaming)</source>
-        <translation type="unfinished" />
-    </message>
 </context>
 <context>
     <name>RSSWidget</name>
@@ -3797,137 +3661,5 @@ Ondersteunt de formaten:  S01E01, 1x1, 2017.12.31 en 31.12.2017 (datumformaten o
 </context>
 <context>
     <name>ExecutionLogWidget</name>
-    <message>
-        <source>General</source>
-        <translation>Algemeen</translation>
-    </message>
-    <message>
-        <source>Blocked</source>
-        <translation>Geblokkeerd</translation>
-    </message>
-    <message>
-        <source>Unknown</source>
-        <translation>Onbekend</translation>
-    </message>
-    <message>
-        <source>All</source>
-        <translation>Alle</translation>
-    </message>
-    <message>
-        <source>showing</source>
-        <translation>weergeven van</translation>
-    </message>
-    <message>
-        <source>Copy</source>
-        <translation>Kopiëren</translation>
-    </message>
-    <message>
-        <source>Select All</source>
-        <translation>Alles selecteren</translation>
-    </message>
-    <message>
-        <source>ID</source>
-        <translation>ID</translation>
-    </message>
-    <message>
-        <source>Log Type</source>
-        <translation>Type log</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation>Wissen</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation>Waarschuwing</translation>
-    </message>
-    <message>
-        <source>Information Messages</source>
-        <translation>Informatieberichten</translation>
-    </message>
-    <message>
-        <source>Warning Messages</source>
-        <translation>Waarschuwingsberichten</translation>
-    </message>
-    <message>
-        <source>Filter logs</source>
-        <translation>Logs filteren</translation>
-    </message>
-    <message>
-        <source>Blocked IPs</source>
-        <translation>Geblokkeerde IP's</translation>
-    </message>
-    <message>
-        <source>out of</source>
-        <translation>van</translation>
-    </message>
-    <message>
-        <source>Status</source>
-        <translation>Status</translation>
-    </message>
-    <message>
-        <source>Timestamp</source>
-        <translation>Tijdstempel</translation>
-    </message>
-    <message>
-        <source>Clear All</source>
-        <translation>Alles wissen</translation>
-    </message>
-    <message>
-        <source>Message</source>
-        <translation>Bericht</translation>
-    </message>
-    <message>
-        <source>Log Levels:</source>
-        <translation>Log-niveaus:</translation>
-    </message>
-    <message>
-        <source>Reason</source>
-        <translation>Reden</translation>
-    </message>
-    <message>
-        <source>item</source>
-        <translation>Item</translation>
-    </message>
-    <message>
-        <source>IP</source>
-        <translation>IP</translation>
-    </message>
-    <message>
-        <source>Banned</source>
-        <translation>Verbannen</translation>
-    </message>
-    <message>
-        <source>Normal Messages</source>
-        <translation>Normale berichten</translation>
-    </message>
-    <message>
-        <source>Critical</source>
-        <translation>Kritiek</translation>
-    </message>
-    <message>
-        <source>Critical Messages</source>
-        <translation>Kritieke berichten</translation>
-    </message>
-    <message>
-        <source>Normal</source>
-        <translation>Normaal</translation>
-    </message>
-    <message>
-        <source>items</source>
-        <translation>Items</translation>
-    </message>
-    <message>
-        <source>Results</source>
-        <translation>Resultaten</translation>
-    </message>
-    <message>
-        <source>Info</source>
-        <translation>Info</translation>
-    </message>
-    <message>
-        <source>Choose a log level...</source>
-        <translation>Logniveau kiezen...</translation>
-    </message>
-</context>
+    </context>
 </TS>

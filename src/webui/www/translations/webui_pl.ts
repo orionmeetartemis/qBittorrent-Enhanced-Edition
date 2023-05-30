@@ -611,14 +611,6 @@
         <source>Would you like to pause all torrents?</source>
         <translation>Czy chcesz wstrzymać wszystkie torrenty?</translation>
     </message>
-    <message>
-        <source>Execution Log</source>
-        <translation>Dziennik programu</translation>
-    </message>
-    <message>
-        <source>Log</source>
-        <translation>Dziennik</translation>
-    </message>
 </context>
 <context>
     <name>OptionsDialog</name>
@@ -791,10 +783,6 @@
         <translation>Typ:</translation>
     </message>
     <message>
-        <source>(None)</source>
-        <translation type="vanished">(Żaden)</translation>
-    </message>
-    <message>
         <source>SOCKS4</source>
         <translation>SOCKS4</translation>
     </message>
@@ -817,10 +805,6 @@
     <message>
         <source>Use proxy for peer connections</source>
         <translation>Używaj proxy do połączeń z partnerami</translation>
-    </message>
-    <message>
-        <source>Use proxy only for torrents</source>
-        <translation type="vanished">Używaj proxy tylko do torrentów</translation>
     </message>
     <message>
         <source>Filter path (.dat, .p2p, .p2b):</source>
@@ -1673,52 +1657,12 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
         <translation>Pliki fastresume</translation>
     </message>
     <message>
-        <source>Backup the log file after:</source>
-        <translation type="unfinished" />
+        <source>(None)</source>
+        <translation>(Żaden)</translation>
     </message>
     <message>
-        <source>days</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Log file</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Behavior</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Delete backup logs older than:</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Use proxy for BitTorrent purposes</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>years</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Save path:</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>months</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Remember Multi-Rename settings</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Use proxy for general purposes</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Use proxy for RSS purposes</source>
-        <translation type="unfinished" />
+        <source>Use proxy only for torrents</source>
+        <translation>Używaj proxy tylko do torrentów</translation>
     </message>
 </context>
 <context>
@@ -2023,66 +1967,6 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
     <message>
         <source>Progress:</source>
         <translation>Postęp:</translation>
-    </message>
-    <message>
-        <source>Use regular expressions</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Filename</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Filename + Extension</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Enumerate Files</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Rename failed: file or folder already exists</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Match all occurences</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Toggle Selection</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Replacement Input</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Replace</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Extension</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Replace All</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Include files</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Include folders</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Search Files</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Case sensitive</source>
-        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -2559,14 +2443,6 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
         <source>Add trackers...</source>
         <translation>Dodaj trackery...</translation>
     </message>
-    <message>
-        <source>Renamed</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Original</source>
-        <translation type="unfinished" />
-    </message>
 </context>
 <context>
     <name>TrackersAdditionDialog</name>
@@ -2860,14 +2736,6 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
     <message>
         <source>Remove</source>
         <translation>Usuń</translation>
-    </message>
-    <message>
-        <source>Rename Files...</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Renaming</source>
-        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -3412,10 +3280,6 @@ Użyj ';' do rozdzielania wielu wpisów. Można użyć wieloznacznika '*'.</tran
         <source>New name:</source>
         <translation>Nowa nazwa:</translation>
     </message>
-    <message>
-        <source>Renaming)</source>
-        <translation type="unfinished" />
-    </message>
 </context>
 <context>
     <name>RSSWidget</name>
@@ -3797,137 +3661,5 @@ Obsługuje formaty: S01E01, 1x1, 2017.12.31 oraz 31.12.2017 (Formaty daty równi
 </context>
 <context>
     <name>ExecutionLogWidget</name>
-    <message>
-        <source>General</source>
-        <translation>Główne</translation>
-    </message>
-    <message>
-        <source>Blocked</source>
-        <translation>Zablokowane</translation>
-    </message>
-    <message>
-        <source>Unknown</source>
-        <translation>Nieznane</translation>
-    </message>
-    <message>
-        <source>All</source>
-        <translation>Wszystkie</translation>
-    </message>
-    <message>
-        <source>showing</source>
-        <translation>pokazywanie</translation>
-    </message>
-    <message>
-        <source>Copy</source>
-        <translation>Kopiuj</translation>
-    </message>
-    <message>
-        <source>Select All</source>
-        <translation>Zaznacz wszystko</translation>
-    </message>
-    <message>
-        <source>ID</source>
-        <translation>ID</translation>
-    </message>
-    <message>
-        <source>Log Type</source>
-        <translation>Typ dziennika</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation>Wyczyść</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation>Ostrzeżenie</translation>
-    </message>
-    <message>
-        <source>Information Messages</source>
-        <translation>Komunikaty informacyjne</translation>
-    </message>
-    <message>
-        <source>Warning Messages</source>
-        <translation>Komunikaty ostrzegawcze</translation>
-    </message>
-    <message>
-        <source>Filter logs</source>
-        <translation>Filtrowanie dzienników</translation>
-    </message>
-    <message>
-        <source>Blocked IPs</source>
-        <translation>Zablokowane adresy IP</translation>
-    </message>
-    <message>
-        <source>out of</source>
-        <translation>z</translation>
-    </message>
-    <message>
-        <source>Status</source>
-        <translation>Status</translation>
-    </message>
-    <message>
-        <source>Timestamp</source>
-        <translation>Sygnatura czasowa</translation>
-    </message>
-    <message>
-        <source>Clear All</source>
-        <translation>Wyczyść wszystko</translation>
-    </message>
-    <message>
-        <source>Message</source>
-        <translation>Komunikat</translation>
-    </message>
-    <message>
-        <source>Log Levels:</source>
-        <translation>Poziomy dziennika:</translation>
-    </message>
-    <message>
-        <source>Reason</source>
-        <translation>Powód</translation>
-    </message>
-    <message>
-        <source>item</source>
-        <translation>element</translation>
-    </message>
-    <message>
-        <source>IP</source>
-        <translation>Adres IP</translation>
-    </message>
-    <message>
-        <source>Banned</source>
-        <translation>Zbanowane</translation>
-    </message>
-    <message>
-        <source>Normal Messages</source>
-        <translation>Komunikaty zwykłe</translation>
-    </message>
-    <message>
-        <source>Critical</source>
-        <translation>Krytyczne</translation>
-    </message>
-    <message>
-        <source>Critical Messages</source>
-        <translation>Komunikaty krytyczne</translation>
-    </message>
-    <message>
-        <source>Normal</source>
-        <translation>Normalne</translation>
-    </message>
-    <message>
-        <source>items</source>
-        <translation>elementy</translation>
-    </message>
-    <message>
-        <source>Results</source>
-        <translation>Wyniki</translation>
-    </message>
-    <message>
-        <source>Info</source>
-        <translation>Informacje</translation>
-    </message>
-    <message>
-        <source>Choose a log level...</source>
-        <translation>Wybierz poziom dziennika...</translation>
-    </message>
-</context>
+    </context>
 </TS>

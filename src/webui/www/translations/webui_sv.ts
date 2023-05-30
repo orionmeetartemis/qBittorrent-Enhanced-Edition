@@ -181,7 +181,7 @@
     </message>
     <message>
         <source>The port used for the Web UI must be between 1 and 65535.</source>
-        <translation>Porten som används för webbgränssnittet måste vara mellan 1 och 65535</translation>
+        <translation>Porten som används för webbgränssnittet måste vara mellan 1 och 65535.</translation>
     </message>
     <message>
         <source>Unable to log in, qBittorrent is probably unreachable.</source>
@@ -189,7 +189,7 @@
     </message>
     <message>
         <source>Invalid Username or Password.</source>
-        <translation>Felaktigt Användarnamn eller Lösenord</translation>
+        <translation>Felaktigt användarnamn eller lösenord.</translation>
     </message>
     <message>
         <source>Username</source>
@@ -611,14 +611,6 @@
         <source>Would you like to pause all torrents?</source>
         <translation>Vill du pausa alla torrenter?</translation>
     </message>
-    <message>
-        <source>Execution Log</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Log</source>
-        <translation type="unfinished" />
-    </message>
 </context>
 <context>
     <name>OptionsDialog</name>
@@ -791,10 +783,6 @@
         <translation>Typ:</translation>
     </message>
     <message>
-        <source>(None)</source>
-        <translation type="vanished">(Ingen)</translation>
-    </message>
-    <message>
         <source>SOCKS4</source>
         <translation>SOCKS4</translation>
     </message>
@@ -817,10 +805,6 @@
     <message>
         <source>Use proxy for peer connections</source>
         <translation>Använd proxy för jämlikeanslutningar</translation>
-    </message>
-    <message>
-        <source>Use proxy only for torrents</source>
-        <translation type="vanished">Använd proxy endast för torrenter</translation>
     </message>
     <message>
         <source>Filter path (.dat, .p2p, .p2b):</source>
@@ -1174,11 +1158,11 @@
     </message>
     <message>
         <source>Allow multiple connections from the same IP address:</source>
-        <translation>Tillåt flera anslutningar från samma IP-adress</translation>
+        <translation>Tillåt flera anslutningar från samma IP-adress:</translation>
     </message>
     <message>
         <source>File pool size:</source>
-        <translation>Filpool storlek</translation>
+        <translation>Filpool storlek:</translation>
     </message>
     <message>
         <source>Any interface</source>
@@ -1218,7 +1202,7 @@
     </message>
     <message>
         <source>Outgoing ports (Min) [0: Disabled]:</source>
-        <translation>Utgående portar (min) [0: Inaktiverat]:</translation>
+        <translation>Utgående portar (min) [0: inaktiverat]:</translation>
     </message>
     <message>
         <source>Recheck torrents on completion:</source>
@@ -1242,7 +1226,7 @@
     </message>
     <message>
         <source>Outgoing ports (Max) [0: Disabled]:</source>
-        <translation>Utgående portar (max) [0: Inaktiverat]</translation>
+        <translation>Utgående portar (max) [0: inaktiverat]:</translation>
     </message>
     <message>
         <source>Asynchronous I/O threads:</source>
@@ -1290,7 +1274,7 @@
     </message>
     <message>
         <source>Upload slots behavior:</source>
-        <translation>Beteende för sändningsplatser</translation>
+        <translation>Beteende för sändningsplatser:</translation>
     </message>
     <message>
         <source>MiB</source>
@@ -1322,7 +1306,7 @@
     </message>
     <message>
         <source>Stop tracker timeout:</source>
-        <translation>Stopptidsgräns för spårare</translation>
+        <translation>Stopptidsgräns för spårare:</translation>
     </message>
     <message>
         <source>Ban client after consecutive failures:</source>
@@ -1334,7 +1318,7 @@
     </message>
     <message>
         <source>UPnP lease duration [0: Permanent lease]:</source>
-        <translation>UPnP-anslutningstid [0: Permanent anslutning]:</translation>
+        <translation>UPnP-anslutningstid [0: permanent anslutning]:</translation>
     </message>
     <message>
         <source>Header: value pairs, one per line</source>
@@ -1662,63 +1646,23 @@ Använd ";" för att dela upp i flera poster. Du kan använda jokertecknet "*".<
     </message>
     <message>
         <source>SQLite database (experimental)</source>
-        <translation type="unfinished" />
+        <translation>SQLite-databas (experimentell)</translation>
     </message>
     <message>
         <source>Resume data storage type (requires restart):</source>
-        <translation type="unfinished" />
+        <translation>Återuppta datalagringstyp (kräver omstart):</translation>
     </message>
     <message>
         <source>Fastresume files</source>
-        <translation type="unfinished" />
+        <translation>Snabbåteruppta filer</translation>
     </message>
     <message>
-        <source>Backup the log file after:</source>
-        <translation type="unfinished" />
+        <source>(None)</source>
+        <translation>(Ingen)</translation>
     </message>
     <message>
-        <source>days</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Log file</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Behavior</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Delete backup logs older than:</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Use proxy for BitTorrent purposes</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>years</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Save path:</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>months</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Remember Multi-Rename settings</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Use proxy for general purposes</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Use proxy for RSS purposes</source>
-        <translation type="unfinished" />
+        <source>Use proxy only for torrents</source>
+        <translation>Använd proxy endast för torrenter</translation>
     </message>
 </context>
 <context>
@@ -2023,66 +1967,6 @@ Använd ";" för att dela upp i flera poster. Du kan använda jokertecknet "*".<
     <message>
         <source>Progress:</source>
         <translation>Förlopp:</translation>
-    </message>
-    <message>
-        <source>Use regular expressions</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Filename</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Filename + Extension</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Enumerate Files</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Rename failed: file or folder already exists</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Match all occurences</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Toggle Selection</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Replacement Input</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Replace</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Extension</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Replace All</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Include files</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Include folders</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Search Files</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Case sensitive</source>
-        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -2559,14 +2443,6 @@ Använd ";" för att dela upp i flera poster. Du kan använda jokertecknet "*".<
         <source>Add trackers...</source>
         <translation>Lägg till spårare...</translation>
     </message>
-    <message>
-        <source>Renamed</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Original</source>
-        <translation type="unfinished" />
-    </message>
 </context>
 <context>
     <name>TrackersAdditionDialog</name>
@@ -2860,14 +2736,6 @@ Använd ";" för att dela upp i flera poster. Du kan använda jokertecknet "*".<
     <message>
         <source>Remove</source>
         <translation>Ta bort</translation>
-    </message>
-    <message>
-        <source>Rename Files...</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Renaming</source>
-        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -3412,10 +3280,6 @@ Använd ";" för att dela upp i flera poster. Du kan använda jokertecknet "*".<
         <source>New name:</source>
         <translation>Nytt namn:</translation>
     </message>
-    <message>
-        <source>Renaming)</source>
-        <translation type="unfinished" />
-    </message>
 </context>
 <context>
     <name>RSSWidget</name>
@@ -3797,137 +3661,5 @@ Stöder formaten: S01E01, 1x1, 2017.12.31 och 31.12.2017 (datumformatet stöder 
 </context>
 <context>
     <name>ExecutionLogWidget</name>
-    <message>
-        <source>General</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Blocked</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Unknown</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>All</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>showing</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Copy</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Select All</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>ID</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Log Type</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Information Messages</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Warning Messages</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Filter logs</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Blocked IPs</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>out of</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Status</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Timestamp</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Clear All</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Message</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Log Levels:</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Reason</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>item</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>IP</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Banned</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Normal Messages</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Critical</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Critical Messages</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Normal</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>items</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Results</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Info</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Choose a log level...</source>
-        <translation type="unfinished" />
-    </message>
-</context>
+    </context>
 </TS>

@@ -734,7 +734,13 @@ qreal TorrentImpl::progress() const
         return 1.;
 
     const qreal progress = static_cast<qreal>(m_nativeStatus.total_wanted_done) / m_nativeStatus.total_wanted;
-    Q_ASSERT((progress >= 0.f) && (progress <= 1.f));
+    if ((progress < 0.f) || (progress > 1.f))
+    {
+        LogMsg(tr("Unexpected data detected. Torrent: %1. Data: total_wanted=%2 total_wanted_done=%3.")
+                .arg(name(), QString::number(m_nativeStatus.total_wanted), QString::number(m_nativeStatus.total_wanted_done))
+                , Log::WARNING);
+    }
+
     return progress;
 }
 
@@ -1841,25 +1847,24 @@ void TorrentImpl::handleTorrentFinishedAlert(const lt::torrent_finished_alert *p
 
     m_statusUpdatedTriggers.enqueue([this]()
     {
-        m_hasSeedStatus = true;
-
         adjustStorageLocation();
         manageIncompleteFiles();
 
         m_session->handleTorrentNeedSaveResumeData(this);
 
         const bool recheckTorrentsOnCompletion = Preferences::instance()->recheckTorrentsOnCompletion();
-        if (isMoveInProgress() || (m_renameCount > 0))
+        if (recheckTorrentsOnCompletion && m_unchecked)
         {
-            if (recheckTorrentsOnCompletion)
-                m_moveFinishedTriggers.enqueue([this]() { forceRecheck(); });
-            m_moveFinishedTriggers.enqueue([this]() { m_session->handleTorrentFinished(this); });
+            forceRecheck();
         }
         else
         {
-            if (recheckTorrentsOnCompletion && m_unchecked)
-                forceRecheck();
-            m_session->handleTorrentFinished(this);
+            m_hasSeedStatus = true;
+
+            if (isMoveInProgress() || (m_renameCount > 0))
+                m_moveFinishedTriggers.enqueue([this]() { m_session->handleTorrentFinished(this); });
+            else
+                m_session->handleTorrentFinished(this);
         }
     });
 }

@@ -611,14 +611,6 @@
         <source>Would you like to pause all torrents?</source>
         <translation>Vuoi mettere in pausa tutti i torrent?</translation>
     </message>
-    <message>
-        <source>Execution Log</source>
-        <translation>Registro eventi esecuzione</translation>
-    </message>
-    <message>
-        <source>Log</source>
-        <translation>Registro eventi</translation>
-    </message>
 </context>
 <context>
     <name>OptionsDialog</name>
@@ -791,10 +783,6 @@
         <translation>Tipo:</translation>
     </message>
     <message>
-        <source>(None)</source>
-        <translation type="vanished">(Nessuno)</translation>
-    </message>
-    <message>
         <source>SOCKS4</source>
         <translation>SOCKS4</translation>
     </message>
@@ -817,10 +805,6 @@
     <message>
         <source>Use proxy for peer connections</source>
         <translation>Usa il proxy per le connessioni ai nodi</translation>
-    </message>
-    <message>
-        <source>Use proxy only for torrents</source>
-        <translation type="vanished">Usa il proxy solo per i torrent</translation>
     </message>
     <message>
         <source>Filter path (.dat, .p2p, .p2b):</source>
@@ -1675,52 +1659,12 @@ Usa ';' per dividere più voci.</translation>
         <translation>File ripresa veloce</translation>
     </message>
     <message>
-        <source>Backup the log file after:</source>
-        <translation type="unfinished" />
+        <source>(None)</source>
+        <translation>(Nessuno)</translation>
     </message>
     <message>
-        <source>days</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Log file</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Behavior</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Delete backup logs older than:</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Use proxy for BitTorrent purposes</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>years</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Save path:</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>months</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Remember Multi-Rename settings</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Use proxy for general purposes</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Use proxy for RSS purposes</source>
-        <translation type="unfinished" />
+        <source>Use proxy only for torrents</source>
+        <translation>Usa il proxy solo per i torrent</translation>
     </message>
 </context>
 <context>
@@ -2025,66 +1969,6 @@ Usa ';' per dividere più voci.</translation>
     <message>
         <source>Progress:</source>
         <translation>Progresso:</translation>
-    </message>
-    <message>
-        <source>Use regular expressions</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Filename</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Filename + Extension</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Enumerate Files</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Rename failed: file or folder already exists</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Match all occurences</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Toggle Selection</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Replacement Input</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Replace</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Extension</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Replace All</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Include files</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Include folders</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Search Files</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Case sensitive</source>
-        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -2561,14 +2445,6 @@ Usa ';' per dividere più voci.</translation>
         <source>Add trackers...</source>
         <translation>Aggiungi tracker...</translation>
     </message>
-    <message>
-        <source>Renamed</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Original</source>
-        <translation type="unfinished" />
-    </message>
 </context>
 <context>
     <name>TrackersAdditionDialog</name>
@@ -2862,14 +2738,6 @@ Usa ';' per dividere più voci.</translation>
     <message>
         <source>Remove</source>
         <translation>Rimuovi</translation>
-    </message>
-    <message>
-        <source>Rename Files...</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Renaming</source>
-        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -3415,10 +3283,6 @@ Il database è concesso in licenza con la licenza internazionale Creative Common
         <source>New name:</source>
         <translation>Nuovo nome:</translation>
     </message>
-    <message>
-        <source>Renaming)</source>
-        <translation type="unfinished" />
-    </message>
 </context>
 <context>
     <name>RSSWidget</name>
@@ -3801,137 +3665,5 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
 </context>
 <context>
     <name>ExecutionLogWidget</name>
-    <message>
-        <source>General</source>
-        <translation>Generale</translation>
-    </message>
-    <message>
-        <source>Blocked</source>
-        <translation>Bloccato</translation>
-    </message>
-    <message>
-        <source>Unknown</source>
-        <translation>Sconosciuto</translation>
-    </message>
-    <message>
-        <source>All</source>
-        <translation>Tutti</translation>
-    </message>
-    <message>
-        <source>showing</source>
-        <translation>visualizzando</translation>
-    </message>
-    <message>
-        <source>Copy</source>
-        <translation>Copia</translation>
-    </message>
-    <message>
-        <source>Select All</source>
-        <translation>Seleziona tutto</translation>
-    </message>
-    <message>
-        <source>ID</source>
-        <translation>ID</translation>
-    </message>
-    <message>
-        <source>Log Type</source>
-        <translation>Tipo registro eventi</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation>Azzera</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation>Avviso</translation>
-    </message>
-    <message>
-        <source>Information Messages</source>
-        <translation>Messaggi informazione</translation>
-    </message>
-    <message>
-        <source>Warning Messages</source>
-        <translation>Messaggi avviso</translation>
-    </message>
-    <message>
-        <source>Filter logs</source>
-        <translation>Filtra registri eventi</translation>
-    </message>
-    <message>
-        <source>Blocked IPs</source>
-        <translation>IP bloccati</translation>
-    </message>
-    <message>
-        <source>out of</source>
-        <translation>fuori da</translation>
-    </message>
-    <message>
-        <source>Status</source>
-        <translation>Stato</translation>
-    </message>
-    <message>
-        <source>Timestamp</source>
-        <translation>Data/ora</translation>
-    </message>
-    <message>
-        <source>Clear All</source>
-        <translation>Azzera tutto</translation>
-    </message>
-    <message>
-        <source>Message</source>
-        <translation>Messaggio</translation>
-    </message>
-    <message>
-        <source>Log Levels:</source>
-        <translation>Livello registro:</translation>
-    </message>
-    <message>
-        <source>Reason</source>
-        <translation>Motivo</translation>
-    </message>
-    <message>
-        <source>item</source>
-        <translation>elemento</translation>
-    </message>
-    <message>
-        <source>IP</source>
-        <translation>IP</translation>
-    </message>
-    <message>
-        <source>Banned</source>
-        <translation>Bannato</translation>
-    </message>
-    <message>
-        <source>Normal Messages</source>
-        <translation>Messaggi normali</translation>
-    </message>
-    <message>
-        <source>Critical</source>
-        <translation>Critico</translation>
-    </message>
-    <message>
-        <source>Critical Messages</source>
-        <translation>Messaggi critici</translation>
-    </message>
-    <message>
-        <source>Normal</source>
-        <translation>Normale</translation>
-    </message>
-    <message>
-        <source>items</source>
-        <translation>elementi</translation>
-    </message>
-    <message>
-        <source>Results</source>
-        <translation>Risultati</translation>
-    </message>
-    <message>
-        <source>Info</source>
-        <translation>Info</translation>
-    </message>
-    <message>
-        <source>Choose a log level...</source>
-        <translation>Seleziona livello registro...</translation>
-    </message>
-</context>
+    </context>
 </TS>
