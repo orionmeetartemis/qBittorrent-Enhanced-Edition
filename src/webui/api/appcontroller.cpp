@@ -196,6 +196,8 @@ void AppController::preferencesAction()
     // Proxy Server
     const auto *proxyManager = Net::ProxyConfigurationManager::instance();
     Net::ProxyConfiguration proxyConf = proxyManager->proxyConfiguration();
+    data[u"auto_ban_unknown_peer"_s] = session->isAutoBanUnknownPeerEnabled();
+    data[u"auto_ban_bt_player_peer"_s] = session->isAutoBanBTPlayerPeerEnabled();
     data[u"proxy_type"_s] = Utils::String::fromEnum(proxyConf.type);
     data[u"proxy_ip"_s] = proxyConf.ip;
     data[u"proxy_port"_s] = proxyConf.port;
@@ -244,6 +246,9 @@ void AppController::preferencesAction()
     data[u"anonymous_mode"_s] = session->isAnonymousModeEnabled();
     // Max active checking torrents
     data[u"max_active_checking_torrents"_s] = session->maxActiveCheckingTorrents();
+    data[u"auto_update_trackers_enabled"_s] = session->isAutoUpdateTrackersEnabled();
+    data[u"customize_trackers_list_url"_s] = pref->customizeTrackersListUrl();
+    data[u"public_trackers"_s] = session->publicTrackers();
     // Torrent Queueing
     data[u"queueing_enabled"_s] = session->isQueueingSystemEnabled();
     data[u"max_active_downloads"_s] = session->maxActiveDownloads();
@@ -665,6 +670,10 @@ void AppController::setPreferencesAction()
         session->setTrackerFilteringEnabled(it.value().toBool());
     if (hasKey(u"banned_IPs"_s))
         session->setBannedIPs(it.value().toString().split(u'\n', Qt::SkipEmptyParts));
+    if (hasKey(u"auto_ban_unknown_peer"_s))
+        session->setAutoBanUnknownPeer(it.value().toBool());
+    if (hasKey(u"auto_ban_bt_player_peer"_s))
+        session->setAutoBanBTPlayerPeer(it.value().toBool());
 
     // Speed
     // Global Rate Limits
@@ -753,6 +762,10 @@ void AppController::setPreferencesAction()
         session->setAddTrackersEnabled(it.value().toBool());
     if (hasKey(u"add_trackers"_s))
         session->setAdditionalTrackers(it.value().toString());
+    if (hasKey(u"auto_update_trackers_enabled"_s))
+        session->setAutoUpdateTrackersEnabled(it.value().toBool());
+    if (hasKey(u"customize_trackers_list_url"_s))
+        pref->setCustomizeTrackersListUrl(it.value().toString());
 
     // Web UI
     // HTTP Server

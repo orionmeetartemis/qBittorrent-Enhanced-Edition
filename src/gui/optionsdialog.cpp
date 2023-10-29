@@ -44,6 +44,7 @@
 #include "base/bittorrent/session.h"
 #include "base/exceptions.h"
 #include "base/global.h"
+#include "base/net/downloadmanager.h"
 #include "base/net/portforwarder.h"
 #include "base/net/proxyconfigurationmanager.h"
 #include "base/path.h"
@@ -1007,6 +1008,7 @@ void OptionsDialog::saveSpeedTabOptions() const
 void OptionsDialog::loadBittorrentTabOptions()
 {
     const auto *session = BitTorrent::Session::instance();
+    const auto *pref = Preferences::instance();
 
     m_ui->checkDHT->setChecked(session->isDHTEnabled());
     m_ui->checkPeX->setChecked(session->isPeXEnabled());
@@ -1082,9 +1084,14 @@ void OptionsDialog::loadBittorrentTabOptions()
         {EnableSuperSeeding, 3}
     };
     m_ui->comboRatioLimitAct->setCurrentIndex(actIndex.value(session->maxRatioAction()));
+    m_ui->checkAutoUpdateTrackers->setChecked(session->isAutoUpdateTrackersEnabled());
+    m_ui->textCustomizeTrackersListUrl->setText(pref->customizeTrackersListUrl());
+    m_ui->textPublicTrackers->setPlainText(session->publicTrackers());
 
     m_ui->checkEnableAddTrackers->setChecked(session->isAddTrackersEnabled());
     m_ui->textTrackers->setPlainText(session->additionalTrackers());
+    connect(m_ui->checkAutoUpdateTrackers, &QGroupBox::toggled, this, &ThisType::enableApplyButton);
+    connect(m_ui->textCustomizeTrackersListUrl, &QLineEdit::textChanged, this, &ThisType::enableApplyButton);
 
     connect(m_ui->checkDHT, &QAbstractButton::toggled, this, &ThisType::enableApplyButton);
     connect(m_ui->checkPeX, &QAbstractButton::toggled, this, &ThisType::enableApplyButton);
@@ -1124,6 +1131,7 @@ void OptionsDialog::loadBittorrentTabOptions()
 void OptionsDialog::saveBittorrentTabOptions() const
 {
     auto *session = BitTorrent::Session::instance();
+    auto *pref = Preferences::instance();
 
     session->setDHTEnabled(isDHTEnabled());
     session->setPeXEnabled(m_ui->checkPeX->isChecked());
@@ -1153,6 +1161,8 @@ void OptionsDialog::saveBittorrentTabOptions() const
         EnableSuperSeeding
     };
     session->setMaxRatioAction(actIndex.value(m_ui->comboRatioLimitAct->currentIndex()));
+    session->setAutoUpdateTrackersEnabled(m_ui->checkAutoUpdateTrackers->isChecked());
+    pref->setCustomizeTrackersListUrl(m_ui->textCustomizeTrackersListUrl->text());
 
     session->setAddTrackersEnabled(m_ui->checkEnableAddTrackers->isChecked());
     session->setAdditionalTrackers(m_ui->textTrackers->toPlainText());
@@ -1961,4 +1971,24 @@ void OptionsDialog::on_IPSubnetWhitelistButton_clicked()
     dialog->setAttribute(Qt::WA_DeleteOnClose);
     connect(dialog, &QDialog::accepted, this, &OptionsDialog::enableApplyButton);
     dialog->open();
+}
+
+void OptionsDialog::on_fetchButton_clicked()
+{
+    Net::DownloadHandler *m_fetchHandler = Net::DownloadManager::instance()->download(Net::DownloadRequest(Preferences::instance()->customizeTrackersListUrl()), Preferences::instance()->useProxyForGeneralPurposes());
+    connect(m_fetchHandler, &Net::DownloadHandler::finished, this, &OptionsDialog::handlePublicTrackersListChanged);
+}
+
+void OptionsDialog::handlePublicTrackersListChanged(const Net::DownloadResult &result)
+{
+    switch (result.status) {
+        case Net::DownloadStatus::Success:
+            BitTorrent::Session::instance()->setPublicTrackers(QString::fromUtf8(result.data.data()));
+            m_ui->textPublicTrackers->setPlainText(QString::fromUtf8(result.data.data()));
+            m_ui->fetchButton->setEnabled(false);
+            m_ui->fetchButton->setText(u"Fetched!"_s);
+            break;
+        default:
+            m_ui->textPublicTrackers->setPlainText(u"Refetch failed. Reason: "_s + result.errorString);
+    }
 }
