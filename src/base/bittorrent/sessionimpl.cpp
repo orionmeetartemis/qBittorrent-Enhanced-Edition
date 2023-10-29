@@ -530,14 +530,14 @@ SessionImpl::SessionImpl(QObject *parent)
     , m_I2PAddress {BITTORRENT_SESSION_KEY(u"I2P/Address"_s), u"127.0.0.1"_s}
     , m_I2PPort {BITTORRENT_SESSION_KEY(u"I2P/Port"_s), 7656}
     , m_I2PMixedMode {BITTORRENT_SESSION_KEY(u"I2P/MixedMode"_s), false}
-    , m_publicTrackers(BITTORRENT_SESSION_KEY(u"PublicTrackersList"_s))
-    , m_autoBanUnknownPeer(BITTORRENT_SESSION_KEY(u"AutoBanUnknownPeer"_s), false)
-    , m_autoBanBTPlayerPeer(BITTORRENT_SESSION_KEY(u"AutoBanBTPlayerPeer"_s), false)
-    , m_isAutoUpdateTrackersEnabled(BITTORRENT_SESSION_KEY(u"AutoUpdateTrackersEnabled"_s), false)
     , m_I2PInboundQuantity {BITTORRENT_SESSION_KEY(u"I2P/InboundQuantity"_s), 3}
     , m_I2POutboundQuantity {BITTORRENT_SESSION_KEY(u"I2P/OutboundQuantity"_s), 3}
     , m_I2PInboundLength {BITTORRENT_SESSION_KEY(u"I2P/InboundLength"_s), 3}
     , m_I2POutboundLength {BITTORRENT_SESSION_KEY(u"I2P/OutboundLength"_s), 3}
+    , m_publicTrackers(BITTORRENT_SESSION_KEY(u"PublicTrackersList"_s))
+    , m_autoBanUnknownPeer(BITTORRENT_SESSION_KEY(u"AutoBanUnknownPeer"_s), false)
+    , m_autoBanBTPlayerPeer(BITTORRENT_SESSION_KEY(u"AutoBanBTPlayerPeer"_s), false)
+    , m_isAutoUpdateTrackersEnabled(BITTORRENT_SESSION_KEY(u"AutoUpdateTrackersEnabled"_s), false)
     , m_seedingLimitTimer {new QTimer(this)}
     , m_resumeDataTimer {new QTimer(this)}
     , m_ioThread {new QThread}
