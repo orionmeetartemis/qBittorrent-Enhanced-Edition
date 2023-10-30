@@ -14,13 +14,13 @@ You should ask a tracker operator to whitelist this client rather than asking a 
 
 qBittorrent Enhanced is based on qBittorrent, it's aimed at blocking leeching clients automatically.
 
-These modifications won't take effect on private torrents.
+These modifications [won't take effect on private torrents](https://github.com/c0re100/qBittorrent-Enhanced-Edition/blob/v4_6_x/src/base/bittorrent/peer_filter_session_plugin.hpp#L60).
 
 Also, qBittorrent Enhanced has a different ID announce to trackers.
 
-User agent: `qBittorrent Enhanced/LATEST_RELEASE_VERSION`, example: `qBittorrent Enhanced/4.3.0.10`
+User agent: `qBittorrent Enhanced/LATEST_RELEASE_VERSION`, example: `qBittorrent Enhanced/4.6.0.10`
 
-PeerID: `-qB430[A-Z]-`, example: `-qB430A-`
+PeerID: `-qB460[A-Z]-`, example: `-qB460A-`
 ********************************
 ### Multiple instances tutorial
 
