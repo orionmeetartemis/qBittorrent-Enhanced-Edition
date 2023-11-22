@@ -74,6 +74,10 @@ public:
     static void setTopLevel(bool value);
     static int savePathHistoryLength();
     static void setSavePathHistoryLength(int value);
+#ifndef Q_OS_MACOS
+    static bool isAttached();
+    static void setAttached(bool value);
+#endif
 
     static void show(const QString &source, const BitTorrent::AddTorrentParams &inParams, QWidget *parent);
     static void show(const QString &source, QWidget *parent);
@@ -112,7 +116,7 @@ private:
     void showEvent(QShowEvent *event) override;
 
     Ui::AddNewTorrentDialog *m_ui = nullptr;
-    TorrentContentAdaptor *m_contentAdaptor = nullptr;
+    std::unique_ptr<TorrentContentAdaptor> m_contentAdaptor;
     BitTorrent::MagnetUri m_magnetURI;
     BitTorrent::TorrentInfo m_torrentInfo;
     int m_savePathIndex = -1;

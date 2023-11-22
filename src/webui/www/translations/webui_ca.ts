@@ -1166,10 +1166,6 @@ Si us plau, no useu cap caràcter especial al nom de la categoria.</translation>
         <translation>Quan la ràtio assoleixi</translation>
     </message>
     <message>
-        <source>When seeding time reaches</source>
-        <translation type="vanished">Quan el temps de sembra assoleixi</translation>
-    </message>
-    <message>
         <source>Allow multiple connections from the same IP address:</source>
         <translation>Permet connexions múltiples des de la mateixa adreça IP:</translation>
     </message>
@@ -1594,10 +1590,6 @@ Useu ";" per separar les entrades. Podeu usar el comodí "*".</translation>
         <translation>Si es marca, les cerques de nom d'amfitrió es fan a través de l'intermediari.</translation>
     </message>
     <message>
-        <source>Use proxy for hostname lookup</source>
-        <translation type="vanished">Usa l'intermediari per a les cerques de noms d'amfitrió.</translation>
-    </message>
-    <message>
         <source>Metadata received</source>
         <translation>Metadades rebudes</translation>
     </message>
@@ -1735,31 +1727,59 @@ Useu ";" per separar les entrades. Podeu usar el comodí "*".</translation>
     </message>
     <message>
         <source>Bdecode token limit:</source>
-        <translation type="unfinished" />
+        <translation>Límit de testimoni de Bdecode:</translation>
     </message>
     <message>
         <source>When inactive seeding time reaches</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>.torrent file size limit:</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Bdecode depth limit:</source>
-        <translation type="unfinished" />
+        <translation>Quan s'arriba al temps de sembra inactiva</translation>
     </message>
     <message>
         <source>(None)</source>
-        <translation type="unfinished" />
+        <translation>(Cap)</translation>
     </message>
     <message>
-        <source>Perform hostname lookup via proxy</source>
-        <translation type="unfinished" />
+        <source>Bdecode depth limit:</source>
+        <translation>Límit de profunditat de Bdecode:</translation>
+    </message>
+    <message>
+        <source>.torrent file size limit:</source>
+        <translation>Límit de mida del fitxer .torrent:</translation>
     </message>
     <message>
         <source>When total seeding time reaches</source>
-        <translation type="unfinished" />
+        <translation>Quan s'arriba al temps total de sembra</translation>
+    </message>
+    <message>
+        <source>Perform hostname lookup via proxy</source>
+        <translation>Realitzar cerca de nom de host via proxy</translation>
+    </message>
+    <message>
+        <source>Mixed mode</source>
+        <translation>Mode mixte</translation>
+    </message>
+    <message>
+        <source>If &amp;quot;mixed mode&amp;quot; is enabled, I2P torrents are allowed to also get peers from other sources than the tracker, and connect to regular IPs, not providing any anonymization. This may be useful if the user is not interested in the anonymization of I2P, but still wants to be able to connect to I2P peers.</source>
+        <translation>Si el &amp;quot;mode mixt&amp;quot; està habilitat, els torrents d'I2P també poden obtenir clients d'altres fonts que no siguin el rastrejador i connectar-se a IP habituals, sense proporcionar cap anonimat. Això pot ser útil si l'usuari no està interessat en l'anonimització d'I2P, però encara vol poder connectar-se amb clients d'I2P.</translation>
+    </message>
+    <message>
+        <source>I2P inbound quantity (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation>Quantitat d'entrada I2P (requereix libtorrent &amp;gt;= 2.0):</translation>
+    </message>
+    <message>
+        <source>I2P (Experimental) (requires libtorrent &amp;gt;= 2.0)</source>
+        <translation>I2P (experimental) (requereix libtorrent &amp;gt;= 2.0)</translation>
+    </message>
+    <message>
+        <source>I2P outbound quantity (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation>Quantitat de sortida d'I2P (requereix libtorrent &amp;gt;= 2.0):</translation>
+    </message>
+    <message>
+        <source>I2P outbound length (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation>Longitud de sortida d'I2P (requereix libtorrent &amp;gt;= 2.0):</translation>
+    </message>
+    <message>
+        <source>I2P inbound length (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation>Longitud d'entrada I2P (requereix libtorrent &amp;gt;= 2.0):</translation>
     </message>
 </context>
 <context>
@@ -2086,10 +2106,6 @@ Useu ";" per separar les entrades. Podeu usar el comodí "*".</translation>
         <translation>Ha fallat el canvi de nom: el fitxer o la carpeta ja existeix.</translation>
     </message>
     <message>
-        <source>Match all occurences</source>
-        <translation type="vanished">Coincideix amb totes les ocurrències</translation>
-    </message>
-    <message>
         <source>Toggle Selection</source>
         <translation>Commuta la selecció</translation>
     </message>
@@ -2127,7 +2143,7 @@ Useu ";" per separar les entrades. Podeu usar el comodí "*".</translation>
     </message>
     <message>
         <source>Match all occurrences</source>
-        <translation type="unfinished" />
+        <translation>Coincideix amb totes les ocurrències</translation>
     </message>
 </context>
 <context>
@@ -2942,16 +2958,12 @@ Useu ";" per separar les entrades. Podeu usar el comodí "*".</translation>
         <translation>ràtio</translation>
     </message>
     <message>
-        <source>minutes</source>
-        <translation type="vanished">minuts</translation>
+        <source>total minutes</source>
+        <translation>minuts totals</translation>
     </message>
     <message>
         <source>inactive minutes</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>total minutes</source>
-        <translation type="unfinished" />
+        <translation>minuts d'inacció</translation>
     </message>
 </context>
 <context>
@@ -3469,10 +3481,6 @@ Useu ";" per separar les entrades. Podeu usar el comodí "*".</translation>
         <source>New name:</source>
         <translation>Nom nou:</translation>
     </message>
-    <message>
-        <source>Renaming)</source>
-        <translation>Canvi de nom</translation>
-    </message>
 </context>
 <context>
     <name>RSSWidget</name>
@@ -3819,7 +3827,7 @@ Admet els formats S01E01, 1x1, 2017.12.31 i 31.12.2017 (Els formats de data tamb
     </message>
     <message>
         <source>Add Tags:</source>
-        <translation type="unfinished" />
+        <translation>Afegeix etiquetes:</translation>
     </message>
 </context>
 <context>
