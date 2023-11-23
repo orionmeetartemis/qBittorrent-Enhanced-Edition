@@ -63,7 +63,7 @@ namespace
         // qBittorrent section
         QBITTORRENT_HEADER,
         RESUME_DATA_STORAGE,
-#ifdef QBT_USES_LIBTORRENT2
+#if defined(QBT_USES_LIBTORRENT2) && !defined(Q_OS_MACOS)
         MEMORY_WORKING_SET_LIMIT,
 #endif
 #if defined(Q_OS_WIN)
@@ -96,6 +96,7 @@ namespace
         ENABLE_SPEED_WIDGET,
 #ifndef Q_OS_MACOS
         ENABLE_ICONS_IN_MENUS,
+        USE_ATTACHED_ADD_NEW_TORRENT_DIALOG,
 #endif
         // embedded tracker
         TRACKER_STATUS,
@@ -196,7 +197,7 @@ void AdvancedSettings::saveAdvancedSettings() const
     BitTorrent::Session *const session = BitTorrent::Session::instance();
 
     session->setResumeDataStorageType(m_comboBoxResumeDataStorage.currentData().value<BitTorrent::ResumeDataStorageType>());
-#ifdef QBT_USES_LIBTORRENT2
+#if defined(QBT_USES_LIBTORRENT2) && !defined(Q_OS_MACOS)
     // Physical memory (RAM) usage limit
     app()->setMemoryWorkingSetLimit(m_spinBoxMemoryWorkingSetLimit.value());
 #endif
@@ -316,6 +317,7 @@ void AdvancedSettings::saveAdvancedSettings() const
     pref->setSpeedWidgetEnabled(m_checkBoxSpeedWidgetEnabled.isChecked());
 #ifndef Q_OS_MACOS
     pref->setIconsInMenusEnabled(m_checkBoxIconsInMenusEnabled.isChecked());
+    AddNewTorrentDialog::setAttached(m_checkBoxAttachedAddNewTorrentDialog.isChecked());
 #endif
 
     // Tracker
@@ -455,7 +457,7 @@ void AdvancedSettings::loadAdvancedSettings()
     m_comboBoxResumeDataStorage.setCurrentIndex(m_comboBoxResumeDataStorage.findData(QVariant::fromValue(session->resumeDataStorageType())));
     addRow(RESUME_DATA_STORAGE, tr("Resume data storage type (requires restart)"), &m_comboBoxResumeDataStorage);
 
-#ifdef QBT_USES_LIBTORRENT2
+#if defined(QBT_USES_LIBTORRENT2) && !defined(Q_OS_MACOS)
     // Physical memory (RAM) usage limit
     m_spinBoxMemoryWorkingSetLimit.setMinimum(1);
     m_spinBoxMemoryWorkingSetLimit.setMaximum(std::numeric_limits<int>::max());
@@ -808,6 +810,9 @@ void AdvancedSettings::loadAdvancedSettings()
     // Enable icons in menus
     m_checkBoxIconsInMenusEnabled.setChecked(pref->iconsInMenusEnabled());
     addRow(ENABLE_ICONS_IN_MENUS, tr("Enable icons in menus"), &m_checkBoxIconsInMenusEnabled);
+
+    m_checkBoxAttachedAddNewTorrentDialog.setChecked(AddNewTorrentDialog::isAttached());
+    addRow(USE_ATTACHED_ADD_NEW_TORRENT_DIALOG, tr("Attach \"Add new torrent\" dialog to main window"), &m_checkBoxAttachedAddNewTorrentDialog);
 #endif
     // Tracker State
     m_checkBoxTrackerStatus.setChecked(session->isTrackerEnabled());

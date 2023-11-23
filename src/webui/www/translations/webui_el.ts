@@ -1165,10 +1165,6 @@
         <translation>Όταν η αναλογία φτάνει</translation>
     </message>
     <message>
-        <source>When seeding time reaches</source>
-        <translation type="vanished">Όταν ο χρόνος seeding φτάσει</translation>
-    </message>
-    <message>
         <source>Allow multiple connections from the same IP address:</source>
         <translation>Να επιτρέπονται πολλαπλές συνδέσεις από την ίδια διεύθυνση IP:</translation>
     </message>
@@ -1593,10 +1589,6 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <translation>Εάν είναι επιλεγμένο, οι αναζητήσεις ονόματος κεντρικού υπολογιστή γίνονται μέσω του διακομιστή μεσολάβησης.</translation>
     </message>
     <message>
-        <source>Use proxy for hostname lookup</source>
-        <translation type="vanished">Χρήση proxy για αναζητήσεις hostname</translation>
-    </message>
-    <message>
         <source>Metadata received</source>
         <translation>Μεταδεδομένα ελήφθησαν</translation>
     </message>
@@ -1734,31 +1726,59 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Bdecode token limit:</source>
-        <translation type="unfinished" />
+        <translation>Όριο Bdecode token:</translation>
     </message>
     <message>
         <source>When inactive seeding time reaches</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>.torrent file size limit:</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>Bdecode depth limit:</source>
-        <translation type="unfinished" />
+        <translation>Όταν ο χρόνος ανενεργού seeding ολοκληρωθεί</translation>
     </message>
     <message>
         <source>(None)</source>
-        <translation type="unfinished" />
+        <translation>(Κανένα)</translation>
     </message>
     <message>
-        <source>Perform hostname lookup via proxy</source>
-        <translation type="unfinished" />
+        <source>Bdecode depth limit:</source>
+        <translation>Όριο Bdecode depth:</translation>
+    </message>
+    <message>
+        <source>.torrent file size limit:</source>
+        <translation>όριο μεγέθους αρχείου .torrent</translation>
     </message>
     <message>
         <source>When total seeding time reaches</source>
-        <translation type="unfinished" />
+        <translation>Όταν ο συνολικός χρόνος seeding ολοκληρωθεί</translation>
+    </message>
+    <message>
+        <source>Perform hostname lookup via proxy</source>
+        <translation>Εκτέλεση αναζήτησης hostname μέσω proxy</translation>
+    </message>
+    <message>
+        <source>Mixed mode</source>
+        <translation>Μικτή λειτουργία</translation>
+    </message>
+    <message>
+        <source>If &amp;quot;mixed mode&amp;quot; is enabled, I2P torrents are allowed to also get peers from other sources than the tracker, and connect to regular IPs, not providing any anonymization. This may be useful if the user is not interested in the anonymization of I2P, but still wants to be able to connect to I2P peers.</source>
+        <translation>Αν η &amp;quot;μικτή λειτουργία&amp;quot; είναι ενεργοποιημένη, τα torrents I2P επιτρέπεται επίσης να λαμβάνουν συνομηλίκους από άλλες πηγές εκτός από τον ιχνηλάτη και να συνδέονται με κανονικές IP, χωρίς να παρέχουν ανωνυμοποίηση. Αυτό μπορεί να είναι χρήσιμο εάν ο χρήστης δεν ενδιαφέρεται για την ανωνυμοποίηση του I2P, αλλά εξακολουθεί να θέλει να μπορεί να συνδεθεί με ομότιμους I2P.</translation>
+    </message>
+    <message>
+        <source>I2P inbound quantity (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation>Μήκος εισερχομένων I2P (απαιτεί libtorrent &amp;gt;= 2.0):</translation>
+    </message>
+    <message>
+        <source>I2P (Experimental) (requires libtorrent &amp;gt;= 2.0)</source>
+        <translation>I2P (Πειραματικό) (απαιτεί libtorrent &amp;gt;= 2.0)</translation>
+    </message>
+    <message>
+        <source>I2P outbound quantity (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation>Μήκος εξερχομένων I2P (απαιτεί libtorrent &amp;gt;= 2.0):</translation>
+    </message>
+    <message>
+        <source>I2P outbound length (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation>Μήκος εισερχομένων I2P (απαιτεί libtorrent &amp;gt;= 2.0):</translation>
+    </message>
+    <message>
+        <source>I2P inbound length (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation>Μήκος εισερχομένων I2P (απαιτεί libtorrent &amp;gt;= 2.0):</translation>
     </message>
 </context>
 <context>
@@ -2085,10 +2105,6 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <translation>Η μετονομασία απέτυχε: το αρχείο ή ο φάκελος υπάρχει ήδη</translation>
     </message>
     <message>
-        <source>Match all occurences</source>
-        <translation type="vanished">Αντιστοίχιση όλων των εμφανίσεων</translation>
-    </message>
-    <message>
         <source>Toggle Selection</source>
         <translation>Εναλλαγή Επιλογής</translation>
     </message>
@@ -2126,7 +2142,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Match all occurrences</source>
-        <translation type="unfinished" />
+        <translation>Αντιστοίχιση όλων των εμφανίσεων</translation>
     </message>
 </context>
 <context>
@@ -2941,16 +2957,12 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <translation>αναλογία</translation>
     </message>
     <message>
-        <source>minutes</source>
-        <translation type="vanished">λεπτά</translation>
+        <source>total minutes</source>
+        <translation>συνολικά λεπτά</translation>
     </message>
     <message>
         <source>inactive minutes</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>total minutes</source>
-        <translation type="unfinished" />
+        <translation>ανενεργά λεπτά</translation>
     </message>
 </context>
 <context>
@@ -3468,10 +3480,6 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <source>New name:</source>
         <translation>Νέο όνομα:</translation>
     </message>
-    <message>
-        <source>Renaming)</source>
-        <translation>Μετονομασία)</translation>
-    </message>
 </context>
 <context>
     <name>RSSWidget</name>
@@ -3818,7 +3826,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Add Tags:</source>
-        <translation type="unfinished" />
+        <translation>Προσθήκη ετικετών</translation>
     </message>
 </context>
 <context>
