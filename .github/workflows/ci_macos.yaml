@@ -49,6 +49,7 @@ jobs:
       - name: Setup ccache
         uses: Chocobo1/setup-ccache-action@v1
         with:
+          store_cache: ${{ startsWith(github.ref, 'refs/heads/') }}
           update_packager_index: false
 
       - name: Install boost
@@ -66,6 +67,7 @@ jobs:
           version: ${{ matrix.qt_version }}
           archives: qtbase qtdeclarative qtsvg qttools
           # Not sure why Qt made a hard dependency on qtdeclarative, try removing it when Qt > 6.4.0
+          cache: true
 
       - name: Install libtorrent
         run: |
