@@ -1,6 +1,6 @@
 /*
  * Bittorrent Client using Qt and libtorrent.
- * Copyright (C) 2015-2023  Vladimir Golovnev <glassez@yandex.ru>
+ * Copyright (C) 2015-2024  Vladimir Golovnev <glassez@yandex.ru>
  * Copyright (C) 2006  Christophe Dumez <chris@qbittorrent.org>
  *
  * This program is free software; you can redistribute it and/or
@@ -1293,13 +1293,13 @@ void SessionImpl::prepareStartup()
         context->isLoadFinished = true;
     });
 
-    connect(this, &SessionImpl::torrentsLoaded, context, [this, context](const QVector<Torrent *> &torrents)
+    connect(this, &SessionImpl::addTorrentAlertsReceived, context, [this, context](const qsizetype alertsCount)
     {
-        context->processingResumeDataCount -= torrents.count();
-        context->finishedResumeDataCount += torrents.count();
+        context->processingResumeDataCount -= alertsCount;
+        context->finishedResumeDataCount += alertsCount;
         if (!context->isLoadedResumeDataHandlingEnqueued)
         {
-            QMetaObject::invokeMethod(this, [this, context]() { handleLoadedResumeData(context); }, Qt::QueuedConnection);
+            QMetaObject::invokeMethod(this, [this, context] { handleLoadedResumeData(context); }, Qt::QueuedConnection);
             context->isLoadedResumeDataHandlingEnqueued = true;
         }
 
@@ -2562,7 +2562,7 @@ bool SessionImpl::cancelDownloadMetadata(const TorrentID &id)
         // if magnet link was hybrid initially then it is indexed also by v1 info hash
         // so we need to remove both entries
         const auto altID = TorrentID::fromSHA1Hash(infoHash.v1());
-        m_downloadedMetadata.remove((altID == downloadedMetadataIter.key()) ? id : altID);
+        m_downloadedMetadata.remove(altID);
     }
 #endif
 
@@ -2796,6 +2796,7 @@ LoadTorrentParams SessionImpl::initLoadTorrentParams(const AddTorrentParams &add
     loadTorrentParams.addToQueueTop = addTorrentParams.addToQueueTop.value_or(isAddTorrentToQueueTop());
     loadTorrentParams.ratioLimit = addTorrentParams.ratioLimit;
     loadTorrentParams.seedingTimeLimit = addTorrentParams.seedingTimeLimit;
+    loadTorrentParams.inactiveSeedingTimeLimit = addTorrentParams.inactiveSeedingTimeLimit;
 
     const QString category = addTorrentParams.category;
     if (!category.isEmpty() && !m_categories.contains(category) && !addCategory(category))
@@ -2921,6 +2922,14 @@ bool SessionImpl::addTorrent_impl(const std::variant<MagnetUri, TorrentInfo> &so
 
     if (hasMetadata)
     {
+        // Torrent  that is being added with metadata is considered to be added as stopped
+        // if "metadata received" stop condition is set for it.
+        if (loadTorrentParams.stopCondition == Torrent::StopCondition::MetadataReceived)
+        {
+            loadTorrentParams.stopped = true;
+            loadTorrentParams.stopCondition = Torrent::StopCondition::None;
+        }
+
         const TorrentInfo &torrentInfo = std::get<TorrentInfo>(source);
 
         Q_ASSERT(addTorrentParams.filePaths.isEmpty() || (addTorrentParams.filePaths.size() == torrentInfo.filesCount()));
@@ -5613,10 +5622,13 @@ void SessionImpl::handleAddTorrentAlerts(const std::vector<lt::alert *> &alerts)
     if (!isRestored())
         loadedTorrents.reserve(MAX_PROCESSING_RESUMEDATA_COUNT);
 
+    qsizetype alertsCount = 0;
     for (const lt::alert *a : alerts)
     {
         if (a->type() != lt::add_torrent_alert::alert_type)
             continue;
+
+        ++alertsCount;
 
         const auto *alert = static_cast<const lt::add_torrent_alert *>(a);
         if (alert->error)
@@ -5627,6 +5639,7 @@ void SessionImpl::handleAddTorrentAlerts(const std::vector<lt::alert *> &alerts)
 
             const lt::add_torrent_params &params = alert->params;
             const bool hasMetadata = (params.ti && params.ti->is_valid());
+
 #ifdef QBT_USES_LIBTORRENT2
             const InfoHash infoHash {(hasMetadata ? params.ti->info_hashes() : params.info_hashes)};
             if (infoHash.isHybrid())
@@ -5651,9 +5664,8 @@ void SessionImpl::handleAddTorrentAlerts(const std::vector<lt::alert *> &alerts)
                 }
             }
 
-            return;
+            continue;
         }
-
 
 #ifdef QBT_USES_LIBTORRENT2
         const InfoHash infoHash {alert->handle.info_hashes()};
@@ -5672,7 +5684,7 @@ void SessionImpl::handleAddTorrentAlerts(const std::vector<lt::alert *> &alerts)
             loadedTorrents.append(torrent);
         }
         else if (const auto downloadedMetadataIter = m_downloadedMetadata.find(torrentID)
-                 ; downloadedMetadataIter != m_downloadedMetadata.end())
+                ; downloadedMetadataIter != m_downloadedMetadata.end())
         {
             downloadedMetadataIter.value() = alert->handle;
             if (infoHash.isHybrid())
@@ -5684,11 +5696,16 @@ void SessionImpl::handleAddTorrentAlerts(const std::vector<lt::alert *> &alerts)
         }
     }
 
-    if (!loadedTorrents.isEmpty())
+    if (alertsCount > 0)
     {
-        if (isRestored())
-            m_torrentsQueueChanged = true;
-        emit torrentsLoaded(loadedTorrents);
+        emit addTorrentAlertsReceived(alertsCount);
+
+        if (!loadedTorrents.isEmpty())
+        {
+            if (isRestored())
+                m_torrentsQueueChanged = true;
+            emit torrentsLoaded(loadedTorrents);
+        }
     }
 }
 
@@ -5988,7 +6005,7 @@ void SessionImpl::handleFileErrorAlert(const lt::file_error_alert *p)
 
         const QString msg = QString::fromStdString(p->message());
         LogMsg(tr("File error alert. Torrent: \"%1\". File: \"%2\". Reason: \"%3\"")
-                .arg(torrent->name(), QString::fromLocal8Bit(p->filename()), msg)
+                .arg(torrent->name(), QString::fromUtf8(p->filename()), msg)
             , Log::WARNING);
         emit fullDiskError(torrent, msg);
     }

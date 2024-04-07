@@ -1,6 +1,6 @@
 /*
  * Bittorrent Client using Qt and libtorrent.
- * Copyright (C) 2015-2023  Vladimir Golovnev <glassez@yandex.ru>
+ * Copyright (C) 2015-2024  Vladimir Golovnev <glassez@yandex.ru>
  * Copyright (C) 2006  Christophe Dumez <chris@qbittorrent.org>
  *
  * This program is free software; you can redistribute it and/or
@@ -489,6 +489,9 @@ namespace BitTorrent
         QString publicTrackers() const override;
         void setPublicTrackers(const QString &trackers) override;
         void updatePublicTracker() override;
+
+    signals:
+        void addTorrentAlertsReceived(qsizetype count);
 
     private slots:
         void configureDeferred();

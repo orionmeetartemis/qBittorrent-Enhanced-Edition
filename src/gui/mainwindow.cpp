@@ -57,6 +57,7 @@
 #include <QShortcut>
 #include <QSplitter>
 #include <QStatusBar>
+#include <QString>
 #include <QtGlobal>
 #include <QTimer>
 
@@ -136,7 +137,7 @@ MainWindow::MainWindow(IGUIApplication *app, WindowState initialState)
 
     Preferences *const pref = Preferences::instance();
     m_uiLocked = pref->isUILocked();
-    setWindowTitle(QStringLiteral("qBittorrent " QBT_VERSION));
+    setWindowTitle(QStringLiteral("qBittorrent Enhanced Edition " QBT_VERSION));
     m_displaySpeedInTitle = pref->speedInTitleBar();
     // Setting icons
 #ifndef Q_OS_MACOS

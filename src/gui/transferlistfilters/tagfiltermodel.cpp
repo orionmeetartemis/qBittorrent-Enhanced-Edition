@@ -279,7 +279,7 @@ void TagFilterModel::torrentAboutToBeRemoved(BitTorrent::Torrent *const torrent)
         {
             const int row = findRow(tag);
             Q_ASSERT(isValidRow(row));
-            if (!isValidRow(row)) [[unlikely]]
+            if (Q_UNLIKELY(!isValidRow(row)))
                 continue;
 
             m_tagItems[row].decreaseTorrentsCount();
