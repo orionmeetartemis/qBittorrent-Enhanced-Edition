@@ -52,15 +52,16 @@ jobs:
         cross_host:
           # cross toolchain downloads from: https://musl.cc/
           # you need to find the name ${cross_host}-cross.tgz
-          - arm-linux-musleabi
-          - arm-linux-musleabihf
-          - aarch64-linux-musl
-          - mips-linux-musl
-          - mipsel-linux-musl
-          - mips64-linux-musl
-          - mips64el-linux-musl
+#          - arm-linux-musleabi
+#          - arm-linux-musleabihf
+#          - aarch64-linux-musl
+#          - mips-linux-musl
+#          - mipsel-linux-musl
+#          - mips64-linux-musl
+#          - mips64el-linux-musl
           - x86_64-linux-musl
-          - i686-linux-musl
+#          - i686-linux-musl
+        libt_version: ["2.0.9", "1.2.19"]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
