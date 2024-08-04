@@ -13,7 +13,7 @@ set -o pipefail
 # match qt version prefix. E.g 5 --> 5.15.2, 5.12 --> 5.12.10
 export QT_VER_PREFIX="6"
 #export LIBTORRENT_BRANCH="RC_1_2"
-export LIBTORRENT_BRANCH="RC_2_0_9"
+export LIBTORRENT_BRANCH="RC_2_0"
 
 # Ubuntu mirror for local building
 if [ x"${USE_CHINA_MIRROR}" = x1 ]; then
