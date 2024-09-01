@@ -1530,6 +1530,7 @@ window.qBittorrent.DynamicTable = (function() {
             this.newColumn('uploaded', '', 'QBT_TR(Uploaded)QBT_TR[CONTEXT=PeerListWidget]', 50, true);
             this.newColumn('relevance', '', 'QBT_TR(Relevance)QBT_TR[CONTEXT=PeerListWidget]', 30, true);
             this.newColumn('files', '', 'QBT_TR(Files)QBT_TR[CONTEXT=PeerListWidget]', 100, true);
+            this.newColumn('shadowbanned', '', 'QBT_TR(Shadowbanned)QBT_TR[CONTEXT=PeerListWidget]', 100, false);
 
             this.columns['country'].dataProperties.push('country_code');
             this.columns['flags'].dataProperties.push('flags_desc');

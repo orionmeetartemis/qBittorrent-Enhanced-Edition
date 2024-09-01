@@ -49,8 +49,6 @@ package-lock.json
 conf.pri.*
 /dist/windows/translations/*
 /dist/windows/license.txt
-/.idea/modules.xml
-/.idea/inspectionProfiles/Project_Default.xml
-/.idea/qBittorrent-Enhanced-Edition.iml
-/.idea/vcs.xml
-/.idea/workspace.xml
+
+.idea/*
+/.clang-format
