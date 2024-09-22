@@ -29,6 +29,9 @@
 
 #include "programupdater.h"
 
+#include <libtorrent/version.hpp>
+
+#include <QtCore/qconfig.h>
 #include <QtGlobal>
 
 #if defined(Q_OS_WIN)
@@ -70,6 +73,22 @@ namespace
                 return true;
         }
         return (newVersion > currentVersion);
+    }
+
+    QString buildVariant()
+    {
+#if defined(Q_OS_MACOS)
+        const auto BASE_OS = u"Mac OS X"_s;
+#elif defined(Q_OS_WIN)
+        const auto BASE_OS = (::IsWindows7OrGreater() && QSysInfo::currentCpuArchitecture().endsWith(u"64"))
+            ? u"Windows x64"_s
+            : u"Windows"_s;
+#endif
+
+        if constexpr ((QT_VERSION_MAJOR == 6) && (LIBTORRENT_VERSION_MAJOR == 1))
+            return BASE_OS;
+
+        return u"%1 (qt%2 lt%3%4)"_s.arg(BASE_OS, QString::number(QT_VERSION_MAJOR), QString::number(LIBTORRENT_VERSION_MAJOR), QString::number(LIBTORRENT_VERSION_MINOR));
     }
 }
 
@@ -120,9 +139,7 @@ void ProgramUpdater::rssDownloadFinished(const Net::DownloadResult &result)
 #ifdef Q_OS_MACOS
     const QString OS_TYPE = u"Mac OS X"_s;
 #elif defined(Q_OS_WIN)
-    const QString OS_TYPE = (::IsWindows7OrGreater() && QSysInfo::currentCpuArchitecture().endsWith(u"64"))
-        ? u"Windows x64"_s
-        : u"Windows"_s;
+    const QString OS_TYPE = u"Windows x64"_s;
 #endif
 
     bool inItem = false;
