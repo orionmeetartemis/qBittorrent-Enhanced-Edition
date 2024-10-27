@@ -1101,9 +1101,6 @@ void OptionsDialog::loadBittorrentTabOptions()
         m_ui->spinMaxRatio->setEnabled(true);
         m_ui->comboRatioLimitAct->setEnabled(true);
         m_ui->spinMaxRatio->setValue(session->globalMaxRatio());
-        m_ui->checkAutoUpdateTrackers->setChecked(session->isAutoUpdateTrackersEnabled());
-        m_ui->textCustomizeTrackersListUrl->setText(pref->customizeTrackersListUrl());
-        m_ui->textPublicTrackers->setPlainText(session->publicTrackers());
     }
     else
     {
@@ -1150,6 +1147,9 @@ void OptionsDialog::loadBittorrentTabOptions()
 
     m_ui->checkEnableAddTrackers->setChecked(session->isAddTrackersEnabled());
     m_ui->textTrackers->setPlainText(session->additionalTrackers());
+    m_ui->checkAutoUpdateTrackers->setChecked(session->isAutoUpdateTrackersEnabled());
+    m_ui->textCustomizeTrackersListUrl->setText(pref->customizeTrackersListUrl());
+    m_ui->textPublicTrackers->setPlainText(session->publicTrackers());
     connect(m_ui->checkAutoUpdateTrackers, &QGroupBox::toggled, this, &ThisType::enableApplyButton);
     connect(m_ui->textCustomizeTrackersListUrl, &QLineEdit::textChanged, this, &ThisType::enableApplyButton);
 
