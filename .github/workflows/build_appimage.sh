@@ -79,48 +79,48 @@ EOF
 
   retry apt update
   retry apt install -y \
-    curl \
-    git \
-    unzip \
-    g++-11 \
-    pkg-config \
-    libssl-dev \
-    libzstd-dev \
-    zlib1g-dev \
-    libbrotli-dev \
-    libxcb1-dev \
-    libicu-dev \
-    libgtk2.0-dev \
     build-essential \
-    libgl1-mesa-dev \
+    curl \
+    desktop-file-utils \
+    g++-11 \
+    git \
+    libbrotli-dev \
     libfontconfig1-dev \
     libfreetype6-dev \
+    libgl1-mesa-dev \
+    libgtk-3-dev \
+    libicu-dev \
+    libssl-dev \
+    libwayland-dev \
+    libwayland-egl-backend-dev \
     libx11-dev \
     libx11-xcb-dev \
-    libxext-dev \
-    libxfixes-dev \
-    libxi-dev \
-    libxrender-dev \
+    libxcb1-dev \
     libxcb1-dev \
     libxcb-cursor-dev \
     libxcb-glx0-dev \
-    libxcb-keysyms1-dev \
-    libxcb-image0-dev \
-    libxcb-shm0-dev \
     libxcb-icccm4-dev \
-    libxcb-sync-dev \
-    libxcb-xfixes0-dev \
-    libxcb-shape0-dev \
+    libxcb-image0-dev \
+    libxcb-keysyms1-dev \
     libxcb-randr0-dev \
     libxcb-render-util0-dev \
+    libxcb-shape0-dev \
+    libxcb-shm0-dev \
+    libxcb-sync-dev \
     libxcb-util-dev \
+    libxcb-xfixes0-dev \
     libxcb-xinerama0-dev \
     libxcb-xkb-dev \
+    libxext-dev \
+    libxfixes-dev \
+    libxi-dev \
     libxkbcommon-dev \
     libxkbcommon-x11-dev \
-    libwayland-dev \
-    libwayland-egl-backend-dev \
-    desktop-file-utils \
+    libxrender-dev \
+    libzstd-dev \
+    pkg-config \
+    unzip \
+    zlib1g-dev \
     zsync
 
   update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 100
@@ -266,20 +266,6 @@ prepare_qt() {
   cat config.summary
   cmake --build . --parallel
   cmake --install .
-
-  # install qt6gtk2 for better look
-  if [ ! -d "/usr/src/qt6gtk2/" ]; then
-    qt6gtk2_git_url="https://github.com/trialuser02/qt6gtk2.git"
-    if [ x"${USE_CHINA_MIRROR}" = x1 ]; then
-      qt6gtk2_git_url="https://ghp.ci/${qt6gtk2_git_url}"
-    fi
-    retry git clone --depth 1 --recursive "${qt6gtk2_git_url}" "/usr/src/qt6gtk2/"
-  fi
-  cd "/usr/src/qt6gtk2/"
-  git pull
-  git clean -fdx
-  qmake
-  make -j$(nproc) install
 }
 
 preapare_libboost() {
@@ -370,8 +356,8 @@ build_appimage() {
 
 this_dir="\$(readlink -f "\$(dirname "\$0")")"
 export XDG_DATA_DIRS="\${this_dir}/usr/share:\${XDG_DATA_DIRS}:/usr/share:/usr/local/share"
-export QT_QPA_PLATFORMTHEMES=gtk2
-export QT_STYLE_OVERRIDE=qt6gtk2
+export QT_QPA_PLATFORMTHEME=gtk3
+unset QT_STYLE_OVERRIDE
 
 # Force set openssl config directory to an invalid directory to fallback to use default openssl config.
 # This can avoid some distributions (mainly Fedora) having some strange patches or configurations
@@ -417,18 +403,6 @@ EOF
     wayland-shell-integration
   )
   exclude_libs=(
-    libX11-xcb.so.1
-    libXau.so.6
-    libXcomposite.so.1
-    libXcursor.so.1
-    libXdamage.so.1
-    libXdmcp.so.6
-    libXext.so.6
-    libXfixes.so.3
-    libXi.so.6
-    libXinerama.so.1
-    libXrandr.so.2
-    libXrender.so.1
     libatk-1.0.so.0
     libatk-bridge-2.0.so.0
     libatspi.so.0
@@ -447,8 +421,8 @@ EOF
     libffi.so.6
     libgcrypt.so.20
     libgdk-3.so.0
-    libgdk-x11-2.0.so.0
     libgdk_pixbuf-2.0.so.0
+    libgdk-x11-2.0.so.0
     libgio-2.0.so.0
     libglib-2.0.so.0
     libgmodule-2.0.so.0
@@ -458,6 +432,8 @@ EOF
     libgtk-x11-2.0.so.0
     libkj-0.5.3.so
     libkj-0.6.1.so
+    liblz4.so.1
+    liblzma.so.5
     libmirclient.so.9
     libmircommon.so.7
     libmircore.so.1
@@ -466,8 +442,8 @@ EOF
     libpango-1.0.so.0
     libpangocairo-1.0.so.0
     libpangoft2-1.0.so.0
-    libpcre.so.3
     libpcre2-8.so.0
+    libpcre.so.3
     libpixman-1.so.0
     libprotobuf-lite.so.9
     libselinux.so.1
@@ -477,22 +453,34 @@ EOF
     libwayland-cursor.so.0
     libwayland-egl.so.1
     libwayland-server.so.0
+    libX11-xcb.so.1
+    libXau.so.6
     libxcb-cursor.so.0
     libxcb-glx.so.0
     libxcb-icccm.so.4
     libxcb-image.so.0
     libxcb-keysyms.so.1
     libxcb-randr.so.0
-    libxcb-render-util.so.0
     libxcb-render.so.0
+    libxcb-render-util.so.0
     libxcb-shape.so.0
     libxcb-shm.so.0
     libxcb-sync.so.1
     libxcb-util.so.1
     libxcb-xfixes.so.0
     libxcb-xkb.so.1
-    libxkbcommon-x11.so.0
+    libXcomposite.so.1
+    libXcursor.so.1
+    libXdamage.so.1
+    libXdmcp.so.6
+    libXext.so.6
+    libXfixes.so.3
+    libXinerama.so.1
+    libXi.so.6
     libxkbcommon.so.0
+    libxkbcommon-x11.so.0
+    libXrandr.so.2
+    libXrender.so.1
   )
 
   # fix AppImage output file name, maybe not needed anymore since appimagetool lets you set output file name?

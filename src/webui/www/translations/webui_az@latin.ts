@@ -1859,6 +1859,34 @@ serveri tərəfindən istifadə olunan domen adını göstərməlisiniz.
         <source>Use Category paths in Manual Mode</source>
         <translation>Kateqoriya yollarını Əl ilə Rejimində istifadə edin</translation>
     </message>
+    <message>
+        <source>Ignore SSL errors:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Simple pread/pwrite</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Dark</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Color scheme:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Light</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>PeerListWidget</name>

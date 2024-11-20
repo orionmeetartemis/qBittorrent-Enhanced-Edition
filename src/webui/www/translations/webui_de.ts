@@ -1861,6 +1861,34 @@ Platzhalter '*' kann verwendet werden.</translation>
         <source>Use Category paths in Manual Mode</source>
         <translation>Kategoriepfade im manuellen Modus verwenden</translation>
     </message>
+    <message>
+        <source>Ignore SSL errors:</source>
+        <translation>SSL-Fehler ignorieren:</translation>
+    </message>
+    <message>
+        <source>Simple pread/pwrite</source>
+        <translation>Einfaches pread/pwrite</translation>
+    </message>
+    <message>
+        <source>Dark</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Color scheme:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Light</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>PeerListWidget</name>

@@ -1859,6 +1859,34 @@ Bruk ";" for å splitte flerfoldige oppføringer. Jokertegnet "*" kan brukes.</t
         <source>Use Category paths in Manual Mode</source>
         <translation>Bruk kategoristier i manuell modus</translation>
     </message>
+    <message>
+        <source>Ignore SSL errors:</source>
+        <translation>Ignorer SSL-feil:</translation>
+    </message>
+    <message>
+        <source>Simple pread/pwrite</source>
+        <translation>Enkel pread/pwrite</translation>
+    </message>
+    <message>
+        <source>Dark</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Color scheme:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Light</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>PeerListWidget</name>

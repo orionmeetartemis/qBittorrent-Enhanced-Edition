@@ -741,6 +741,7 @@ void WebApplication::sessionStart()
     cookie.setHttpOnly(true);
     cookie.setSecure(m_isSecureCookieEnabled && m_isHttpsEnabled);
     cookie.setPath(u"/"_s);
+    cookie.setExpirationDate(QDateTime::currentDateTime().addSecs(m_sessionTimeout));
     if (m_isCSRFProtectionEnabled)
         cookie.setSameSitePolicy(QNetworkCookie::SameSite::Strict);
     else if (cookie.isSecure())

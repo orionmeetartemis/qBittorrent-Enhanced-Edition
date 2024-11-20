@@ -1859,6 +1859,34 @@ Use ';' pra dividir múltiplas entradas. Pode usar o wildcard '*'.</translation>
         <source>Use Category paths in Manual Mode</source>
         <translation>Usar os caminhos da Categoria no Modo Manual</translation>
     </message>
+    <message>
+        <source>Ignore SSL errors:</source>
+        <translation>Ignorar erros SSL:</translation>
+    </message>
+    <message>
+        <source>Simple pread/pwrite</source>
+        <translation>Pread/pwrite simples</translation>
+    </message>
+    <message>
+        <source>Dark</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Color scheme:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Light</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>PeerListWidget</name>

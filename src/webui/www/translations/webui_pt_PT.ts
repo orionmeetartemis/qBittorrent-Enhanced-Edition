@@ -114,11 +114,11 @@
     </message>
     <message>
         <source>Start torrents</source>
-        <translation type="unfinished" />
+        <translation>Iniciar torrents</translation>
     </message>
     <message>
         <source>Stop torrents</source>
-        <translation type="unfinished" />
+        <translation>Parar torrents</translation>
     </message>
 </context>
 <context>
@@ -365,15 +365,15 @@
     </message>
     <message>
         <source>The port used for the WebUI must be between 1 and 65535.</source>
-        <translation type="unfinished" />
+        <translation>A porta utilizada para a interface web tem que estar compreendida entre 1 e 65535.</translation>
     </message>
     <message>
         <source>%1 has been shutdown</source>
-        <translation type="unfinished" />
+        <translation>%1 foi desligado</translation>
     </message>
     <message>
         <source>JavaScript Required! You must enable JavaScript for the WebUI to work properly</source>
-        <translation type="unfinished" />
+        <translation>É necessário o JavaScript! Deverá ativar o JavaScript para a interface web de forma a poder funcionar corretamente</translation>
     </message>
     <message>
         <source>Unable to log in, qBittorrent is probably unreachable.</source>
@@ -381,7 +381,7 @@
     </message>
     <message>
         <source>Could not contact qBittorrent</source>
-        <translation type="unfinished" />
+        <translation>Não foi possível contatar o qBittorrent</translation>
     </message>
     <message>
         <source>Password</source>
@@ -600,11 +600,11 @@
     </message>
     <message>
         <source>[D: %1, U: %2]</source>
-        <translation type="unfinished" />
+        <translation>[D: %1, U: %2]</translation>
     </message>
     <message>
         <source>Would you like to start all torrents?</source>
-        <translation type="unfinished" />
+        <translation>Gostaria de iniciar todos os torrents?</translation>
     </message>
     <message>
         <source>Stop</source>
@@ -612,19 +612,19 @@
     </message>
     <message>
         <source>Would you like to stop all torrents?</source>
-        <translation type="unfinished" />
+        <translation>Gostaria de parar todos os torrents?</translation>
     </message>
     <message>
         <source>Start All</source>
-        <translation type="unfinished" />
+        <translation>Iniciar todos</translation>
     </message>
     <message>
         <source>Stop All</source>
-        <translation type="unfinished" />
+        <translation>Parar todos</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation type="unfinished" />
+        <translation>Iniciar</translation>
     </message>
 </context>
 <context>
@@ -1641,15 +1641,15 @@ Utilize ';' para dividir várias entradas. Pode usar o asterisco '*'.</translati
     </message>
     <message>
         <source>Socket send buffer size [0: system default]:</source>
-        <translation type="unfinished" />
+        <translation>Tamanho do buffer do socket de envio [0: predefinição do sistema]:</translation>
     </message>
     <message>
         <source>Outgoing ports (Max) [0: disabled]:</source>
-        <translation type="unfinished" />
+        <translation>Portas de saída (Máx) [0: desativado]:</translation>
     </message>
     <message>
         <source>Socket receive buffer size [0: system default]:</source>
-        <translation type="unfinished" />
+        <translation>Tamanho do buffer do socket de receção [0: predefinição do sistema]:</translation>
     </message>
     <message>
         <source>Use Subcategories</source>
@@ -1661,27 +1661,27 @@ Utilize ';' para dividir várias entradas. Pode usar o asterisco '*'.</translati
     </message>
     <message>
         <source>Stop tracker timeout [0: disabled]:</source>
-        <translation type="unfinished" />
+        <translation>Intervalo para parar o rastreador [0: desativado]:</translation>
     </message>
     <message>
         <source>Outgoing ports (Min) [0: disabled]:</source>
-        <translation type="unfinished" />
+        <translation>Portas de saída (Mín) [0: desativado]:</translation>
     </message>
     <message>
         <source>UPnP lease duration [0: permanent lease]:</source>
-        <translation type="unfinished" />
+        <translation>Duração da concessão do UPnP [0: concessão permanente]:</translation>
     </message>
     <message>
         <source>Bdecode depth limit:</source>
-        <translation type="unfinished" />
+        <translation>Limite de profundidade Bdecode:</translation>
     </message>
     <message>
         <source>Bdecode token limit:</source>
-        <translation type="unfinished" />
+        <translation>Limite do token Bdecode:</translation>
     </message>
     <message>
         <source>When total seeding time reaches</source>
-        <translation type="unfinished" />
+        <translation>Quando o tempo total de semear for atingido</translation>
     </message>
     <message>
         <source>(None)</source>
@@ -1689,7 +1689,7 @@ Utilize ';' para dividir várias entradas. Pode usar o asterisco '*'.</translati
     </message>
     <message>
         <source>Python executable path (may require restart):</source>
-        <translation type="unfinished" />
+        <translation>Caminho do executável Python (pode ser necessário reiniciar):</translation>
     </message>
     <message>
         <source>Resets to default if empty</source>
@@ -1701,15 +1701,15 @@ Utilize ';' para dividir várias entradas. Pode usar o asterisco '*'.</translati
     </message>
     <message>
         <source>If &amp;quot;mixed mode&amp;quot; is enabled, I2P torrents are allowed to also get peers from other sources than the tracker, and connect to regular IPs, not providing any anonymization. This may be useful if the user is not interested in the anonymization of I2P, but still wants to be able to connect to I2P peers.</source>
-        <translation type="unfinished" />
+        <translation>Se o &amp;quot;modo misto&amp;quot; estiver ativado, os torrents I2P podem também obter pares de outras fontes que não o rastreador e ligar-se a IPs normais, não fornecendo qualquer anonimização. Isso pode ser útil se o utilizador não estiver interessado na anonimização do I2P, mas ainda quiser se ligar a pares I2P.</translation>
     </message>
     <message>
         <source>DHT bootstrap nodes:</source>
-        <translation type="unfinished" />
+        <translation>Nós de inicialização DHT</translation>
     </message>
     <message>
         <source>When inactive seeding time reaches</source>
-        <translation type="unfinished" />
+        <translation>Quando o tempo inativo de semear for atingido</translation>
     </message>
     <message>
         <source>Mixed mode</source>
@@ -1725,11 +1725,11 @@ Utilize ';' para dividir várias entradas. Pode usar o asterisco '*'.</translati
     </message>
     <message>
         <source>Keep unselected files in ".unwanted" folder</source>
-        <translation type="unfinished" />
+        <translation>Manter ficheiros não selecionados na pasta ".unwanted"</translation>
     </message>
     <message>
         <source>Enable Mark-of-the-Web (MOTW) for downloaded files (require macOS or Windows):</source>
-        <translation type="unfinished" />
+        <translation>Ativar Mark-of-the-Web (MOTW) para ficheiros transferidos (é necessário o macOS ou Windows):</translation>
     </message>
     <message>
         <source> sec</source>
@@ -1737,15 +1737,15 @@ Utilize ';' para dividir várias entradas. Pode usar o asterisco '*'.</translati
     </message>
     <message>
         <source>I2P outbound quantity:</source>
-        <translation type="unfinished" />
+        <translation>Quantidade de saída I2P:</translation>
     </message>
     <message>
         <source>I2P inbound quantity:</source>
-        <translation type="unfinished" />
+        <translation>Quantidade de entrada I2P:</translation>
     </message>
     <message>
         <source>Hashing threads:</source>
-        <translation type="unfinished" />
+        <translation>Threads de cálculo do hash:</translation>
     </message>
     <message>
         <source>Physical memory (RAM) usage limit:</source>
@@ -1753,31 +1753,31 @@ Utilize ';' para dividir várias entradas. Pode usar o asterisco '*'.</translati
     </message>
     <message>
         <source>Use alternative WebUI</source>
-        <translation type="unfinished" />
+        <translation>Usar interface web alternativa</translation>
     </message>
     <message>
         <source>Disk cache expiry interval:</source>
-        <translation type="unfinished" />
+        <translation>Intervalo de validade de cache de disco:</translation>
     </message>
     <message>
         <source>I2P outbound length:</source>
-        <translation type="unfinished" />
+        <translation>Comprimento de saída I2P:</translation>
     </message>
     <message>
         <source>I2P (Experimental)</source>
-        <translation type="unfinished" />
+        <translation>I2P (Experimental)</translation>
     </message>
     <message>
         <source>Disk IO type (requires restart):</source>
-        <translation type="unfinished" />
+        <translation>Tipo de E/S de disco (requer reinício):</translation>
     </message>
     <message>
         <source>The alternative WebUI files location cannot be blank.</source>
-        <translation type="unfinished" />
+        <translation>O local alternativo dos ficheiros da interface web não pode estar em branco.</translation>
     </message>
     <message>
         <source>Disk cache:</source>
-        <translation type="unfinished" />
+        <translation>Cache do disco:</translation>
     </message>
     <message>
         <source>Write-through</source>
@@ -1785,71 +1785,71 @@ Utilize ';' para dividir várias entradas. Pode usar o asterisco '*'.</translati
     </message>
     <message>
         <source>WebUI</source>
-        <translation type="unfinished" />
+        <translation>Interface Web</translation>
     </message>
     <message>
         <source>The WebUI password must be at least 6 characters long.</source>
-        <translation type="unfinished" />
+        <translation>A palavra-passe da interface web tem de ter pelo menos 6 caracteres.</translation>
     </message>
     <message>
         <source>Coalesce reads &amp;amp; writes:</source>
-        <translation type="unfinished" />
+        <translation>Unir leituras e gravações:</translation>
     </message>
     <message>
         <source>I2P inbound length:</source>
-        <translation type="unfinished" />
+        <translation>Comprimento de entrada I2P:</translation>
     </message>
     <message>
         <source>It appends the text to the window title to help distinguish qBittorent instances</source>
-        <translation type="unfinished" />
+        <translation>Anexa o texto ao título da janela para ajudar a distinguir as instâncias do qBittorent</translation>
     </message>
     <message>
         <source>The WebUI username must be at least 3 characters long.</source>
-        <translation type="unfinished" />
+        <translation>O nome de utilizador da interface web deve ter pelo menos 3 caracteres.</translation>
     </message>
     <message>
         <source>Same host request delay:</source>
-        <translation type="unfinished" />
+        <translation>Atraso na solicitação do mesmo host:</translation>
     </message>
     <message>
         <source>Customize application instance name:</source>
-        <translation type="unfinished" />
+        <translation>Personalizar nome da instância da aplicação:</translation>
     </message>
     <message>
         <source>Send test email</source>
-        <translation type="unfinished" />
+        <translation>Enviar e-mail de teste</translation>
     </message>
     <message>
         <source>Attempted to send email. Check your inbox to confirm success</source>
-        <translation type="unfinished" />
+        <translation>Tentativa de enviar e-mail. Verifique a sua caixa de entrada para confirmar</translation>
     </message>
     <message>
         <source>Automatically append these trackers to new downloads:</source>
-        <translation type="unfinished" />
+        <translation>Automaticamente adicionar estes rastreadores às novas transferências:</translation>
     </message>
     <message>
         <source>Stop torrent</source>
-        <translation type="unfinished" />
+        <translation>Parar torrent</translation>
     </message>
     <message>
         <source>Move files to trash (if possible)</source>
-        <translation type="unfinished" />
+        <translation>Mover ficheiros para o lixo (se possível)</translation>
     </message>
     <message>
         <source>Torrent content removing mode:</source>
-        <translation type="unfinished" />
+        <translation>Modo de remoção de conteúdo do torrent:</translation>
     </message>
     <message>
         <source>Delete files permanently</source>
-        <translation type="unfinished" />
+        <translation>Eliminar ficheiros permanentemente</translation>
     </message>
     <message>
         <source>Merge trackers to existing torrent</source>
-        <translation type="unfinished" />
+        <translation>Unir rastreadores ao torrent existente</translation>
     </message>
     <message>
         <source>When duplicate torrent is being added</source>
-        <translation type="unfinished" />
+        <translation>Quando um torrent duplicado for adicionado</translation>
     </message>
     <message>
         <source>Resolve relative Save Path against appropriate Category path instead of Default one</source>
@@ -1858,6 +1858,34 @@ Utilize ';' para dividir várias entradas. Pode usar o asterisco '*'.</translati
     <message>
         <source>Use Category paths in Manual Mode</source>
         <translation>Utilizar os caminhos de 'Categoria' no 'Modo manual'</translation>
+    </message>
+    <message>
+        <source>Ignore SSL errors:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Simple pread/pwrite</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Dark</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Color scheme:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Light</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -2225,11 +2253,11 @@ Utilize ';' para dividir várias entradas. Pode usar o asterisco '*'.</translati
     </message>
     <message>
         <source>Popularity:</source>
-        <translation type="unfinished" />
+        <translation>Popularidade:</translation>
     </message>
     <message>
         <source>Ratio / Time Active (in months), indicates how popular the torrent is</source>
-        <translation type="unfinished" />
+        <translation>Proporção / Tempo ativo (em meses), indica o quão popular o torrent é</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -2241,7 +2269,7 @@ Utilize ';' para dividir várias entradas. Pode usar o asterisco '*'.</translati
     </message>
     <message>
         <source>Private:</source>
-        <translation type="unfinished" />
+        <translation>Privado:</translation>
     </message>
 </context>
 <context>
@@ -2453,19 +2481,19 @@ Utilize ';' para dividir várias entradas. Pode usar o asterisco '*'.</translati
     </message>
     <message>
         <source>Running (%1)</source>
-        <translation type="unfinished" />
+        <translation>Em execução (%1)</translation>
     </message>
     <message>
         <source>Stopped (0)</source>
-        <translation type="unfinished" />
+        <translation>Parado (0)</translation>
     </message>
     <message>
         <source>Stopped (%1)</source>
-        <translation type="unfinished" />
+        <translation>Parado (%1)</translation>
     </message>
     <message>
         <source>Running (0)</source>
-        <translation type="unfinished" />
+        <translation>Em execução (0)</translation>
     </message>
 </context>
 <context>
@@ -2616,11 +2644,11 @@ Utilize ';' para dividir várias entradas. Pode usar o asterisco '*'.</translati
     </message>
     <message>
         <source>Reannounce In</source>
-        <translation type="unfinished" />
+        <translation>Anunciar novamente em</translation>
     </message>
     <message>
         <source>Popularity</source>
-        <translation type="unfinished" />
+        <translation>Popularidade</translation>
     </message>
     <message>
         <source>Progress</source>
@@ -2640,7 +2668,7 @@ Utilize ';' para dividir várias entradas. Pode usar o asterisco '*'.</translati
     </message>
     <message>
         <source>Private</source>
-        <translation type="unfinished" />
+        <translation>Privado</translation>
     </message>
 </context>
 <context>
@@ -2842,7 +2870,7 @@ Utilize ';' para dividir várias entradas. Pode usar o asterisco '*'.</translati
     </message>
     <message>
         <source>Stopped</source>
-        <translation type="unfinished" />
+        <translation>Parado</translation>
     </message>
     <message>
         <source>N/A</source>
@@ -3054,7 +3082,7 @@ Utilize ';' para dividir várias entradas. Pode usar o asterisco '*'.</translati
     </message>
     <message>
         <source>Comment</source>
-        <translation type="unfinished" />
+        <translation>Comentário</translation>
     </message>
     <message>
         <source>Stop</source>
@@ -3062,11 +3090,11 @@ Utilize ';' para dividir várias entradas. Pode usar o asterisco '*'.</translati
     </message>
     <message>
         <source>Force Start</source>
-        <translation type="unfinished" />
+        <translation>Forçar início</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation type="unfinished" />
+        <translation>Iniciar</translation>
     </message>
 </context>
 <context>
@@ -3111,7 +3139,7 @@ Utilize ';' para dividir várias entradas. Pode usar o asterisco '*'.</translati
     </message>
     <message>
         <source>Also remove the content files</source>
-        <translation type="unfinished" />
+        <translation>Remover também os ficheiros de conteúdo</translation>
     </message>
 </context>
 <context>
@@ -3315,7 +3343,7 @@ Utilize ';' para dividir várias entradas. Pode usar o asterisco '*'.</translati
     </message>
     <message>
         <source>Start a search above.</source>
-        <translation type="unfinished" />
+        <translation>Inicie uma pesquisa acima.</translation>
     </message>
 </context>
 <context>
@@ -3381,7 +3409,7 @@ Utilize ';' para dividir várias entradas. Pode usar o asterisco '*'.</translati
     </message>
     <message>
         <source>Published On</source>
-        <translation type="unfinished" />
+        <translation>Publicado em</translation>
     </message>
 </context>
 <context>
@@ -3466,11 +3494,11 @@ Utilize ';' para dividir várias entradas. Pode usar o asterisco '*'.</translati
     </message>
     <message>
         <source>Start torrents</source>
-        <translation type="unfinished" />
+        <translation>Iniciar torrents</translation>
     </message>
     <message>
         <source>Stop torrents</source>
-        <translation type="unfinished" />
+        <translation>Parar torrents</translation>
     </message>
 </context>
 <context>
@@ -3985,7 +4013,7 @@ Suporta os formatos: S01E01, 1x1, 2017.12.31 e 31.12.2017 (Suporte também para 
     </message>
     <message>
         <source>Add Stopped:</source>
-        <translation type="unfinished" />
+        <translation>Adicionar parado(s):</translation>
     </message>
 </context>
 <context>
@@ -4004,11 +4032,11 @@ Suporta os formatos: S01E01, 1x1, 2017.12.31 e 31.12.2017 (Suporte também para 
     </message>
     <message>
         <source>Start torrents</source>
-        <translation type="unfinished" />
+        <translation>Iniciar torrents</translation>
     </message>
     <message>
         <source>Stop torrents</source>
-        <translation type="unfinished" />
+        <translation>Parar torrents</translation>
     </message>
 </context>
 <context>
