@@ -397,6 +397,8 @@ bool AutoDownloadRule::matchesSmartEpisodeFilter(const QString &articleTitle) co
             m_dataPtr->lastComputedEpisodes.append(episodeStr + u"-REPACK");
             m_dataPtr->lastComputedEpisodes.append(episodeStr + u"-PROPER");
         }
+
+        return true;
     }
 
     m_dataPtr->lastComputedEpisodes.append(episodeStr);

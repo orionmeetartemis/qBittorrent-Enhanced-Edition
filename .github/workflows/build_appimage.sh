@@ -187,7 +187,7 @@ prepare_ssl() {
     touch "/usr/src/openssl-${openssl_ver}/.unpack_ok"
   fi
   cd "/usr/src/openssl-${openssl_ver}"
-  ./Configure --openssldir=/etc/ssl
+  ./Configure no-tests --openssldir=/etc/ssl
   make -j$(nproc)
   make install_sw
   ldconfig
@@ -270,7 +270,8 @@ prepare_qt() {
 
 preapare_libboost() {
   # build latest boost
-  boost_ver="$(retry curl -ksSfL --compressed https://www.boost.org/users/download/ \| grep "'>Version\s*'" \| sed -r "'s/.*Version\s*([^<]+).*/\1/'" \| head -1)"
+  # boost_ver="$(retry curl -ksSfL --compressed https://www.boost.org/users/download/ \| grep "'>Version\s*'" \| sed -r "'s/.*Version\s*([^<]+).*/\1/'" \| head -1)"
+  boost_ver="1.86.0"
   echo "boost version ${boost_ver}"
   mkdir -p "/usr/src/boost-${boost_ver}"
   if [ ! -f "/usr/src/boost-${boost_ver}/.unpack_ok" ]; then

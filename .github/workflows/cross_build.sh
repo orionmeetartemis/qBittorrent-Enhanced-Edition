@@ -244,7 +244,7 @@ prepare_ssl() {
     touch "/usr/src/openssl-${openssl_ver}/.unpack_ok"
   fi
   cd "/usr/src/openssl-${openssl_ver}/"
-  ./Configure -static --openssldir=/etc/ssl --cross-compile-prefix="${CROSS_HOST}-" --prefix="${CROSS_PREFIX}" "${OPENSSL_COMPILER}"
+  ./Configure -static no-tests --openssldir=/etc/ssl --cross-compile-prefix="${CROSS_HOST}-" --prefix="${CROSS_PREFIX}" "${OPENSSL_COMPILER}"
   make -j$(nproc)
   make install_sw
   if [ -f "${CROSS_PREFIX}/lib64/libssl.a" ]; then
@@ -256,7 +256,8 @@ prepare_ssl() {
 }
 
 prepare_boost() {
-  boost_ver="$(retry curl -ksSL --compressed https://www.boost.org/users/download/ \| grep "'>Version\s*'" \| sed -r "'s/.*Version\s*([^<]+).*/\1/'" \| head -1)"
+  # boost_ver="$(retry curl -ksSL --compressed https://www.boost.org/users/download/ \| grep "'>Version\s*'" \| sed -r "'s/.*Version\s*([^<]+).*/\1/'" \| head -1)"
+  boost_ver="1.86.0"
   echo "Boost version ${boost_ver}"
   if [ ! -f "/usr/src/boost-${boost_ver}/.unpack_ok" ]; then
     boost_latest_url="https://sourceforge.net/projects/boost/files/boost/${boost_ver}/boost_${boost_ver//./_}.tar.bz2/download"

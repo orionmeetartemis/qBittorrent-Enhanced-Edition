@@ -41,19 +41,11 @@ Latest AppImage download: [qBittorrent-Enhanced-Edition-x86_64.AppImage](https:/
 
 #### Debian (Maintainer: [Kolcha](https://github.com/Kolcha))
 
-##### Qt5 variants (Debian 11 and above):
-
 [GUI](https://software.opensuse.org//download.html?project=home%3Anikoneko%3Atest&package=qbittorrent-enhanced)
 
 [nox](https://software.opensuse.org//download.html?project=home%3Anikoneko%3Atest&package=qbittorrent-enhanced-nox)
 
-##### Qt6 variants (Debian Testing and above):
-
-[GUI](https://software.opensuse.org//download.html?project=home%3Anikoneko%3Atest&package=qbittorrent-enhanced-qt6)
-
-[nox](https://software.opensuse.org//download.html?project=home%3Anikoneko%3Atest&package=qbittorrent-enhanced-nox-qt6)
-
-The one [repository](https://build.opensuse.org/project/show/home:nikoneko:test) contains all 4 variants listed above, links to specific packages are provided for convenience.
+The one [repository](https://build.opensuse.org/project/show/home:nikoneko:test) contains all variants, links to specific packages are provided for convenience.
 
 #### openSUSE (Maintainer: [openSUSE Chinese Community](https://github.com/openSUSE-zh))
 

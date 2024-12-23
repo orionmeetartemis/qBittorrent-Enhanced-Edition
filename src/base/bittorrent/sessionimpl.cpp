@@ -66,6 +66,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonValue>
+#include <QMutexLocker>
 #include <QNetworkAddressEntry>
 #include <QNetworkInterface>
 #include <QRegularExpression>
@@ -1674,7 +1675,7 @@ void SessionImpl::endStartup(ResumeSessionContext *context)
                 reannounceToAllTrackers();
             }
 
-            m_wakeupCheckTimestamp = QDateTime::currentDateTime();
+            m_wakeupCheckTimestamp = now;
         });
         m_wakeupCheckTimestamp = QDateTime::currentDateTime();
         m_wakeupCheckTimer->start(30s);
@@ -5728,8 +5729,6 @@ void SessionImpl::readAlerts()
 
     // Some torrents may become "finished" after different alerts handling.
     processPendingFinishedTorrents();
-
-    processTrackerStatuses();
 }
 
 void SessionImpl::handleAddTorrentAlert(const lt::add_torrent_alert *alert)
@@ -6405,7 +6404,12 @@ void SessionImpl::handleTrackerAlert(const lt::tracker_alert *alert)
     if (!torrent)
         return;
 
+    [[maybe_unused]] const QMutexLocker updatedTrackerStatusesLocker {&m_updatedTrackerStatusesMutex};
+
+    const auto prevSize = m_updatedTrackerStatuses.size();
     QMap<int, int> &updateInfo = m_updatedTrackerStatuses[torrent->nativeHandle()][std::string(alert->tracker_url())][alert->local_endpoint];
+    if (prevSize < m_updatedTrackerStatuses.size())
+        updateTrackerEntryStatuses(torrent->nativeHandle());
 
     if (alert->type() == lt::tracker_reply_alert::alert_type)
     {
@@ -6467,17 +6471,6 @@ void SessionImpl::handleTorrentConflictAlert(const lt::torrent_conflict_alert *a
 }
 #endif
 
-void SessionImpl::processTrackerStatuses()
-{
-    if (m_updatedTrackerStatuses.isEmpty())
-        return;
-
-    for (auto it = m_updatedTrackerStatuses.cbegin(); it != m_updatedTrackerStatuses.cend(); ++it)
-        updateTrackerEntryStatuses(it.key(), it.value());
-
-    m_updatedTrackerStatuses.clear();
-}
-
 void SessionImpl::saveStatistics() const
 {
     if (!m_isStatisticsDirty)
@@ -6502,15 +6495,19 @@ void SessionImpl::loadStatistics()
     m_previouslyUploaded = value[u"AlltimeUL"_s].toLongLong();
 }
 
-void SessionImpl::updateTrackerEntryStatuses(lt::torrent_handle torrentHandle, QHash<std::string, QHash<lt::tcp::endpoint, QMap<int, int>>> updatedTrackers)
+void SessionImpl::updateTrackerEntryStatuses(lt::torrent_handle torrentHandle)
 {
-    invokeAsync([this, torrentHandle = std::move(torrentHandle), updatedTrackers = std::move(updatedTrackers)]() mutable
+    invokeAsync([this, torrentHandle = std::move(torrentHandle)]() mutable
     {
         try
         {
             std::vector<lt::announce_entry> nativeTrackers = torrentHandle.trackers();
-            invoke([this, torrentHandle, nativeTrackers = std::move(nativeTrackers)
-                    , updatedTrackers = std::move(updatedTrackers)]
+
+            QMutexLocker updatedTrackerStatusesLocker {&m_updatedTrackerStatusesMutex};
+            QHash<std::string, QHash<lt::tcp::endpoint, QMap<int, int>>> updatedTrackers = m_updatedTrackerStatuses.take(torrentHandle);
+            updatedTrackerStatusesLocker.unlock();
+
+            invoke([this, torrentHandle, nativeTrackers = std::move(nativeTrackers), updatedTrackers = std::move(updatedTrackers)]
             {
                 TorrentImpl *torrent = m_torrents.value(torrentHandle.info_hash());
                 if (!torrent || torrent->isStopped())
@@ -6565,7 +6562,7 @@ void SessionImpl::handleRemovedTorrent(const TorrentID &torrentID, const QString
     m_removingTorrents.erase(removingTorrentDataIter);
 }
 
-QDateTime SessionImpl::fromLTTimePoint32(const libtorrent::time_point32 &timePoint) const
+QDateTime SessionImpl::fromLTTimePoint32(const lt::time_point32 &timePoint) const
 {
     const auto secsSinceNow = lt::duration_cast<lt::seconds>(timePoint - m_ltNow + lt::milliseconds(500)).count();
     return m_qNow.addSecs(secsSinceNow);
