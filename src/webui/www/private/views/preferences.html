@@ -2908,7 +2908,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.)QBT_TR[CONTEXT=OptionsD
             settings["auto_ban_unknown_peer"] = $("autoBanUnknownPeer").getProperty("checked");
             settings["auto_ban_bt_player_peer"] = $("autoBanBittorrentPlayer").getProperty("checked");
             settings["shadow_ban_enabled"] = $("shadowBan").getProperty("checked");
-            settings["shadow_banned_IPs"] = $("shadowBannedIPs").getProperty("checked");
+            settings["shadow_banned_IPs"] = $("shadowBannedIPs").getProperty("value");
             settings["ignore_ssl_errors"] = $("ignoreSSLErrors").getProperty("checked");
             settings["python_executable_path"] = $("pythonExecutablePath").getProperty("value");
 
