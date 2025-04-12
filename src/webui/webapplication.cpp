@@ -437,6 +437,7 @@ void WebApplication::configure()
     m_isAuthSubnetWhitelistEnabled = pref->isWebUIAuthSubnetWhitelistEnabled();
     m_authSubnetWhitelist = pref->getWebUIAuthSubnetWhitelist();
     m_sessionTimeout = pref->getWebUISessionTimeout();
+    m_cookieExpirationEnabled = pref->isCookieExpirationEnabled();
 
     m_domainList = pref->getServerDomains().split(u';', Qt::SkipEmptyParts);
     std::for_each(m_domainList.begin(), m_domainList.end(), [](QString &entry) { entry = entry.trimmed(); });
@@ -741,7 +742,8 @@ void WebApplication::sessionStart()
     cookie.setHttpOnly(true);
     cookie.setSecure(m_isSecureCookieEnabled && m_isHttpsEnabled);
     cookie.setPath(u"/"_s);
-    cookie.setExpirationDate(QDateTime::currentDateTime().addSecs(m_sessionTimeout));
+    if (m_cookieExpirationEnabled)
+        cookie.setExpirationDate(QDateTime::currentDateTime().addSecs(m_sessionTimeout));
     if (m_isCSRFProtectionEnabled)
         cookie.setSameSitePolicy(QNetworkCookie::SameSite::Strict);
     else if (cookie.isSecure())

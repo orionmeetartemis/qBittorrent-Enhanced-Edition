@@ -426,13 +426,15 @@ public:
 
     // Enhanced option
     bool getAutoBanUnknownPeer() const;
-    void setAutoBanUnknownPeer(const bool checked);
+    void setAutoBanUnknownPeer(bool checked);
     bool getAutoBanBTPlayerPeer() const;
-    void setAutoBanBTPlayerPeer(const bool checked);
+    void setAutoBanBTPlayerPeer(bool checked);
     bool getShadowBan() const;
-    void setShadowBan(const bool checked);
+    void setShadowBan(bool checked);
     QString customizeTrackersListUrl() const;
     void setCustomizeTrackersListUrl(const QString &trackersUrl);
+    bool isCookieExpirationEnabled() const;
+    void setCookieExpirationEnabled(bool enabled);
 
 public slots:
     void setStatusFilterState(bool checked);

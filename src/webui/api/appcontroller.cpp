@@ -323,6 +323,7 @@ void AppController::preferencesAction()
     data[u"web_ui_max_auth_fail_count"_s] = pref->getWebUIMaxAuthFailCount();
     data[u"web_ui_ban_duration"_s] = static_cast<int>(pref->getWebUIBanDuration().count());
     data[u"web_ui_session_timeout"_s] = pref->getWebUISessionTimeout();
+    data[u"web_ui_cookie_expiration"_s] = pref->isCookieExpirationEnabled();
     // Use alternative WebUI
     data[u"alternative_webui_enabled"_s] = pref->isAltWebUIEnabled();
     data[u"alternative_webui_path"_s] = pref->getWebUIRootFolder().toString();
@@ -898,6 +899,8 @@ void AppController::setPreferencesAction()
         pref->setWebUIBanDuration(std::chrono::seconds {it.value().toInt()});
     if (hasKey(u"web_ui_session_timeout"_s))
         pref->setWebUISessionTimeout(it.value().toInt());
+    if (hasKey(u"web_ui_cookie_expiration"_s))
+        pref->setCookieExpirationEnabled(it.value().toBool());
     // Use alternative WebUI
     if (hasKey(u"alternative_webui_enabled"_s))
         pref->setAltWebUIEnabled(it.value().toBool());

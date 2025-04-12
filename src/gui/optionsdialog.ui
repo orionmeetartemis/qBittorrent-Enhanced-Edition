@@ -3710,6 +3710,13 @@ Specify an IPv4 or IPv6 address. You can specify &quot;0.0.0.0&quot; for any IPv
                     </item>
                    </layout>
                   </item>
+                  <item>
+                   <widget class="QCheckBox" name="enableCookieExpiration">
+                    <property name="text">
+                     <string>Enable cookie expiration</string>
+                    </property>
+                   </widget>
+                  </item>
                  </layout>
                 </widget>
                </item>

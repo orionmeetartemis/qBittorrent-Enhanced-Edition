@@ -928,6 +928,10 @@
                     <td><input type="number" id="webUISessionTimeoutInput" style="width: 4em;" min="0" />&nbsp;&nbsp;QBT_TR(seconds)QBT_TR[CONTEXT=OptionsDialog]</td>
                 </tr>
             </table>
+            <div class="formRow">
+                <input type="checkbox" id="cookie_expiration_checkbox" />
+                <label for="cookie_expiration_checkbox">QBT_TR(Enable cookie expiration)QBT_TR[CONTEXT=OptionsDialog]</label>
+            </div>
         </fieldset>
 
         <fieldset class="settings">
@@ -2393,6 +2397,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.)QBT_TR[CONTEXT=OptionsD
                     $("webUIMaxAuthFailCountInput").setProperty("value", pref.web_ui_max_auth_fail_count.toInt());
                     $("webUIBanDurationInput").setProperty("value", pref.web_ui_ban_duration.toInt());
                     $("webUISessionTimeoutInput").setProperty("value", pref.web_ui_session_timeout.toInt());
+                    $("cookie_expiration_checkbox").setProperty("checked", pref.web_ui_cookie_expiration);
 
                     // Use alternative WebUI
                     $("use_alt_webui_checkbox").setProperty("checked", pref.alternative_webui_enabled);
@@ -2855,6 +2860,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.)QBT_TR[CONTEXT=OptionsD
             settings["web_ui_max_auth_fail_count"] = Number($("webUIMaxAuthFailCountInput").getProperty("value"));
             settings["web_ui_ban_duration"] = Number($("webUIBanDurationInput").getProperty("value"));
             settings["web_ui_session_timeout"] = Number($("webUISessionTimeoutInput").getProperty("value"));
+            settings["web_ui_cookie_expiration"] = $("cookie_expiration_checkbox").getProperty("checked");
 
             // Use alternative WebUI
             const alternative_webui_enabled = $("use_alt_webui_checkbox").getProperty("checked");

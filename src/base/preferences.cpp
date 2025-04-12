@@ -2039,6 +2039,19 @@ void Preferences::setCustomizeTrackersListUrl(const QString &trackersUrl) {
     setValue(u"Preferences/Bittorrent/CustomizeTrackersListUrl"_s, trackersUrl);
 }
 
+bool Preferences::isCookieExpirationEnabled() const
+{
+    return value(u"Preferences/WebUI/CookieExpiration"_s, false);
+}
+
+void Preferences::setCookieExpirationEnabled(const bool enabled)
+{
+    if (enabled == isCookieExpirationEnabled())
+        return;
+
+    setValue(u"Preferences/WebUI/CookieExpiration"_s, enabled);
+}
+
 void Preferences::apply()
 {
     if (SettingsStorage::instance()->save())
