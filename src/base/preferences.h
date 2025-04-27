@@ -423,6 +423,8 @@ public:
     void setAddNewTorrentDialogTopLevel(bool value);
     int addNewTorrentDialogSavePathHistoryLength() const;
     void setAddNewTorrentDialogSavePathHistoryLength(int value);
+    bool isAddNewTorrentDialogAttached() const;
+    void setAddNewTorrentDialogAttached(bool attached);
 
     // Enhanced option
     bool getAutoBanUnknownPeer() const;
