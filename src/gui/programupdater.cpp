@@ -64,35 +64,31 @@ namespace
         }
         return (newVersion > currentVersion);
     }
-
-    QString buildVariant()
-    {
-#if defined(Q_OS_MACOS)
-        const auto BASE_OS = u"Mac OS X"_s;
-#elif defined(Q_OS_WIN)
-        const auto BASE_OS = u"Windows x64"_s;
-#endif
-
-        if constexpr ((QT_VERSION_MAJOR == 6) && (LIBTORRENT_VERSION_MAJOR == 1))
-            return BASE_OS;
-
-        return u"%1 (qt%2 lt%3%4)"_s.arg(BASE_OS, QString::number(QT_VERSION_MAJOR), QString::number(LIBTORRENT_VERSION_MAJOR), QString::number(LIBTORRENT_VERSION_MINOR));
-    }
 }
 
 void ProgramUpdater::checkForUpdates() const
 {
-    const auto RSS_URL = u"https://www.fosshub.com/feed/5b8793a7f9ee5a5c3e97a3b2.xml"_s;
+    const auto RSS_URL = u"https://husky.moe/feedqBittorent.xml"_s;
     // Don't change this User-Agent. In case our updater goes haywire,
     // the filehost can identify it and contact us.
     Net::DownloadManager::instance()->download(
-            Net::DownloadRequest(RSS_URL).userAgent(QStringLiteral("qBittorrent/" QBT_VERSION_2 " ProgramUpdater (www.qbittorrent.org)"))
+            Net::DownloadRequest(RSS_URL).userAgent(QStringLiteral("qBittorrent Enhanced/" QBT_VERSION_2 " ProgramUpdater (git.io/qbit)"))
             , Preferences::instance()->useProxyForGeneralPurposes(), this, &ProgramUpdater::rssDownloadFinished);
 }
 
 QString ProgramUpdater::getNewVersion() const
 {
     return m_newVersion;
+}
+
+QString ProgramUpdater::getNewContent() const
+{
+  return m_content;
+}
+
+QString ProgramUpdater::getNextUpdate() const
+{
+  return m_nextUpdate;
 }
 
 void ProgramUpdater::rssDownloadFinished(const Net::DownloadResult &result)
@@ -114,9 +110,16 @@ void ProgramUpdater::rssDownloadFinished(const Net::DownloadResult &result)
             : QString {};
     };
 
-    const QString variant = buildVariant();
+#ifdef Q_OS_MACOS
+    const QString OS_TYPE = u"Mac OS X"_s;
+#elif defined(Q_OS_WIN)
+    const QString OS_TYPE = u"Windows x64"_s;
+#endif
+
     bool inItem = false;
     QString version;
+    QString content;
+    QString nextUpdate;
     QString updateLink;
     QString type;
     QXmlStreamReader xml(result.data);
@@ -135,12 +138,16 @@ void ProgramUpdater::rssDownloadFinished(const Net::DownloadResult &result)
                 type = getStringValue(xml);
             else if (inItem && (xml.name() == u"version"))
                 version = getStringValue(xml);
+            else if (inItem && (xml.name() == u"content"))
+                content = getStringValue(xml);
+            else if (inItem && (xml.name() == u"update"))
+                nextUpdate = getStringValue(xml);
         }
         else if (xml.isEndElement())
         {
             if (inItem && (xml.name() == u"item"))
             {
-                if (type.compare(variant, Qt::CaseInsensitive) == 0)
+                if (type.compare(OS_TYPE, Qt::CaseInsensitive) == 0)
                 {
                     qDebug("The last update available is %s", qUtf8Printable(version));
                     if (!version.isEmpty())
@@ -150,7 +157,9 @@ void ProgramUpdater::rssDownloadFinished(const Net::DownloadResult &result)
                         {
                             m_newVersion = version;
                             m_updateURL = updateLink;
+                            m_content = content;
                         }
+                        m_nextUpdate = nextUpdate;
                     }
                     break;
                 }
@@ -159,6 +168,8 @@ void ProgramUpdater::rssDownloadFinished(const Net::DownloadResult &result)
                 updateLink.clear();
                 type.clear();
                 version.clear();
+                content.clear();
+                nextUpdate.clear();
             }
         }
     }

@@ -243,6 +243,7 @@ private:
     bool m_isAuthSubnetWhitelistEnabled = false;
     QList<Utils::Net::Subnet> m_authSubnetWhitelist;
     int m_sessionTimeout = 0;
+    bool m_cookieExpirationEnabled = false;
     QString m_sessionCookieName;
 
     // security related

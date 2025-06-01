@@ -1,7 +1,6 @@
 /*
  * Bittorrent Client using Qt and libtorrent.
- * Copyright (C) 2021  Mike Tzou (Chocobo1)
- * Copyright (C) 2010  Christophe Dumez <chris@qbittorrent.org>
+ * Copyright (C) 2016  Alexandr Milovantsev <dzmat@yandex.ru>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -29,38 +28,37 @@
 
 #pragma once
 
-#include <QObject>
-#include <QString>
-#include <QUrl>
+#include <QDialog>
 
-namespace Net
+#include "base/settingvalue.h"
+
+class QSortFilterProxyModel;
+class QStringListModel;
+
+namespace Ui
 {
-    struct DownloadResult;
+    class ShadowBanListOptionsDialog;
 }
 
-class ProgramUpdater final : public QObject
+class ShadowBanListOptionsDialog final : public QDialog
 {
     Q_OBJECT
-    Q_DISABLE_COPY_MOVE(ProgramUpdater)
+    Q_DISABLE_COPY_MOVE(ShadowBanListOptionsDialog)
 
 public:
-    using QObject::QObject;
-
-    void checkForUpdates() const;
-    QString getNewVersion() const;
-    QString getNewContent() const;
-    QString getNextUpdate() const;
-    bool updateProgram() const;
-
-signals:
-    void updateCheckFinished();
+    explicit ShadowBanListOptionsDialog(QWidget *parent = nullptr);
+    ~ShadowBanListOptionsDialog() override;
 
 private slots:
-    void rssDownloadFinished(const Net::DownloadResult &result);
+    void on_buttonBox_accepted();
+    void on_buttonBanIP_clicked();
+    void on_buttonDeleteIP_clicked();
+    void on_txtIP_textChanged(const QString &ip);
 
 private:
-    QString m_newVersion;
-    QString m_nextUpdate;
-    QString m_content;
-    QUrl m_updateURL;
+    Ui::ShadowBanListOptionsDialog *m_ui = nullptr;
+    SettingValue<QSize> m_storeDialogSize;
+    QStringListModel *m_model = nullptr;
+    QSortFilterProxyModel *m_sortFilter = nullptr;
+    bool m_modified = false;
 };

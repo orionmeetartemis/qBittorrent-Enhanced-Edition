@@ -161,6 +161,23 @@ window.qBittorrent.PropPeers ??= (() => {
                         })
                     });
                 }
+            },
+            shadowbanPeer: function(element, ref) {
+                const selectedPeers = torrentPeersTable.selectedRowsIds();
+                if (selectedPeers.length === 0)
+                    return;
+
+                if (confirm("QBT_TR(Are you sure you want to shadowban the selected peers?)QBT_TR[CONTEXT=PeerListWidget]")) {
+                    new Request({
+                        url: "api/v2/transfer/shadowbanPeers",
+                        noCache: true,
+                        method: "post",
+                        data: {
+                            hash: torrentsTable.getCurrentTorrentID(),
+                            peers: selectedPeers.join("|")
+                        }
+                    }).send();
+                }
             }
         },
         offsets: {
@@ -173,10 +190,12 @@ window.qBittorrent.PropPeers ??= (() => {
             if (selectedPeers.length >= 1) {
                 this.showItem("copyPeer");
                 this.showItem("banPeer");
+                this.showItem("shadowbanPeer");
             }
             else {
                 this.hideItem("copyPeer");
                 this.hideItem("banPeer");
+                this.hideItem("shadowbanPeer");
             }
         }
     });
@@ -187,7 +206,7 @@ window.qBittorrent.PropPeers ??= (() => {
         }
     });
 
-    torrentPeersTable.setup("torrentPeersTableDiv", "torrentPeersTableFixedHeaderDiv", torrentPeersContextMenu);
+    torrentPeersTable.setup("torrentPeersTableDiv", "torrentPeersTableFixedHeaderDiv", torrentPeersContextMenu, true);
 
     return exports();
 })();
