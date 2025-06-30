@@ -596,8 +596,8 @@
         </div>
         <div class="formRow">
             <fieldset class="settings">
-                <legend>QBT_TR(Manually shadow banned IP addresses...)QBT_TR[CONTEXT=OptionsDialog]</legend>
-                <textarea id="shadowBannedIPs" rows="5" cols="70"></textarea>
+                <legend id="shadowBanLabel">QBT_TR(Manually shadow banned IP addresses...)QBT_TR[CONTEXT=OptionsDialog]</legend>
+                <textarea id="shadowBannedIPs" rows="5" cols="70" aria-labelledby="shadowBanLabel"></textarea>
             </fieldset>
         </div>
     </fieldset>
@@ -1025,7 +1025,7 @@
                 </tbody>
             </table>
             <div class="formRow">
-                <input type="checkbox" id="cookie_expiration_checkbox" />
+                <input type="checkbox" id="cookie_expiration_checkbox">
                 <label for="cookie_expiration_checkbox">QBT_TR(Enable cookie expiration)QBT_TR[CONTEXT=OptionsDialog]</label>
             </div>
         </fieldset>
@@ -2150,7 +2150,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.)QBT_TR[CONTEXT=OptionsD
 
         // Advanced Tab
         const updateNetworkInterfaces = (default_iface, default_iface_name) => {
-            [...document.getElementById("networkInterface").children].forEach((el) => { el.destroy(); });
+            [...document.getElementById("networkInterface").children].forEach((el) => { el.remove(); });
 
             fetch("api/v2/app/networkInterfaceList", {
                     method: "GET",
@@ -2179,7 +2179,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.)QBT_TR[CONTEXT=OptionsD
         };
 
         const updateInterfaceAddresses = (iface, default_addr) => {
-            [...document.getElementById("optionalIPAddressToBind").children].forEach((el) => { el.destroy(); });
+            [...document.getElementById("optionalIPAddressToBind").children].forEach((el) => { el.remove(); });
 
             const url = new URL("api/v2/app/networkInterfaceAddressList", window.location);
             url.search = new URLSearchParams({
@@ -2924,10 +2924,10 @@ Use ';' to split multiple entries. Can use wildcard '*'.)QBT_TR[CONTEXT=OptionsD
 
             // Share Ratio Limiting
             let max_ratio = -1;
-            if ($("max_ratio_checkbox").checked) {
-                max_ratio = Number($("max_ratio_value").value);
-                if (isNaN(max_ratio) || (max_ratio < 0) || (max_ratio > 9998)) {
-                    alert("QBT_TR(Share ratio limit must be between 0 and 9998.)QBT_TR[CONTEXT=HttpServer]");
+            if (document.getElementById("max_ratio_checkbox").checked) {
+                max_ratio = Number(document.getElementById("max_ratio_value").value);
+                if (isNaN(max_ratio) || (max_ratio < 0)) {
+                    alert("QBT_TR(Share ratio limit must not have a negative value.)QBT_TR[CONTEXT=HttpServer]");
                     return;
                 }
             }
@@ -2935,10 +2935,10 @@ Use ';' to split multiple entries. Can use wildcard '*'.)QBT_TR[CONTEXT=OptionsD
             settings["max_ratio"] = max_ratio;
 
             let max_seeding_time = -1;
-            if ($("max_seeding_time_checkbox").checked) {
-                max_seeding_time = Number($("max_seeding_time_value").value);
-                if (isNaN(max_seeding_time) || (max_seeding_time < 0) || (max_seeding_time > 525600)) {
-                    alert("QBT_TR(Seeding time limit must be between 0 and 525600 minutes.)QBT_TR[CONTEXT=HttpServer]");
+            if (document.getElementById("max_seeding_time_checkbox").checked) {
+                max_seeding_time = Number(document.getElementById("max_seeding_time_value").value);
+                if (Number.isNaN(max_seeding_time) || (max_seeding_time < 0)) {
+                    alert("QBT_TR(Seeding time limit must not have a negative value.)QBT_TR[CONTEXT=HttpServer]");
                     return;
                 }
             }
@@ -2947,10 +2947,10 @@ Use ';' to split multiple entries. Can use wildcard '*'.)QBT_TR[CONTEXT=OptionsD
             settings["max_ratio_act"] = Number($("max_ratio_act").value);
 
             let max_inactive_seeding_time = -1;
-            if ($("max_inactive_seeding_time_checkbox").checked) {
-                max_inactive_seeding_time = Number($("max_inactive_seeding_time_value").value);
-                if (isNaN(max_inactive_seeding_time) || (max_inactive_seeding_time < 0) || (max_inactive_seeding_time > 525600)) {
-                    alert("QBT_TR(Seeding time limit must be between 0 and 525600 minutes.)QBT_TR[CONTEXT=HttpServer]");
+            if (document.getElementById("max_inactive_seeding_time_checkbox").checked) {
+                max_inactive_seeding_time = Number(document.getElementById("max_inactive_seeding_time_value").value);
+                if (Number.isNaN(max_inactive_seeding_time) || (max_inactive_seeding_time < 0)) {
+                    alert("QBT_TR(Seeding time limit must not have a negative value.)QBT_TR[CONTEXT=HttpServer]");
                     return;
                 }
             }

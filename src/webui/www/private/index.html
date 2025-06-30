@@ -26,6 +26,7 @@
     <script defer src="scripts/lib/MooTools-Core-1.6.0-compat-compressed.js"></script>
     <script defer src="scripts/lib/MooTools-More-1.6.0-compat-compressed.js"></script>
     <script defer src="scripts/lib/mocha.min.js"></script>
+    <script defer src="scripts/monkeypatch.js?v=${CACHEID}"></script>
     <script defer src="scripts/cache.js?v=${CACHEID}"></script>
     <script defer src="scripts/localpreferences.js?v=${CACHEID}"></script>
     <script defer src="scripts/color-scheme.js?v=${CACHEID}"></script>
@@ -250,7 +251,7 @@
         <li><a href="#addPeer"><img src="images/peers-add.svg" alt="QBT_TR(Add peers...)QBT_TR[CONTEXT=PeerListWidget]"> QBT_TR(Add peers...)QBT_TR[CONTEXT=PeerListWidget]</a></li>
         <li><a href="#copyPeer" id="CopyPeerInfo"><img src="images/edit-copy.svg" alt="QBT_TR(Copy IP:port)QBT_TR[CONTEXT=PeerListWidget]"> QBT_TR(Copy IP:port)QBT_TR[CONTEXT=PeerListWidget]</a></li>
         <li class="separator"><a href="#banPeer"><img src="images/peers-remove.svg" alt="QBT_TR(Ban peer permanently)QBT_TR[CONTEXT=PeerListWidget]"> QBT_TR(Ban peer permanently)QBT_TR[CONTEXT=PeerListWidget]</a></li>
-        <li><a href="#shadowbanPeer"><img src="images/peers-remove.svg" alt="QBT_TR(Shadowban peer)QBT_TR[CONTEXT=PeerListWidget]" /> QBT_TR(Shadowban peer)QBT_TR[CONTEXT=PeerListWidget]</a></li>
+        <li><a href="#shadowbanPeer"><img src="images/peers-remove.svg" alt="QBT_TR(Shadowban peer)QBT_TR[CONTEXT=PeerListWidget]"> QBT_TR(Shadowban peer)QBT_TR[CONTEXT=PeerListWidget]</a></li>
     </ul>
     <ul id="torrentWebseedsMenu" class="contextMenu">
         <li><a href="#AddWebSeeds"><img src="images/list-add.svg" alt="QBT_TR(Add web seeds...)QBT_TR[CONTEXT=PropertiesWidget]"> QBT_TR(Add web seeds...)QBT_TR[CONTEXT=PropertiesWidget]</a></li>

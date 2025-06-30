@@ -162,21 +162,19 @@ window.qBittorrent.PropPeers ??= (() => {
                     });
                 }
             },
-            shadowbanPeer: function(element, ref) {
+            shadowbanPeer: (element, ref) => {
                 const selectedPeers = torrentPeersTable.selectedRowsIds();
                 if (selectedPeers.length === 0)
                     return;
 
                 if (confirm("QBT_TR(Are you sure you want to shadowban the selected peers?)QBT_TR[CONTEXT=PeerListWidget]")) {
-                    new Request({
-                        url: "api/v2/transfer/shadowbanPeers",
-                        noCache: true,
-                        method: "post",
-                        data: {
+                    fetch("api/v2/transfer/shadowbanPeers", {
+                        method: "POST",
+                        body: new URLSearchParams({
                             hash: torrentsTable.getCurrentTorrentID(),
                             peers: selectedPeers.join("|")
-                        }
-                    }).send();
+                        })
+                    });
                 }
             }
         },
