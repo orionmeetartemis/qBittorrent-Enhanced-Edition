@@ -52,15 +52,16 @@ jobs:
         cross_host:
           # cross toolchain downloads from: https://musl.cc/
           # you need to find the name ${cross_host}-cross.tgz
-          - arm-linux-musleabi
-          - arm-linux-musleabihf
-          - aarch64-linux-musl
-          - mips-linux-musl
-          - mipsel-linux-musl
-          - mips64-linux-musl
-          - mips64el-linux-musl
+#          - arm-linux-musleabi
+#          - arm-linux-musleabihf
+#          - aarch64-linux-musl
+#          - mips-linux-musl
+#          - mipsel-linux-musl
+#          - mips64-linux-musl
+#          - mips64el-linux-musl
           - x86_64-linux-musl
-          - i686-linux-musl
+#          - i686-linux-musl
+        libt_version: ["RC_2_0", "RC_1_2"]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -69,16 +70,17 @@ jobs:
           path: |
             /usr/src/
             /var/cache/apt/
-          key: cross-build-dependencies-cache-${{ matrix.cross_host }}-${{ github.sha }}
+          key: cross-build-dependencies-cache-${{ matrix.cross_host }}-${{ matrix.libt_version }}-${{ github.sha }}
           restore-keys: |
-            cross-build-dependencies-cache-${{ matrix.cross_host }}-
+            cross-build-dependencies-cache-${{ matrix.cross_host }}-${{ matrix.libt_version }}
       - name: cross compile nox-static
         env:
           CROSS_HOST: "${{ matrix.cross_host }}"
+          LIBTORRENT_BRANCH: ${{ matrix.libt_version }}
         run: .github/workflows/cross_build.sh
       - uses: actions/upload-artifact@v4
         with:
-          name: qbittorrent-enhanced-nox_${{ matrix.cross_host }}_static
+          name: qbittorrent-enhanced-nox_${{ matrix.cross_host }}_${{ matrix.libt_version }}_static
           path: |
             /tmp/qbittorrent-nox*
       - name: Upload Github Assets
@@ -86,6 +88,6 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ".github/workflows/qbittorrent-enhanced-nox_${{ matrix.cross_host }}_static.zip"
+          file: ".github/workflows/qbittorrent-enhanced-nox_${{ matrix.cross_host }}_${{ matrix.libt_version }}_static.zip"
           tag: ${{ github.ref }}
           overwrite: true
