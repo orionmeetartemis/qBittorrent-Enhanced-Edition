@@ -72,7 +72,7 @@
     </message>
     <message>
         <source>One link per line (HTTP links, Magnet links and info-hashes are supported)</source>
-        <translation>Jeden odkaz na řádek (jsou podporovány odkazy HTTP, Magnet linky odkazy a info-hashes )</translation>
+        <translation>Jeden odkaz na řádek (jsou podporovány odkazy HTTP, Magnet link odkazy a info-hashe)</translation>
     </message>
     <message>
         <source>Add torrent links</source>
@@ -185,7 +185,7 @@
     </message>
     <message>
         <source>Unable to save program preferences, qBittorrent is probably unreachable.</source>
-        <translation>Nelze uložit nastavení programu, qBittorrent klient je pravděpodobně nedostupný.</translation>
+        <translation>Nelze uložit předvolby programu, qBittorrent klient je pravděpodobně nedosažitelný.</translation>
     </message>
     <message>
         <source>Unknown</source>

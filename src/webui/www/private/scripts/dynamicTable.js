@@ -373,7 +373,7 @@ window.qBittorrent.DynamicTable ??= (() => {
             }
         },
 
-        setupDynamicTableHeaderContextMenuClass: function() {
+        setupDynamicTableHeaderContextMenuClass: () => {
             DynamicTableHeaderContextMenuClass ??= class extends window.qBittorrent.ContextMenu.ContextMenu {
                 updateMenuItems() {
                     for (let i = 0; i < this.dynamicTable.columns.length; ++i) {
@@ -2456,7 +2456,7 @@ window.qBittorrent.DynamicTable ??= (() => {
             this.updateGlobalCheckbox();
         },
 
-        _sortNodesByColumn: function(nodes, column) {
+        _sortNodesByColumn: function(nodes, column) { // eslint-disable-line PreferArrowFunctions/prefer-arrow-functions
             nodes.sort((row1, row2) => {
                 // list folders before files when sorting by name
                 if (column.name === "original") {
@@ -2914,7 +2914,7 @@ window.qBittorrent.DynamicTable ??= (() => {
             this.columns["availability"].updateTd = displayPercentage;
         },
 
-        _sortNodesByColumn: function(nodes, column) {
+        _sortNodesByColumn: function(nodes, column) { // eslint-disable-line PreferArrowFunctions/prefer-arrow-functions
             nodes.sort((row1, row2) => {
                 // list folders before files when sorting by name
                 if (column.name === "name") {
@@ -3285,7 +3285,7 @@ window.qBittorrent.DynamicTable ??= (() => {
             this.newColumn("checked", "", "", 30, true);
             this.newColumn("name", "", "", -1, true);
 
-            this.columns["checked"].updateTd = function(td, row) {
+            this.columns["checked"].updateTd = (td, row) => {
                 if ($(`cbRssDlRule${row.rowId}`) === null) {
                     const checkbox = document.createElement("input");
                     checkbox.type = "checkbox";
@@ -3383,7 +3383,7 @@ window.qBittorrent.DynamicTable ??= (() => {
             this.newColumn("checked", "", "", 30, true);
             this.newColumn("name", "", "", -1, true);
 
-            this.columns["checked"].updateTd = function(td, row) {
+            this.columns["checked"].updateTd = (td, row) => {
                 if ($(`cbRssDlFeed${row.rowId}`) === null) {
                     const checkbox = document.createElement("input");
                     checkbox.type = "checkbox";

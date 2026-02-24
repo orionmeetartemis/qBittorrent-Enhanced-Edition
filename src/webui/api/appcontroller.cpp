@@ -1225,7 +1225,7 @@ void AppController::getDirectoryContentAction()
     QJsonArray ret;
     QDirIterator it {dirPath, (QDir::NoDotAndDotDot | parseDirectoryContentMode(visibility))};
     while (it.hasNext())
-        ret.append(it.next());
+        ret.append(Path(it.next()).toString());
     setResult(ret);
 }
 

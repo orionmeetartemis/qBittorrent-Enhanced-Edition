@@ -373,7 +373,7 @@
     </message>
     <message>
         <source>Could not contact qBittorrent</source>
-        <translation>Kunde inte kontakta qBittorrent</translation>
+        <translation>Det gick inte att kontakta qBittorrent</translation>
     </message>
     <message>
         <source>Remember choice</source>
@@ -1453,7 +1453,7 @@
     </message>
     <message>
         <source>Type of service (ToS) for connections to peers</source>
-        <translation>Typ av tjänst (TOS) för anslutningar till jämlikar</translation>
+        <translation>Typ av tjänst (ToS) för anslutningar till jämlikar</translation>
     </message>
     <message>
         <source>Outgoing connections per second:</source>
@@ -1737,7 +1737,7 @@ Använd ";" för att dela upp i flera poster. Du kan använda jokertecknet "*".<
     </message>
     <message>
         <source>Python executable path (may require restart):</source>
-        <translation>Python körbar sökväg (kan kräva omstart):</translation>
+        <translation>Sökväg till körbar Python-fil (kan kräva omstart):</translation>
     </message>
     <message>
         <source>Resets to default if empty</source>
@@ -1765,7 +1765,7 @@ Använd ";" för att dela upp i flera poster. Du kan använda jokertecknet "*".<
     </message>
     <message>
         <source>.torrent file size limit:</source>
-        <translation>.torrent-filstorleksgräns:</translation>
+        <translation>Storleksgräns för .torrent-filer:</translation>
     </message>
     <message>
         <source>(Auto detect if empty)</source>
@@ -1973,7 +1973,7 @@ Använd ";" för att dela upp i flera poster. Du kan använda jokertecknet "*".<
     </message>
     <message>
         <source>Torrent content removing mode:</source>
-        <translation>Torrent-innehåll borttagningsläge:</translation>
+        <translation>Läge för borttagning av torrentinnehåll:</translation>
     </message>
     <message>
         <source>Move files to trash (if possible)</source>
