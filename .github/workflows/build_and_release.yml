@@ -28,7 +28,7 @@ jobs:
             appimage-build-dependencies-cache-
       - name: Build AppImage
         run: .github/workflows/build_appimage.sh
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: qBittorrent-Enhanced-Edition-x86_64.AppImage
           path: ".github/workflows/qBittorrent-Enhanced-Edition*.AppImage*"
@@ -78,7 +78,7 @@ jobs:
           CROSS_HOST: "${{ matrix.cross_host }}"
           LIBTORRENT_BRANCH: ${{ matrix.libt_version }}
         run: .github/workflows/cross_build.sh
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: qbittorrent-enhanced-nox_${{ matrix.cross_host }}_${{ matrix.libt_version }}_static
           path: |
