@@ -2141,83 +2141,87 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
 <context>
     <name>BitTorrent::DBResumeDataStorage</name>
     <message>
-        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="320"/>
+        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="321"/>
         <source>Not found.</source>
         <translation>未找到。</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="324"/>
+        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="325"/>
         <source>Couldn&apos;t load resume data of torrent &apos;%1&apos;. Error: %2</source>
         <translation>无法加载 Torrent “%1”的恢复数据。错误：%2</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="408"/>
-        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="413"/>
+        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="409"/>
+        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="414"/>
         <source>Database is corrupted.</source>
         <translation>数据库损坏。</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="426"/>
+        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="427"/>
         <source>Couldn&apos;t enable Write-Ahead Logging (WAL) journaling mode. Error: %1.</source>
         <translation>无法启用预写式日志（WAL）记录模式。错误：%1。</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="615"/>
+        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="616"/>
         <source>Couldn&apos;t obtain query result.</source>
         <translation>无法获取查询结果。</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="619"/>
+        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="620"/>
         <source>WAL mode is probably unsupported due to filesystem limitations.</source>
         <translation>由于文件系统限制，WAL 模式可能不受支持。</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="672"/>
-        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="678"/>
+        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="673"/>
+        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="679"/>
         <source>Cannot parse resume data: %1</source>
         <translation>无法解析恢复数据：%1</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="686"/>
-        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="690"/>
+        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="687"/>
+        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="691"/>
         <source>Cannot parse torrent info: %1</source>
         <translation>无法解析 Torrent 信息：%1</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="696"/>
+        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="697"/>
         <source>Corrupted resume data: %1</source>
         <translation>恢复数据受损：%1</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="696"/>
+        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="697"/>
         <source>save_path is invalid</source>
         <translation>保存路径无效</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="753"/>
+        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="749"/>
+        <source>Save resume data transaction failed. Error: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Couldn&apos;t begin transaction. Error: %1</source>
-        <translation>无法开始处理。错误：%1</translation>
+        <translation type="vanished">无法开始处理。错误：%1</translation>
     </message>
 </context>
 <context>
     <name>BitTorrent::ResumeDataStorage</name>
     <message>
-        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="883"/>
+        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="880"/>
         <source>Couldn&apos;t save torrent metadata. Error: %1.</source>
         <translation>无法保存 Torrent 元数据。 错误：%1。</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="939"/>
+        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="936"/>
         <source>Couldn&apos;t store resume data for torrent &apos;%1&apos;. Error: %2</source>
         <translation>无法存储 Torrent “%1” 的恢复数据。错误：%2</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="967"/>
+        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="964"/>
         <source>Couldn&apos;t delete resume data of torrent &apos;%1&apos;. Error: %2</source>
         <translation>无法删除 Torrent “%1” 的恢复数据。错误：%2</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="1001"/>
+        <location filename="../base/bittorrent/dbresumedatastorage.cpp" line="998"/>
         <source>Couldn&apos;t store torrents queue positions. Error: %1</source>
         <translation>无法存储 Torrent 的队列位置。错误：%1</translation>
     </message>
@@ -2226,39 +2230,39 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     <name>BitTorrent::SessionImpl</name>
     <message>
         <location filename="../base/bittorrent/sessionimpl.cpp" line="775"/>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1773"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1778"/>
         <source>Distributed Hash Table (DHT) support: %1</source>
         <translation>分布式哈希表（DHT）支持：%1</translation>
     </message>
     <message>
         <location filename="../base/bittorrent/sessionimpl.cpp" line="775"/>
         <location filename="../base/bittorrent/sessionimpl.cpp" line="790"/>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1773"/>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1774"/>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1775"/>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1776"/>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1777"/>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="3790"/>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="4728"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1778"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1779"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1780"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1781"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1782"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="3785"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="4723"/>
         <source>ON</source>
         <translation>开</translation>
     </message>
     <message>
         <location filename="../base/bittorrent/sessionimpl.cpp" line="775"/>
         <location filename="../base/bittorrent/sessionimpl.cpp" line="790"/>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1773"/>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1774"/>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1775"/>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1776"/>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1777"/>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="3790"/>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="4728"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1778"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1779"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1780"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1781"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1782"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="3785"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="4723"/>
         <source>OFF</source>
         <translation>关</translation>
     </message>
     <message>
         <location filename="../base/bittorrent/sessionimpl.cpp" line="790"/>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1774"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1779"/>
         <source>Local Peer Discovery support: %1</source>
         <translation>本地 Peer 发现支持：%1</translation>
     </message>
@@ -2268,126 +2272,126 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
         <translation>开/关 Peer 交换（PeX）功能必须重新启动程序</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1490"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1495"/>
         <source>Failed to resume torrent. Torrent: &quot;%1&quot;. Reason: &quot;%2&quot;</source>
         <translation>未能继续下载 Torrent。Torrent：“%1”。原因：“%2”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1541"/>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1548"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1546"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1553"/>
         <source>Failed to resume torrent: inconsistent torrent ID is detected. Torrent: &quot;%1&quot;</source>
         <translation>未能继续下载 Torrent：检测到不一致的 Torrent ID。Torrent：“%1”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1582"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1587"/>
         <source>Detected inconsistent data: category is missing from the configuration file. Category will be recovered but its settings will be reset to default. Torrent: &quot;%1&quot;. Category: &quot;%2&quot;</source>
         <translation>检测到不一致的数据：配置文件缺少分类。分类将被恢复但其设置将被重置到默认值。Torrent：“%1”。分类：“%2”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1589"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1594"/>
         <source>Detected inconsistent data: invalid category. Torrent: &quot;%1&quot;. Category: &quot;%2&quot;</source>
         <translation>检测到不一致的数据：无效分类。Torrent：“%1”。分类：“%2”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1604"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1609"/>
         <source>Detected mismatch between the save paths of the recovered category and the current save path of the torrent. Torrent is now switched to Manual mode. Torrent: &quot;%1&quot;. Category: &quot;%2&quot;</source>
         <translation>检测到已恢复分类的路径和 Torrent 当前保存路径不一致。Torrent 现在切换到手动模式。Torrent：“%1”。分类：“%2”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1618"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1623"/>
         <source>Detected inconsistent data: tag is missing from the configuration file. Tag will be recovered. Torrent: &quot;%1&quot;. Tag: &quot;%2&quot;</source>
         <translation>检测到不一致的数据：配置文件缺少标签。标签将被恢复。Torrent：“%1”。标签：“%2”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1624"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1629"/>
         <source>Detected inconsistent data: invalid tag. Torrent: &quot;%1&quot;. Tag: &quot;%2&quot;</source>
         <translation>检测到不一致的数据：无效标签。Torrent：“%1”。标签：“%2”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1702"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1707"/>
         <source>System wake-up event detected. Re-announcing to all the trackers...</source>
         <translation>检测到系统唤醒事件。正重新向所有 Tracker 广播...</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1771"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1776"/>
         <source>Peer ID: &quot;%1&quot;</source>
         <translation>Peer ID：“%1”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1772"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1777"/>
         <source>HTTP User-Agent: &quot;%1&quot;</source>
         <translation>HTTP User-Agent：“%1”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1775"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1780"/>
         <source>Peer Exchange (PeX) support: %1</source>
         <translation>Peer 交换（PeX）支持：%1</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1776"/>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="4728"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1781"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="4723"/>
         <source>Anonymous mode: %1</source>
         <translation>匿名模式：%1</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1777"/>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="3789"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1782"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="3784"/>
         <source>Encryption support: %1</source>
         <translation>加密支持：%1</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1777"/>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="3790"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1782"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="3785"/>
         <source>FORCED</source>
         <translation>强制</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="2221"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="2226"/>
         <source>Could not find GUID of network interface. Interface: &quot;%1&quot;</source>
         <translation>找不到网络接口的 GUID。接口：“%1”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="2238"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="2243"/>
         <source>Trying to listen on the following list of IP addresses: &quot;%1&quot;</source>
         <translation>尝试侦听下列 IP 地址列表：“%1”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="2385"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="2390"/>
         <source>Torrent reached the share ratio limit.</source>
         <translation>Torrent 到达了分享率上限。</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="2402"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="2407"/>
         <source>Torrent: &quot;%1&quot;.</source>
         <translation>Torrent：“%1”。</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="2423"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="2428"/>
         <source>Super seeding enabled.</source>
         <translation>已开启超级做种。</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="2391"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="2396"/>
         <source>Torrent reached the seeding time limit.</source>
         <translation>Torrent 到达做种时间上限。</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="2397"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="2402"/>
         <source>Torrent reached the inactive seeding time limit.</source>
         <translation>Torrent 到达了不活跃做种时间上限。</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1641"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1646"/>
         <source>Failed to load torrent. Reason: &quot;%1&quot;</source>
         <translation>加载 Torrent 失败，原因：“%1”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="6364"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="6359"/>
         <source>I2P error. Message: &quot;%1&quot;.</source>
         <translation>I2P 错误。消息：“%1”。</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="3028"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="3032"/>
         <source>UPnP/NAT-PMP support: ON</source>
         <translation>UPnP/NAT-PMP 支持：开</translation>
     </message>
@@ -2407,351 +2411,351 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
         <translation>会话关闭超时。</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="2407"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="2412"/>
         <source>Removing torrent.</source>
         <translation>删除 torrent。</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="2412"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="2417"/>
         <source>Removing torrent and deleting its content.</source>
         <translation>删除 torrent 及其内容。</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="2418"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="2423"/>
         <source>Torrent stopped.</source>
         <translation>Torrent 已停止。</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="2432"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="2437"/>
         <source>Torrent content removed. Torrent: &quot;%1&quot;</source>
         <translation>已删除 Torrent 内容。Torrent：&quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="2436"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="2441"/>
         <source>Failed to remove torrent content. Torrent: &quot;%1&quot;. Error: &quot;%2&quot;</source>
         <translation>删除 torrent 内容失败。Torrent：&quot;%1&quot;。 错误：&quot;%2&quot;</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="2548"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="2553"/>
         <source>Torrent removed. Torrent: &quot;%1&quot;</source>
         <translation>已删除 Torrent。Torrent：&quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="2743"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="2748"/>
         <source>Merging of trackers is disabled</source>
         <translation>合并 Tracker 已禁用</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="2753"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="2758"/>
         <source>Trackers cannot be merged because it is a private torrent</source>
         <translation>无法合并 Tracker，因为这是一个私有 Torrent</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="2764"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="2769"/>
         <source>Trackers are merged from new source</source>
         <translation>来自新来源的 Tracker 已经合并</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="2967"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="2971"/>
         <source>Failed to add torrent. Reason: &quot;%1&quot;</source>
         <translation>无法添加 Torrent。原因：“%1”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="3047"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="3051"/>
         <source>UPnP/NAT-PMP support: OFF</source>
         <translation>UPnP/NAT-PMP 支持：关</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="3154"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="3158"/>
         <source>Failed to download torrent metadata. Reason: &quot;%1&quot;</source>
         <translation>无法下载 Torrent 元数据。原因：“%1”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="3199"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="3203"/>
         <source>Failed to export torrent. Torrent: &quot;%1&quot;. Destination: &quot;%2&quot;. Reason: &quot;%3&quot;</source>
         <translation>导出 Torrent 失败。Torrent：“%1”。保存位置：“%2”。原因：“%3”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="3242"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="3246"/>
         <source>Aborted saving resume data. Number of outstanding torrents: %1</source>
         <translation>终止了保存恢复数据。未完成 Torrent 数目：%1</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="3378"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="3382"/>
         <source>The configured network address is invalid. Address: &quot;%1&quot;</source>
         <translation>配置的网络地址无效。地址：“%1”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="3419"/>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="3453"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="3423"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="3457"/>
         <source>Failed to find the configured network address to listen on. Address: &quot;%1&quot;</source>
         <translation>未能找到配置的要侦听的网络地址。地址：“%1”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="3432"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="3436"/>
         <source>The configured network interface is invalid. Interface: &quot;%1&quot;</source>
         <translation>配置的网络接口无效。接口：“%1”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="4055"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="4050"/>
         <source>Tracker list updated</source>
         <translation>Tracker 列表已更新</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="4059"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="4054"/>
         <source>Failed to update tracker list. Reason: &quot;%1&quot;</source>
         <translation>更新Tracker列表失败。原因：“%1”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="4189"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="4184"/>
         <source>Rejected invalid IP address while applying the list of banned IP addresses. IP: &quot;%1&quot;</source>
         <translation>应用被禁止的 IP 地址列表时拒绝了无效的 IP 地址。IP：“%1”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="5284"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="5279"/>
         <source>Added tracker to torrent. Torrent: &quot;%1&quot;. Tracker: &quot;%2&quot;</source>
         <translation>已添加 Tracker 到 Torrent。Torrent：“%1”。Tracker：“%2”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="5291"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="5286"/>
         <source>Removed tracker from torrent. Torrent: &quot;%1&quot;. Tracker: &quot;%2&quot;</source>
         <translation>从 Torrent 删除了 Tracker。Torrent：“%1”。Tracker：“%2”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="5303"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="5298"/>
         <source>Added URL seed to torrent. Torrent: &quot;%1&quot;. URL: &quot;%2&quot;</source>
         <translation>已添加 URL 种子到 Torrent。Torrent：“%1”。URL：“%2”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="5309"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="5304"/>
         <source>Removed URL seed from torrent. Torrent: &quot;%1&quot;. URL: &quot;%2&quot;</source>
         <translation>从 Torrent 中删除了 URL 种子。Torrent：“%1”。URL：“%2”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="6485"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="6480"/>
         <source>Generate resume data failed. Torrent: &quot;%1&quot;. Reason: &quot;%2&quot;</source>
         <translation>生成恢复数据失败。Torrent：“%1”。原因：“%2”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="6497"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="6492"/>
         <source>Failed to restore torrent. Files were probably moved or storage isn&apos;t accessible. Torrent: &quot;%1&quot;. Reason: &quot;%2&quot;</source>
         <translation>恢复 Torrent 失败。文件可能被移动或存储不可访问。Torrent：“%1”。原因：“%2”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="6524"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="6519"/>
         <source>File rename failed. Torrent: &quot;%1&quot;, file: &quot;%2&quot;, reason: &quot;%3&quot;</source>
         <translation>文件重命名错误。Torrent：“%1”，文件：“%2”，错误：“%3”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="6537"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="6532"/>
         <source>Performance alert: %1. More info: %2</source>
         <translation>性能警报：%1。更多信息：%2</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="6614"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="6609"/>
         <source>Failed to remove partfile. Torrent: &quot;%1&quot;. Reason: &quot;%2&quot;.</source>
         <translation>删除 partfile 失败。Torrent：&quot;%1&quot;。理由：&quot;%2&quot;.</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="6645"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="6640"/>
         <source>Failed to load additional trackers from file. Reason: %1</source>
         <translation>从文件更新额外的 Tracker 列表失败。原因：%1</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="5338"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="5333"/>
         <source>Torrent resumed. Torrent: &quot;%1&quot;</source>
         <translation>Torrent 已恢复。Torrent：“%1”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="5500"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="5495"/>
         <source>Torrent download finished. Torrent: &quot;%1&quot;</source>
         <translation>Torrent 下载完成。Torrent：“%1”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="5403"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="5398"/>
         <source>Torrent move canceled. Torrent: &quot;%1&quot;. Source: &quot;%2&quot;. Destination: &quot;%3&quot;</source>
         <translation>取消了 Torrent 移动。Torrent：“%1”。 源位置：“%2”。目标位置：“%3”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="2744"/>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="2754"/>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="2765"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="2749"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="2759"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="2770"/>
         <source>Detected an attempt to add a duplicate torrent. Existing torrent: &quot;%1&quot;. Torrent infohash: %2. Result: %3</source>
         <translation>检测到尝试添加重复的种子。现有种子：&quot;%1&quot;。种子 infohash 值：%2。结果：%3</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="5332"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="5327"/>
         <source>Torrent stopped. Torrent: &quot;%1&quot;</source>
         <translation>Torrent 已停止。Torrent：&quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="5414"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="5409"/>
         <source>Failed to enqueue torrent move. Torrent: &quot;%1&quot;. Source: &quot;%2&quot;. Destination: &quot;%3&quot;. Reason: torrent is currently moving to the destination</source>
         <translation>未能将 Torrent 移动加入队列。Torrent：“%1”。源位置：“%2”。目标位置：“%3”。原因：正在将 Torrent 移动到目标位置</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="5423"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="5418"/>
         <source>Failed to enqueue torrent move. Torrent: &quot;%1&quot;. Source: &quot;%2&quot; Destination: &quot;%3&quot;. Reason: both paths point to the same location</source>
         <translation>未能将 Torrent 移动加入队列。Torrent：“%1”。源位置：“%2”。目标位置：“%3”。原因：两个路径指向同一个位置</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="5431"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="5426"/>
         <source>Enqueued torrent move. Torrent: &quot;%1&quot;. Source: &quot;%2&quot;. Destination: &quot;%3&quot;</source>
         <translation>已将 Torrent 移动加入队列。Torrent：“%1”。源位置：“%2”。目标位置：“%3”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="5458"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="5453"/>
         <source>Start moving torrent. Torrent: &quot;%1&quot;. Destination: &quot;%2&quot;</source>
         <translation>开始移动 Torrent。Torrent：“%1”。目标位置：“%2”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="5534"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="5529"/>
         <source>Failed to save Categories configuration. File: &quot;%1&quot;. Error: &quot;%2&quot;</source>
         <translation>保存分类配置失败。文件：“%1”。错误：“%2”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="5581"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="5576"/>
         <source>Failed to parse Categories configuration. File: &quot;%1&quot;. Error: &quot;%2&quot;</source>
         <translation>解析分类配置失败。文件：“%1”。错误：“%2”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="5710"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="5705"/>
         <source>Successfully parsed the IP filter file. Number of rules applied: %1</source>
         <translation>成功解析了 IP 筛选规则文件。已应用规则数量：%1</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="5720"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="5715"/>
         <source>Failed to parse the IP filter file</source>
         <translation>解析 IP 筛选规则文件失败</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="1648"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="1653"/>
         <source>Restored torrent. Torrent: &quot;%1&quot;</source>
         <translation>已还原 Torrent。Torrent：“%1”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="2984"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="2988"/>
         <source>Added new torrent. Torrent: &quot;%1&quot;</source>
         <translation>添加了新 Torrent。Torrent：“%1”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="5942"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="5937"/>
         <source>Torrent errored. Torrent: &quot;%1&quot;. Error: &quot;%2&quot;</source>
         <translation>Torrent 出错了。Torrent：“%1”。错误：“%2”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="5994"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="5989"/>
         <source>Torrent is missing SSL parameters. Torrent: &quot;%1&quot;. Message: &quot;%2&quot;</source>
         <translation>Torrent 缺少 SSL 参数。Torrent：&quot;%1&quot;。消息： &quot;%2&quot;</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="6057"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="6052"/>
         <source>File error alert. Torrent: &quot;%1&quot;. File: &quot;%2&quot;. Reason: &quot;%3&quot;</source>
         <translation>文件错误警报。Torrent：“%1”。文件：“%2”。原因：“%3”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="6068"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="6063"/>
         <source>UPnP/NAT-PMP port mapping failed. Message: &quot;%1&quot;</source>
         <translation>UPnP/NAT-PMP 端口映射失败。消息：“%1”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="6074"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="6069"/>
         <source>UPnP/NAT-PMP port mapping succeeded. Message: &quot;%1&quot;</source>
         <translation>UPnP/NAT-PMP 端口映射成功。消息：“%1”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="6083"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="6078"/>
         <source>IP filter</source>
         <comment>this peer was blocked. Reason: IP filter.</comment>
         <translation>IP 筛选规则</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="6086"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="6081"/>
         <source>filtered port (%1)</source>
         <comment>this peer was blocked. Reason: filtered port (8899).</comment>
         <translation>已筛选端口 (%1)</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="6092"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="6087"/>
         <source>privileged port (%1)</source>
         <comment>this peer was blocked. Reason: privileged port (80).</comment>
         <translation>特权端口（%1）</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="6122"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="6117"/>
         <source>URL seed connection failed. Torrent: &quot;%1&quot;. URL: &quot;%2&quot;. Error: &quot;%3&quot;</source>
         <translation>URL 种子连接失败。Torrent：&quot;%1&quot;。URL：&quot;%2&quot;。错误：&quot;%3&quot;</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="6173"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="6168"/>
         <source>BitTorrent session encountered a serious error. Reason: &quot;%1&quot;</source>
         <translation>BitTorrent 会话遇到严重错误。原因：“%1”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="6354"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="6349"/>
         <source>SOCKS5 proxy error. Address: %1. Message: &quot;%2&quot;.</source>
         <translation>SOCKS5 代理错误。地址：%1。消息：“%2”。</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="6089"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="6084"/>
         <source>%1 mixed mode restrictions</source>
         <comment>this peer was blocked. Reason: I2P mixed mode restrictions.</comment>
         <translation>%1 混合模式限制</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="5573"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="5568"/>
         <source>Failed to load Categories. %1</source>
         <translation>未能加载类别：%1</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="5588"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="5583"/>
         <source>Failed to load Categories configuration. File: &quot;%1&quot;. Error: &quot;Invalid data format&quot;</source>
         <translation>未能加载分类配置。文件：“%1”。错误：“无效数据格式”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="6095"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="6090"/>
         <source>%1 is disabled</source>
         <comment>this peer was blocked. Reason: uTP is disabled.</comment>
         <translation>%1 已停用</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="6098"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="6093"/>
         <source>%1 is disabled</source>
         <comment>this peer was blocked. Reason: TCP is disabled.</comment>
         <translation>%1 已停用</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="6128"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="6123"/>
         <source>Received error message from URL seed. Torrent: &quot;%1&quot;. URL: &quot;%2&quot;. Message: &quot;%3&quot;</source>
         <translation>收到了来自 URL 种子的错误信息。Torrent：“%1”。URL：“%2”。消息：“%3”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="6137"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="6132"/>
         <source>Successfully listening on IP. IP: &quot;%1&quot;. Port: &quot;%2/%3&quot;</source>
         <translation>成功监听 IP。IP：“%1”。端口：“%2/%3”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="6144"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="6139"/>
         <source>Failed to listen on IP. IP: &quot;%1&quot;. Port: &quot;%2/%3&quot;. Reason: &quot;%4&quot;</source>
         <translation>监听 IP 失败。IP：“%1”。端口：“%2/%3”。原因：“%4”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="6152"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="6147"/>
         <source>Detected external IP. IP: &quot;%1&quot;</source>
         <translation>检测到外部 IP。IP：“%1”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="6281"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="6276"/>
         <source>Error: Internal alert queue is full and alerts are dropped, you might see degraded performance. Dropped alert type: &quot;%1&quot;. Message: &quot;%2&quot;</source>
         <translation>错误：内部警报队列已满，警报被丢弃。您可能注意到性能下降。被丢弃的警报类型：“%1”。消息：“%2”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="6297"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="6292"/>
         <source>Moved torrent successfully. Torrent: &quot;%1&quot;. Destination: &quot;%2&quot;</source>
         <translation>成功移动了 Torrent。Torrent：“%1”。目标位置：“%2”</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/sessionimpl.cpp" line="6314"/>
+        <location filename="../base/bittorrent/sessionimpl.cpp" line="6309"/>
         <source>Failed to move torrent. Torrent: &quot;%1&quot;. Source: &quot;%2&quot;. Destination: &quot;%3&quot;. Reason: &quot;%4&quot;</source>
         <translation>移动 Torrent 失败。Torrent：“%1”。源位置：“%2”。目标位置：“%3”。原因：“%4”</translation>
     </message>
@@ -2767,13 +2771,13 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
 <context>
     <name>BitTorrent::TorrentCreator</name>
     <message>
-        <location filename="../base/bittorrent/torrentcreator.cpp" line="93"/>
+        <location filename="../base/bittorrent/torrentcreator.cpp" line="95"/>
         <source>Operation aborted</source>
         <translation>操作中止</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/torrentcreator.cpp" line="261"/>
-        <location filename="../base/bittorrent/torrentcreator.cpp" line="265"/>
+        <location filename="../base/bittorrent/torrentcreator.cpp" line="263"/>
+        <location filename="../base/bittorrent/torrentcreator.cpp" line="267"/>
         <source>Create new torrent file failed. Reason: %1.</source>
         <translation>创建新的 Torrent 文件失败。原因：%1。</translation>
     </message>
@@ -2821,7 +2825,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
         <translation>重加载 torrent 文件失败。Torrent：%1. 原因：%2</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/torrentimpl.cpp" line="2800"/>
+        <location filename="../base/bittorrent/torrentimpl.cpp" line="2801"/>
         <source>Missing metadata</source>
         <translation>缺少元数据</translation>
     </message>
@@ -2829,12 +2833,12 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
 <context>
     <name>BitTorrent::Tracker</name>
     <message>
-        <location filename="../base/bittorrent/tracker.cpp" line="217"/>
+        <location filename="../base/bittorrent/tracker.cpp" line="228"/>
         <source>Embedded Tracker: Now listening on IP: %1, port: %2</source>
         <translation>内置 tracker：正在监听 IP：%1，端口：%2</translation>
     </message>
     <message>
-        <location filename="../base/bittorrent/tracker.cpp" line="222"/>
+        <location filename="../base/bittorrent/tracker.cpp" line="233"/>
         <source>Embedded Tracker: Unable to bind to IP: %1, port: %2. Reason: %3</source>
         <translation>内置 tracker：无法绑定至 IP：%1，端口：%2。原因：%3</translation>
     </message>
@@ -3662,13 +3666,13 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
 <context>
     <name>LogPeerModel</name>
     <message>
-        <location filename="../gui/log/logmodel.cpp" line="198"/>
+        <location filename="../gui/log/logmodel.cpp" line="199"/>
         <source>%1 was blocked. Reason: %2.</source>
         <comment>0.0.0.0 was blocked. Reason: reason for blocking.</comment>
         <translation>%1 被阻止，原因：%2。</translation>
     </message>
     <message>
-        <location filename="../gui/log/logmodel.cpp" line="199"/>
+        <location filename="../gui/log/logmodel.cpp" line="200"/>
         <source>%1 was banned</source>
         <comment>0.0.0.0 was banned</comment>
         <translation>%1 被禁止</translation>
@@ -4505,7 +4509,7 @@ Minimum requirement: %2.</source>
     <message>
         <location filename="../base/net/downloadhandlerimpl.cpp" line="236"/>
         <source>Redirect to unsupported or dangerous protocol: &apos;%1&apos;.</source>
-        <translation type="unfinished"></translation>
+        <translation>重定向至不支持或危险的协议：“%1”。</translation>
     </message>
     <message>
         <location filename="../base/net/downloadhandlerimpl.cpp" line="269"/>
@@ -9744,17 +9748,17 @@ Those plugins were disabled.</source>
         <translation>获取搜索引擎能力时出错。错误： &quot;%1&quot;。</translation>
     </message>
     <message>
-        <location filename="../base/search/searchpluginmanager.cpp" line="651"/>
+        <location filename="../base/search/searchpluginmanager.cpp" line="663"/>
         <source>Plugin &quot;%1&quot; is outdated, updating to version %2</source>
         <translation>插件 &quot;%1&quot; 已过时，正在更新至 %2 版本</translation>
     </message>
     <message>
-        <location filename="../base/search/searchpluginmanager.cpp" line="658"/>
+        <location filename="../base/search/searchpluginmanager.cpp" line="670"/>
         <source>Incorrect update info received for %1 out of %2 plugins.</source>
         <translation>在 %2 插件中收到 %1 不正确的更新信息。</translation>
     </message>
     <message>
-        <location filename="../base/search/searchpluginmanager.cpp" line="700"/>
+        <location filename="../base/search/searchpluginmanager.cpp" line="712"/>
         <source>Search plugin &apos;%1&apos; contains invalid version string (&apos;%2&apos;)</source>
         <translation>搜索插件 &apos;%1&apos; 包含无效的版本字符串 (&apos;%2&apos;)</translation>
     </message>
@@ -11791,57 +11795,57 @@ Please choose a different name and try again.</source>
         <translation>无效状态！</translation>
     </message>
     <message>
-        <location filename="../gui/trackerlist/trackerlistmodel.cpp" line="502"/>
+        <location filename="../gui/trackerlist/trackerlistmodel.cpp" line="503"/>
         <source>URL/Announce Endpoint</source>
         <translation>URL/Announce 端点</translation>
     </message>
     <message>
-        <location filename="../gui/trackerlist/trackerlistmodel.cpp" line="506"/>
+        <location filename="../gui/trackerlist/trackerlistmodel.cpp" line="507"/>
         <source>BT Protocol</source>
         <translation>BT 协议</translation>
     </message>
     <message>
-        <location filename="../gui/trackerlist/trackerlistmodel.cpp" line="520"/>
+        <location filename="../gui/trackerlist/trackerlistmodel.cpp" line="521"/>
         <source>Next Announce</source>
         <translation>下一个 Announce</translation>
     </message>
     <message>
-        <location filename="../gui/trackerlist/trackerlistmodel.cpp" line="522"/>
+        <location filename="../gui/trackerlist/trackerlistmodel.cpp" line="523"/>
         <source>Min Announce</source>
         <translation>最小 Announce</translation>
     </message>
     <message>
-        <location filename="../gui/trackerlist/trackerlistmodel.cpp" line="504"/>
+        <location filename="../gui/trackerlist/trackerlistmodel.cpp" line="505"/>
         <source>Tier</source>
         <translation>层级</translation>
     </message>
     <message>
-        <location filename="../gui/trackerlist/trackerlistmodel.cpp" line="508"/>
+        <location filename="../gui/trackerlist/trackerlistmodel.cpp" line="509"/>
         <source>Status</source>
         <translation>状态</translation>
     </message>
     <message>
-        <location filename="../gui/trackerlist/trackerlistmodel.cpp" line="510"/>
+        <location filename="../gui/trackerlist/trackerlistmodel.cpp" line="511"/>
         <source>Peers</source>
         <translation>用户</translation>
     </message>
     <message>
-        <location filename="../gui/trackerlist/trackerlistmodel.cpp" line="512"/>
+        <location filename="../gui/trackerlist/trackerlistmodel.cpp" line="513"/>
         <source>Seeds</source>
         <translation>种子</translation>
     </message>
     <message>
-        <location filename="../gui/trackerlist/trackerlistmodel.cpp" line="514"/>
+        <location filename="../gui/trackerlist/trackerlistmodel.cpp" line="515"/>
         <source>Leeches</source>
         <translation>下载</translation>
     </message>
     <message>
-        <location filename="../gui/trackerlist/trackerlistmodel.cpp" line="516"/>
+        <location filename="../gui/trackerlist/trackerlistmodel.cpp" line="517"/>
         <source>Times Downloaded</source>
         <translation>下载次数</translation>
     </message>
     <message>
-        <location filename="../gui/trackerlist/trackerlistmodel.cpp" line="518"/>
+        <location filename="../gui/trackerlist/trackerlistmodel.cpp" line="519"/>
         <source>Message</source>
         <translation>消息</translation>
     </message>
@@ -12087,27 +12091,27 @@ Please choose a different name and try again.</source>
 <context>
     <name>TransferListFiltersWidget</name>
     <message>
-        <location filename="../gui/transferlistfilterswidget.cpp" line="68"/>
+        <location filename="../gui/transferlistfilterswidget.cpp" line="69"/>
         <source>Status</source>
         <translation>状态</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistfilterswidget.cpp" line="85"/>
+        <location filename="../gui/transferlistfilterswidget.cpp" line="88"/>
         <source>Categories</source>
         <translation>分类</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistfilterswidget.cpp" line="106"/>
+        <location filename="../gui/transferlistfilterswidget.cpp" line="109"/>
         <source>Tags</source>
         <translation>标签</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistfilterswidget.cpp" line="121"/>
+        <location filename="../gui/transferlistfilterswidget.cpp" line="124"/>
         <source>Trackers</source>
         <translation>Tracker</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistfilterswidget.cpp" line="139"/>
+        <location filename="../gui/transferlistfilterswidget.cpp" line="145"/>
         <source>Tracker status</source>
         <translation>追踪器状态</translation>
     </message>
@@ -12199,19 +12203,19 @@ Please choose a different name and try again.</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="161"/>
+        <location filename="../gui/transferlistmodel.cpp" line="162"/>
         <source>Name</source>
         <comment>i.e: torrent name</comment>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="162"/>
+        <location filename="../gui/transferlistmodel.cpp" line="163"/>
         <source>Size</source>
         <comment>i.e: torrent size</comment>
         <translation>选定大小</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="163"/>
+        <location filename="../gui/transferlistmodel.cpp" line="164"/>
         <source>Progress</source>
         <comment>% Done</comment>
         <translation>进度</translation>
@@ -12222,235 +12226,235 @@ Please choose a different name and try again.</source>
         <translation>已停止</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="164"/>
+        <location filename="../gui/transferlistmodel.cpp" line="165"/>
         <source>Status</source>
         <comment>Torrent status (e.g. downloading, seeding, stopped)</comment>
         <translation>状态</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="165"/>
+        <location filename="../gui/transferlistmodel.cpp" line="166"/>
         <source>Seeds</source>
         <comment>i.e. full sources (often untranslated)</comment>
         <translation>做种数</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="166"/>
+        <location filename="../gui/transferlistmodel.cpp" line="167"/>
         <source>Peers</source>
         <comment>i.e. partial sources (often untranslated)</comment>
         <translation>用户</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="167"/>
+        <location filename="../gui/transferlistmodel.cpp" line="168"/>
         <source>Down Speed</source>
         <comment>i.e: Download speed</comment>
         <translation>下载速度</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="168"/>
+        <location filename="../gui/transferlistmodel.cpp" line="169"/>
         <source>Up Speed</source>
         <comment>i.e: Upload speed</comment>
         <translation>上传速度</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="169"/>
+        <location filename="../gui/transferlistmodel.cpp" line="170"/>
         <source>Ratio</source>
         <comment>Share ratio</comment>
         <translation>比率</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="170"/>
+        <location filename="../gui/transferlistmodel.cpp" line="171"/>
         <source>Popularity</source>
         <translation>流行度</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="171"/>
+        <location filename="../gui/transferlistmodel.cpp" line="172"/>
         <source>ETA</source>
         <comment>i.e: Estimated Time of Arrival / Time left</comment>
         <translation>剩余时间</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="172"/>
+        <location filename="../gui/transferlistmodel.cpp" line="173"/>
         <source>Category</source>
         <translation>分类</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="173"/>
+        <location filename="../gui/transferlistmodel.cpp" line="174"/>
         <source>Tags</source>
         <translation>标签</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="174"/>
+        <location filename="../gui/transferlistmodel.cpp" line="175"/>
         <source>Created On</source>
         <comment>Torrent was initially created on 01/01/2010 08:00</comment>
         <translation>Created On</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="175"/>
+        <location filename="../gui/transferlistmodel.cpp" line="176"/>
         <source>Added On</source>
         <comment>Torrent was added to transfer list on 01/01/2010 08:00</comment>
         <translation>添加于</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="176"/>
+        <location filename="../gui/transferlistmodel.cpp" line="177"/>
         <source>Completed On</source>
         <comment>Torrent was completed on 01/01/2010 08:00</comment>
         <translation>完成于</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="177"/>
+        <location filename="../gui/transferlistmodel.cpp" line="178"/>
         <source>Tracker</source>
         <translation>Tracker</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="178"/>
+        <location filename="../gui/transferlistmodel.cpp" line="179"/>
         <source>Down Limit</source>
         <comment>i.e: Download limit</comment>
         <translation>下载限制</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="179"/>
+        <location filename="../gui/transferlistmodel.cpp" line="180"/>
         <source>Up Limit</source>
         <comment>i.e: Upload limit</comment>
         <translation>上传限制</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="180"/>
+        <location filename="../gui/transferlistmodel.cpp" line="181"/>
         <source>Downloaded</source>
         <comment>Amount of data downloaded (e.g. in MB)</comment>
         <translation>已下载</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="181"/>
+        <location filename="../gui/transferlistmodel.cpp" line="182"/>
         <source>Uploaded</source>
         <comment>Amount of data uploaded (e.g. in MB)</comment>
         <translation>已上传</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="184"/>
+        <location filename="../gui/transferlistmodel.cpp" line="185"/>
         <source>Remaining</source>
         <comment>Amount of data left to download (e.g. in MB)</comment>
         <translation>剩余</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="185"/>
+        <location filename="../gui/transferlistmodel.cpp" line="186"/>
         <source>Time Active</source>
         <comment>Time (duration) the torrent is active (not stopped)</comment>
         <translation>有效时间</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="367"/>
+        <location filename="../gui/transferlistmodel.cpp" line="368"/>
         <source>Yes</source>
         <translation>是</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="367"/>
+        <location filename="../gui/transferlistmodel.cpp" line="368"/>
         <source>No</source>
         <translation>否</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="186"/>
+        <location filename="../gui/transferlistmodel.cpp" line="187"/>
         <source>Save Path</source>
         <comment>Torrent save path</comment>
         <translation>保存路径</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="182"/>
+        <location filename="../gui/transferlistmodel.cpp" line="183"/>
         <source>Session Downloaded</source>
         <comment>Amount of data downloaded since program open (e.g. in MB)</comment>
         <translation>Session Downloaded</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="183"/>
+        <location filename="../gui/transferlistmodel.cpp" line="184"/>
         <source>Session Uploaded</source>
         <comment>Amount of data uploaded since program open (e.g. in MB)</comment>
         <translation>Session Uploaded</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="187"/>
+        <location filename="../gui/transferlistmodel.cpp" line="188"/>
         <source>Incomplete Save Path</source>
         <comment>Torrent incomplete save path</comment>
         <translation>保存路径不完整</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="188"/>
+        <location filename="../gui/transferlistmodel.cpp" line="189"/>
         <source>Completed</source>
         <comment>Amount of data completed (e.g. in MB)</comment>
         <translation>已完成</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="189"/>
+        <location filename="../gui/transferlistmodel.cpp" line="190"/>
         <source>Ratio Limit</source>
         <comment>Upload share ratio limit</comment>
         <translation>比率限制</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="190"/>
+        <location filename="../gui/transferlistmodel.cpp" line="191"/>
         <source>Last Seen Complete</source>
         <comment>Indicates the time when the torrent was last seen complete/whole</comment>
         <translation>最后完整可见</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="191"/>
+        <location filename="../gui/transferlistmodel.cpp" line="192"/>
         <source>Last Activity</source>
         <comment>Time passed since a chunk was downloaded/uploaded</comment>
         <translation>最近活动</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="192"/>
+        <location filename="../gui/transferlistmodel.cpp" line="193"/>
         <source>Total Size</source>
         <comment>i.e. Size including unwanted data</comment>
         <translation>总大小</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="193"/>
+        <location filename="../gui/transferlistmodel.cpp" line="194"/>
         <source>Availability</source>
         <comment>The number of distributed copies of the torrent</comment>
         <translation>可用性</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="194"/>
+        <location filename="../gui/transferlistmodel.cpp" line="195"/>
         <source>Info Hash v1</source>
         <comment>i.e: torrent info hash v1</comment>
         <translation>信息哈希值 v1</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="195"/>
+        <location filename="../gui/transferlistmodel.cpp" line="196"/>
         <source>Info Hash v2</source>
         <comment>i.e: torrent info hash v2</comment>
         <translation>信息哈希值 v2</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="196"/>
+        <location filename="../gui/transferlistmodel.cpp" line="197"/>
         <source>Reannounce In</source>
         <comment>Indicates the time until next trackers reannounce</comment>
         <translation>下次重新汇报</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="197"/>
+        <location filename="../gui/transferlistmodel.cpp" line="198"/>
         <source>Private</source>
         <comment>Flags private torrents</comment>
         <translation>私密</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="205"/>
+        <location filename="../gui/transferlistmodel.cpp" line="206"/>
         <source>Ratio / Time Active (in months), indicates how popular the torrent is</source>
         <translation>分享率/活跃时间（月份为单位），表明 torrent 的流行度</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="259"/>
-        <location filename="../gui/transferlistmodel.cpp" line="352"/>
-        <location filename="../gui/transferlistmodel.cpp" line="368"/>
+        <location filename="../gui/transferlistmodel.cpp" line="260"/>
+        <location filename="../gui/transferlistmodel.cpp" line="353"/>
+        <location filename="../gui/transferlistmodel.cpp" line="369"/>
         <source>N/A</source>
         <translation>N/A</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="316"/>
+        <location filename="../gui/transferlistmodel.cpp" line="317"/>
         <source>%1 ago</source>
         <comment>e.g.: 1h 20m ago</comment>
         <translation>%1 前</translation>
     </message>
     <message>
-        <location filename="../gui/transferlistmodel.cpp" line="329"/>
+        <location filename="../gui/transferlistmodel.cpp" line="330"/>
         <source>%1 (seeded for %2)</source>
         <comment>e.g. 4m39s (seeded for 3m10s)</comment>
         <translation>%1 (已做种 %2)</translation>
@@ -12850,12 +12854,12 @@ Please choose a different name and try again.</source>
 <context>
     <name>UIThemeManager</name>
     <message>
-        <location filename="../gui/uithememanager.cpp" line="82"/>
+        <location filename="../gui/uithememanager.cpp" line="88"/>
         <source>Set app style failed. Unknown style: &quot;%1&quot;</source>
         <translation>设置应用程序样式失败。未知样式：&quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../gui/uithememanager.cpp" line="101"/>
+        <location filename="../gui/uithememanager.cpp" line="107"/>
         <source>Failed to load UI theme from file: &quot;%1&quot;</source>
         <translation>从文件加载 UI 主题失败：&quot;%1&quot;</translation>
     </message>
@@ -12886,21 +12890,21 @@ Please choose a different name and try again.</source>
 <context>
     <name>Upgrade</name>
     <message>
-        <location filename="../app/upgrade.cpp" line="59"/>
+        <location filename="../app/upgrade.cpp" line="62"/>
         <source>Migrate preferences failed: WebUI https, file: &quot;%1&quot;, error: &quot;%2&quot;</source>
         <translation>合并个性化设置失败：WebUI https，文件：&quot;%1&quot;，错误：&quot;%2&quot;</translation>
     </message>
     <message>
-        <location filename="../app/upgrade.cpp" line="74"/>
+        <location filename="../app/upgrade.cpp" line="77"/>
         <source>Migrated preferences: WebUI https, exported data to file: &quot;%1&quot;</source>
         <translation>合并个性化设置成功：WebUI https，数据已导出至文件：&quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../app/upgrade.cpp" line="166"/>
-        <location filename="../app/upgrade.cpp" line="197"/>
-        <location filename="../app/upgrade.cpp" line="228"/>
-        <location filename="../app/upgrade.cpp" line="366"/>
-        <location filename="../app/upgrade.cpp" line="464"/>
+        <location filename="../app/upgrade.cpp" line="174"/>
+        <location filename="../app/upgrade.cpp" line="207"/>
+        <location filename="../app/upgrade.cpp" line="240"/>
+        <location filename="../app/upgrade.cpp" line="380"/>
+        <location filename="../app/upgrade.cpp" line="481"/>
         <source>Invalid value found in configuration file, reverting it to default. Key: &quot;%1&quot;. Invalid value: &quot;%2&quot;.</source>
         <translation>在配置文件中找到了无效的值，将其还原为默认值。键：“%1”。无效值：“%2”。</translation>
     </message>
@@ -12992,27 +12996,27 @@ Please choose a different name and try again.</source>
         <translation>监视文件夹</translation>
     </message>
     <message>
-        <location filename="../gui/watchedfoldersmodel.cpp" line="105"/>
+        <location filename="../gui/watchedfoldersmodel.cpp" line="106"/>
         <source>Watched folder path cannot be empty.</source>
         <translation>监视文件夹路径不能为空。</translation>
     </message>
     <message>
-        <location filename="../gui/watchedfoldersmodel.cpp" line="108"/>
+        <location filename="../gui/watchedfoldersmodel.cpp" line="109"/>
         <source>Watched folder path cannot be relative.</source>
         <translation>所监视的文件夹路径不能是相对的。</translation>
     </message>
     <message>
-        <location filename="../gui/watchedfoldersmodel.cpp" line="111"/>
+        <location filename="../gui/watchedfoldersmodel.cpp" line="112"/>
         <source>Folder &apos;%1&apos; is already in watch list.</source>
         <translation>文件夹 “%1” 已在监视列表中。</translation>
     </message>
     <message>
-        <location filename="../gui/watchedfoldersmodel.cpp" line="115"/>
+        <location filename="../gui/watchedfoldersmodel.cpp" line="116"/>
         <source>Folder &apos;%1&apos; doesn&apos;t exist.</source>
         <translation>文件夹 “%1” 不存在。</translation>
     </message>
     <message>
-        <location filename="../gui/watchedfoldersmodel.cpp" line="117"/>
+        <location filename="../gui/watchedfoldersmodel.cpp" line="118"/>
         <source>Folder &apos;%1&apos; isn&apos;t readable.</source>
         <translation>文件夹 “%1” 不可读。</translation>
     </message>
@@ -13065,42 +13069,42 @@ Please choose a different name and try again.</source>
         <translation>Web 服务器错误：未知错误。</translation>
     </message>
     <message>
-        <location filename="../webui/webapplication.cpp" line="918"/>
+        <location filename="../webui/webapplication.cpp" line="920"/>
         <source>WebUI: Origin header &amp; Target origin mismatch! Source IP: &apos;%1&apos;. Origin header: &apos;%2&apos;. Target origin: &apos;%3&apos;</source>
         <translation>WebUI: 请求 Header 中 Origin 与 XFH/Host 不匹配！来源 IP: &apos;%1&apos;。Origin: &apos;%2&apos;。XFH/Host: &apos;%3&apos;</translation>
     </message>
     <message>
-        <location filename="../webui/webapplication.cpp" line="930"/>
+        <location filename="../webui/webapplication.cpp" line="932"/>
         <source>WebUI: Referer header &amp; Target origin mismatch! Source IP: &apos;%1&apos;. Referer header: &apos;%2&apos;. Target origin: &apos;%3&apos;</source>
         <translation>WebUI: 请求 Header 中 Referer 与 XFH/Host 不匹配！来源 IP: &apos;%1&apos;。Referer: &apos;%2&apos;。XFH/Host: &apos;%3&apos;</translation>
     </message>
     <message>
-        <location filename="../webui/webapplication.cpp" line="949"/>
+        <location filename="../webui/webapplication.cpp" line="951"/>
         <source>WebUI: Invalid Host header, port mismatch. Request source IP: &apos;%1&apos;. Server port: &apos;%2&apos;. Received Host header: &apos;%3&apos;</source>
         <translation>WebUI：无效的 Host header，端口不匹配。请求的来源 IP：“%1”。服务器端口：“%2”。收到的 Host header：“%3”</translation>
     </message>
     <message>
-        <location filename="../webui/webapplication.cpp" line="970"/>
+        <location filename="../webui/webapplication.cpp" line="972"/>
         <source>WebUI: Invalid Host header. Request source IP: &apos;%1&apos;. Received Host header: &apos;%2&apos;</source>
         <translation>WebUI：无效的 Host header。请求的来源 IP：“%1”。收到的 Host header：“%2”</translation>
     </message>
     <message>
-        <location filename="../webui/webapplication.cpp" line="1016"/>
+        <location filename="../webui/webapplication.cpp" line="1018"/>
         <source>WebAPI login failure. Reason: IP has been banned, IP: %1, username: %2</source>
         <translation>WebAPI 登录失败。原因: IP 被封禁，IP：%1，用户名：%2</translation>
     </message>
     <message>
-        <location filename="../webui/webapplication.cpp" line="1019"/>
+        <location filename="../webui/webapplication.cpp" line="1021"/>
         <source>Your IP address has been banned after too many failed authentication attempts.</source>
         <translation>身份认证失败次数过多，您的 IP 地址已被封禁。</translation>
     </message>
     <message>
-        <location filename="../webui/webapplication.cpp" line="1028"/>
+        <location filename="../webui/webapplication.cpp" line="1030"/>
         <source>WebAPI login success. IP: %1</source>
         <translation>WebAPI 登录成功。IP：%1</translation>
     </message>
     <message>
-        <location filename="../webui/webapplication.cpp" line="1036"/>
+        <location filename="../webui/webapplication.cpp" line="1038"/>
         <source>WebAPI login failure. Reason: invalid credentials, attempt count: %1, IP: %2, username: %3</source>
         <translation>WebAPI 登录失败。原因：凭证无效，尝试次数：%1，IP：%2，用户名：%3</translation>
     </message>

@@ -14,7 +14,7 @@
 ; 4.5.1.3 -> good
 ; 4.5.1.3.2 -> bad
 ; 4.5.0beta -> bad
-!define /ifndef QBT_VERSION "5.2.1.10"
+!define /ifndef QBT_VERSION "5.2.3.10"
 
 ; Option that controls the installer's window name
 ; If set, its value will be used like this:
@@ -38,12 +38,23 @@
 ; QBT_CPU_ARCH (x64 or arm64)
 !define /ifndef QBT_CPU_ARCH "x64"
 
-!ifndef QBT_INSTALLER_WINDOWNAME | QBT_INSTALLER_FILENAME
-  ; The name of the installer
-  !define QBT_INSTALLER_WINDOWNAME "${QBT_VERSION} ${QBT_CPU_ARCH}"
+; Libtorrent Experimental
+;!define LT_EXP_BUILD "LT2.1"
 
-  ; The file to write
-  !define QBT_INSTALLER_FILENAME "${QBT_VERSION}_${QBT_CPU_ARCH}"
+!ifndef QBT_INSTALLER_WINDOWNAME | QBT_INSTALLER_FILENAME
+  !ifdef LT_EXP_BUILD
+    ; The name of the installer
+    !define QBT_INSTALLER_WINDOWNAME "${QBT_VERSION} ${QBT_CPU_ARCH} ${LT_EXP_BUILD}"
+
+    ; The file to write
+    !define QBT_INSTALLER_FILENAME "${QBT_VERSION}_${QBT_CPU_ARCH}_${LT_EXP_BUILD}"
+  !else
+    ; The name of the installer
+    !define QBT_INSTALLER_WINDOWNAME "${QBT_VERSION} ${QBT_CPU_ARCH} "
+
+    ; The file to write
+    !define QBT_INSTALLER_FILENAME "${QBT_VERSION}_${QBT_CPU_ARCH}"
+  !endif
 !endif
 
 !define /ifndef QBT_DIST_DIR "qBittorrent"

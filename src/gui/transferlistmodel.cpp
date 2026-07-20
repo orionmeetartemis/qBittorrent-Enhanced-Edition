@@ -118,7 +118,8 @@ TransferListModel::TransferListModel(QObject *parent)
     connect(UIThemeManager::instance(), &UIThemeManager::themeChanged, this, [this]
     {
         loadUIThemeResources();
-        emit dataChanged(index(0, 0), index((rowCount() - 1), (columnCount() - 1)), {Qt::DecorationRole, Qt::ForegroundRole});
+        if (const int rCount = rowCount(); rCount > 0)
+            emit dataChanged(index(0, 0), index((rCount - 1), (columnCount() - 1)), {Qt::DecorationRole, Qt::ForegroundRole});
     });
 
     // Load the torrents
@@ -638,10 +639,13 @@ bool TransferListModel::setData(const QModelIndex &index, const QVariant &value,
 
 void TransferListModel::addTorrents(const QList<BitTorrent::Torrent *> &torrents)
 {
+    if (torrents.isEmpty())
+        return;
+
     qsizetype row = m_torrentList.size();
     const qsizetype total = row + torrents.size();
 
-    beginInsertRows({}, row, total);
+    beginInsertRows({}, row, (total - 1));
 
     m_torrentList.reserve(total);
     for (BitTorrent::Torrent *torrent : torrents)
@@ -743,7 +747,10 @@ void TransferListModel::configure()
     }
 
     if (isDataChanged)
-        emit dataChanged(index(0, 0), index((rowCount() - 1), (columnCount() - 1)));
+    {
+        if (const int rCount = rowCount(); rCount > 0)
+            emit dataChanged(index(0, 0), index((rCount - 1), (columnCount() - 1)));
+    }
 }
 
 void TransferListModel::loadUIThemeResources()

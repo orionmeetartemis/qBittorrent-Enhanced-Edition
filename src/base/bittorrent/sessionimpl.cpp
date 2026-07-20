@@ -57,6 +57,7 @@
 #include <libtorrent/session_stats.hpp>
 #include <libtorrent/session_status.hpp>
 #include <libtorrent/torrent_info.hpp>
+#include <libtorrent/version.hpp>
 
 #include <QDateTime>
 #include <QDeadlineTimer>
@@ -227,6 +228,10 @@ namespace
 #endif
         case lt::socket_type_t::utp_ssl:
             return u"UTP_SSL"_s;
+#if LIBTORRENT_VERSION_NUM >= 20100
+        case lt::socket_type_t::rtc:
+            return u"WebRTC"_s;
+#endif
         }
         return u"INVALID"_s;
     }
@@ -1366,8 +1371,13 @@ void SessionImpl::applyBandwidthLimits()
 
 void SessionImpl::configure()
 {
+    const bool isListenInterfaceChanged = !m_listenInterfaceConfigured;
+
     m_nativeSession->apply_settings(loadLTSettings());
     configureComponents();
+
+    if (isListenInterfaceChanged && isReannounceWhenAddressChangedEnabled())
+        reannounceToAllTrackers();
 
     m_deferredConfigureScheduled = false;
 }
@@ -1774,6 +1784,10 @@ void SessionImpl::initializeNativeSession()
     case DiskIOType::SimplePreadPwrite:
         sessionParams.disk_io_constructor = customMMapDiskIOConstructor;
         break;
+#if LIBTORRENT_VERSION_NUM >= 20100
+    case DiskIOType::PreadPwrite:
+        sessionParams.disk_io_constructor = customPreadDiskIOConstructor;
+#endif
     default:
         sessionParams.disk_io_constructor = customDiskIOConstructor;
         break;
@@ -2881,7 +2895,6 @@ bool SessionImpl::addTorrent_impl(const TorrentDescriptor &source, const AddTorr
 
         const auto nativeIndexes = torrentInfo.nativeIndexes();
 
-        Q_ASSERT(p.file_priorities.empty());
         Q_ASSERT(addTorrentParams.filePriorities.isEmpty() || (addTorrentParams.filePriorities.size() == nativeIndexes.size()));
         QList<DownloadPriority> filePriorities = addTorrentParams.filePriorities;
 
@@ -3745,9 +3758,6 @@ void SessionImpl::setPort(const int port)
     {
         m_port = port;
         configureListeningInterface();
-
-        if (isReannounceWhenAddressChangedEnabled())
-            reannounceToAllTrackers();
     }
 }
 
@@ -3763,9 +3773,6 @@ void SessionImpl::setSSLEnabled(const bool enabled)
 
     m_sslEnabled = enabled;
     configureListeningInterface();
-
-    if (isReannounceWhenAddressChangedEnabled())
-        reannounceToAllTrackers();
 }
 
 int SessionImpl::sslPort() const
@@ -3780,9 +3787,6 @@ void SessionImpl::setSSLPort(const int port)
 
     m_sslPort = port;
     configureListeningInterface();
-
-    if (isReannounceWhenAddressChangedEnabled())
-        reannounceToAllTrackers();
 }
 
 QString SessionImpl::networkInterface() const
